@@ -1,0 +1,103 @@
+\usepackage{graphicx}
+\usepackage{a4wide}		% use wide pages to save paper
+\usepackage[compact]{titlesec}	% compact titles to save space
+\usepackage{placeins}		% provides \FloatBarrier
+\usepackage{ifthen}
+\usepackage[margin=15pt,font=small,labelfont=bf]{caption}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+
+% hyperref should be last in any LaTex doc
+\usepackage{hyperref}
+\hypersetup{colorlinks,
+            linkcolor=blue,
+            urlcolor=cyan}
+
+% change some spacings
+\addtolength{\parskip}{2.5mm}
+\parindent = 0.0in
+\setlength{\belowdisplayskip}{0.0in}
+\setlength{\textfloatsep}{5mm}
+
+\newcounter{confidential}
+\newcounter{withdate}
+\newcommand{\@subtitle}{}
+\newcommand{\@client}{}
+\newcommand{\@subject}{}
+\newcommand{\@keywords}{}
+\newcommand{\@revision}{}
+
+% headers
+\pagestyle{fancy}
+
+%% redefine \maketitle %%
+%
+\renewcommand{\maketitle}{%
+  \hypersetup{pdftitle={\@title},
+              pdfauthor={\@author, Collabora Ltd.},
+	      pdfsubject={\@subject},
+	      pdfkeywords={\@keywords},
+	     }
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+    	\null
+	\vskip 6cm
+    	{\Huge\bfseries{\@title}}\\[2mm]
+	{\Large{\@subtitle}}\ \\[4mm]
+	\@revision\ \\[4mm]
+	\ifthenelse{\value{withdate} = 1}{%
+	 \@date
+	}{}
+	\vskip 3cm
+	{\large\@client}
+	\includegraphics[width=8cm]{images/collabora-logo}
+	\vskip 2mm
+	{\Large{\@author}}\ \\
+	Collabora Ltd.\\[1cm]
+	\ifthenelse{\value{confidential} = 1}{%
+	 {\Large\bfseries{Confidential}}
+	}{}
+    \end{center}
+  \end{titlepage}
+
+  % change the headers
+  \rhead{{\small{\@title}}}
+  % add the Confidential marker
+  \ifthenelse{\value{confidential} = 1}{%
+    \lhead{{\bfseries\small{Confidential}}}
+  }{%
+    \lhead{}
+  }
+}
+
+\newcommand{\confidential}{\setcounter{confidential}{1}}
+\newcommand{\withdate}{\setcounter{withdate}{1}}
+\newcommand{\subtitle}[1]{\renewcommand{\@subtitle}{#1}}
+\newcommand{\client}[1]{\renewcommand{\@client}{Prepared for\\{\bfseries#1}\\by\\}}
+\newcommand{\subject}[1]{\renewcommand{\@subject}{#1}}
+\newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
+\newcommand{\revision}[1]{\renewcommand{\@revision}{Revision #1}}
+
+\newcommand{\unnumberedsection}[1]{%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  \section*{#1}
+}
+
+\newcommand{\unnumberedsubsection}[1]{%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{#1}
+  \subsection*{#1}
+}
+
+%% define a note environment %%
+%
+\newenvironment{note}[1][Note]
+{% beginning of the environment
+\begin{quote}
+{\bfseries{#1}}\\
+}
+{% end of the environment
+\end{quote}
+}
