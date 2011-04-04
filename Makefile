@@ -3,7 +3,7 @@ IMAGES = \
 
 DOCUMENT = thesis.tex
 INCLUDES =
-STYLESHEET = collabora.sty
+STYLESHEET = template.sty
 
 PDF_IMAGES = $(patsubst %.svg,%.pdf,$(IMAGES))
 
