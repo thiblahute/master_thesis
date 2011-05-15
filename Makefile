@@ -17,6 +17,6 @@ clean:
 	 rm -f *.{blg,bbl,toc,out,log,aux,pdf,dvi}
 
 spell:
-	aspell -l en_GB -t -c $(DOCUMENT) --add-filter=tex
+	aspell -l fr_FR -t -c $(DOCUMENT) --add-filter=tex
 
 .PHONY: spell
