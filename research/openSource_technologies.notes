@@ -1,0 +1,409 @@
+# Copyright (C) 2011 Thibault Saunier <thibault.saunier@collabora.co.uk>
+# Released under the Creative Commons License
+
+__Title__: Open source_technologies analisis, comparicion...
+__Author__: Thibault Saunier
+
+================================================================================
+# Lecture-Topic = ""
+# Suggested References = ""
+
+1 * The MLT framework toolkit "Media' Loving TOolkit"
+    -------------------------------------------------
+
+  A- Description
+     -----------
+    'MLT is an open source multimedia framework, designed and developed for
+    television broadcasting. It provides a toolkit for broadcasters, video editors,
+    media players, transcoders, web streamers and many more types of applications.
+    The functionality of the system is provided via an assortment of ready to use
+    tools, XML authoring components, and an extensible plug-in based API.' [0]
+
+    This a a multimedia framework oriented on TV content creation. It
+    can be used for all the related fields.
+
+
+  B- Overview of the technology [1]
+     --------------------------
+    * Written in C
+    * Small, clean API with minimal dependencies (POSIX and C99)
+    * Basic Object Oriented design paradigm -> Implemented in the framework
+      itself
+    * Colorspace neutral in theory, in fact YUV422 oriented
+    * Modular design for the addition of new components
+    * Simple integration with other multimedia libraries and applications
+    * Supports the authoring and manipulation (ala DOM) of time-based media
+      including playlists, multiple tracks, filters, and transitions
+    * Serialization and deserialization of authored projects
+    * Doxygen-based API Documentation
+    * High-level language bindings for C++, C#, Java, Lua, Perl, PHP, Python,
+      Ruby, and TCL
+    * Multi-core processing
+    * Cross-platform: Linux, BSD, Mac OS X (MacPorts), Windows (MinGW)
+    * Licensed under the LGPLv2.1
+
+  C * Base concept
+      ------------
+
+    The MLT framework is based on the idea of a Network which can be represented
+    by a diagram like this one
+
+         +--------+   +--------+
+         |Producer|-->|Consumer|
+         +--------+   +--------+
+
+    An MLT Frame essentially provides an uncompressed image and its associated
+    audio samples.
+
+    Also there are filters that can be place at the middle of the network
+
+         +--------+   +------+   +--------+
+         |Producer|-->|Filter|-->|Consumer|
+         +--------+   +------+   +--------+
+
+    This is just aiming at showing that we are in something pretty similare to
+    what Gst does. The editing feature is included in the base design of the
+    framework.
+
+  D * Plugins
+      -------
+      * Integration with many libraries for multimedia including FFmpeg, Jack,
+        LADSPA, SoX, SRC (libsamplerate), frei0r, GTK+, Qt, and SDL
+      * Images handling through gdk or QImage
+      * Frei0r for video effects
+      * LADSPA for audio effects
+      * ...
+
+  E * Revision control system
+      -----------------------
+    The main project GIT repository is accessible at:
+      www.mltframework.org/gitweb/mlt.git
+
+  F * The community
+      -------------
+    a - Involved companies
+        ------------------
+      +Ushodaya: is a big Idian Television company. The company is based
+         in Bangalore, in Andhra Pradesh. It has 12 TV channels in India and
+         is sponsoring the mlt framework devlopment.
+         website: www.etv.co.in/e-tv-5/index.php
+
+      +mainconcept: Mainconcept is a company specialized in coding, decoding,
+          streaming transcoding and analysing media content. It provided
+          professional quality codec to the framework.
+
+      +BlueFish444: Hardware vendor that provides its HW to the comunity so they
+          can implement related features.
+
+      +VMFX: Company that helps on the framework while developing cinefx[2]
+
+    b - Other project it is making use of
+        ---------------------------------
+      +ffmpeg: FFmpeg is a complete, cross-platform solution to record, convert
+        and stream audio and video. It includes libavcodec - the leading audio/
+        video codec library. This project creates most of the codecs in use in
+        MLT, the two communities work in close collaboration.
+
+    c - Mailling list
+        -------------
+      Min mail per month in the last 3 years:  50
+      Max mails per month in the last 3 years:  142
+
+      website: http://sourceforge.net/mail/?group_id=96039
+
+    d- Bug tracker
+      ------------
+      Nb of current bugs: 114
+      Nb of open bugs: 17
+
+      These number need to be analysed, compared with other technologies and understood.
+      website: www.sourceforge.net/tracker/?group_id=96039&atid=613414
+
+    e- What about the code and developers
+       ---------------------------------
+      Datas from gitstats, only the main mlt repo, plugnis are not centralized,
+      and can't be taken into account here.
+      Lines of code: 110 011
+      Total Number of devs: 12
+      Number of devs last month: 1
+      Number of commits last month: 47
+      Month of biggest commit merged: 09-2004 with 53 commits
+      Month of first commits: 2003-12
+      Max number of author in a month: 4
+      Lines by type:
+
+      Note : The master branch is broken on 16-05-2011
+
+    D * Video editors based on this technology
+      --------------------------------------
+
+      a- KDenlive
+         --------
+        website: www.kdenlive.org/
+
+      b- openshot
+         --------
+        website: www.openshot.org/
+
+2 * GStreamer
+    ---------
+
+  A- Description
+     -----------
+
+    GStreamer allows a programmer to create a variety of media-handling components,
+    including simple audio playback, audio and video playback, recording, streaming
+    and editing. The pipeline design serves as a base to create many types of
+    multimedia applications such as video editors, streaming media broadcasters, and
+    media players.
+
+    This a a multimedia framework aiming at being as complete as possible in
+    order to response to any usecase that multimedia application can have to
+    handle.
+
+
+  B- Overview of the technology [1]
+     --------------------------
+    * Written in C
+    * Object oriented using the GLib and so forth, Gobject-s.
+    * Various colorspace support
+    * Very modular design for the addition of new components
+    * Wrapper around various libraries to support effects/video formats/audio
+      formats...
+    * High-level language bindings for Python, Vala, C++, Perl, GNU Guile and
+      Ruby
+    * Multi-core processing
+    * Cross-platform: Linux, BSD, Mac OS X (MacPorts), Windows (MinGW)
+    * Licensed under the LGPLv2.1
+    * Ready for video edition thanks to the gnonlin set of plugins
+    * Higher level API for video edition through Gstreamer Editing Service (GES)
+
+  C * Base concept
+      ------------
+    GStreamer processes media by connecting a number of processing elements into a
+    pipeline. Each element is provided by a plug-in. Elements can be grouped into
+    bins, which can be further aggregated, thus forming a hierarchical graph.
+
+    Elements communicate by means of pads. A source pad on one element can be
+    connected to a sink pad on another. When the pipeline is in the playing state,
+    data buffers flow from the source pad to the sink pad. Pads negotiate the kind
+    of data that will be sent using capabilities.
+
+    This base conception is not video edition oriented, and that's where the
+    GNonlin set of plugins were introduced to create dynamic pipelines, and allow
+    creation of non-linear video editor on top of GStreamer.
+
+    Then the Gstreamer editing Srevices library is now avalaible, which is a
+    higher level of abstraction over non linear editing logic.
+
+  D * Revision control system
+      -----------------------
+    The project and its plugins GIT repository is accessible at:
+        http://cgit.freedesktop.org/gstreamer/
+
+  E * The community
+      -------------
+    a - Involved companies
+        ------------------
+      +Nokia: No need to describe de company I guess... They worked on it as it
+        is the multimedia framework for Maemo and meego. They sponsored the
+        development of GES (Gstreamer Editing Service) in order to write a Video
+        Editor for mobile phones.
+
+        website: www.nokia.com
+
+      +Intel: No need to present the company I guess... Same as Nokia, they work
+        on meego
+
+        website: www.intel.com/
+
+      +Fluendo: Fluendo aims at improving the global multimedia experience in
+        the Free Software world by funding, developing and maintaining the GStreamer
+        media framework and providing a wide range of, both commercial and free,
+        products on top of it. They provide commercial codecs, a media server based
+        on GStreamer, and are writing a media center based on GStreamer.
+
+        website: www.fluendo.com/
+
+      +Collabora: Collabora Ltd. is a software consultancy specialising in
+        bringing companies and the open source software community together. We
+        combine years of open source software experience with an understanding
+        of the challenges that businesses, nonprofits, and governments face.
+        It has around 20 developpers working full time on Gstreamer.
+
+         website: www.collabora.com/
+
+      +Linaro: Worke on GStreamer for ARM processors, and mobile devices.
+          website: www.linaro.org
+
+      +entropywave: Video Encoding. Application Development. Custom Codecs. They
+        also sail hardware, and they do everything based on Gstreamer
+
+          website: entropywave.com
+
+    b - Other project it is making use of
+        ---------------------------------
+
+      +frei0r: Enable lots of video effects to be used with GStreamer
+
+      +ffmpeg: FFmpeg is a complete, cross-platform solution to record, convert
+        and stream audio and video. It includes libavcodec - the leading audio/
+        video codec library. This project creates most of the codecs in use in
+        MLT, the two communities work in close collaboration.
+      +ladspa: Audio effects
+
+      +Other libraries: such as libogg libvpx...
+
+    c - Mailling list
+        -------------
+      Min mail per month in the last 3 years: 279
+      Max mails per month in the last 3 years: 523
+
+      website: http://lists.freedesktop.org/mailman/listinfo/gstreamer-devel
+
+    d- Bug tracker
+      ------------
+      Nb of current bugs: 11210
+      Nb of open bugs: 1363
+
+      These number need to be analysed, compared with other technologies and understood.
+      website: https://bugzilla.gnome.org/
+
+    e- What about the code and developers
+       ---------------------------------
+      Datas from gitstats, only the main gst repo, plugnis are not taken in
+      account
+      Lines of code:     435 930
+      Total Number of devs: 205
+      Number of commits: 11574 average 4.1 commits per active day, 2.8 per all days
+      Number of devs last month: 14
+      Number of commits last month: 47
+      Month of biggest commit merged: 2001-12 with 150 commits
+      Month of first commits: 2000-01
+      Max number of author in a month:  25 in january 2011
+
+    D * Video editors based on this technology
+      --------------------------------------
+
+      a- Pitivi
+         --------
+        website: www.kdenlive.org/
+
+      b- openshot
+         --------
+        website: www.openshot.org/
+
+3 * Cinelera video editor:
+
+  A- Description
+     -----------
+
+    Cinelerra is the most advanced non-linear video editor and compositor for Linux.
+    It is developed by Adam Williams (formerly known as Jack Crossfire) at Heroine
+    Virtual Ltd.. [3]
+
+    So why do I speak about it here if it is a video editor?
+      The response is pretty simple, it is not based on any other technology,
+      and does everything internally. It is a huge piece of software 100%
+      oriented on video edition, and pretty feature complete.
+
+    The comparaison with other technologies is not 100% occurate since this is
+    not only a technology, but also a video editor full implementation.
+
+  B- Overview of the technology [1]
+     --------------------------
+    * Written in C++ so object oriented.
+    * Various colorspace support
+    * Modular design for the addition of new components
+    * Wrapper around various libraries to support effects/video formats/audio
+      formats...
+    * High-level language bindings for Python, Vala, C++, Perl, GNU Guile and
+      Ruby
+    * Multi-core and GPU processing
+    * RGBA and YUVA colorspace support
+    * Licensed under the GPL
+
+  D * Revision control system
+      -----------------------
+    As the repo is concerned, the one from cinelerra-CV is pretty occurate and
+    can be analized to know who actually create the software, how active the
+    project is. The repos are accessible at
+
+        http://git.cinelerra.org/
+
+  E * The community
+      -------------
+    a - Involved companies
+        ------------------
+
+      + heroine virtual:
+        The project is developed by heroine virtual, the company develops the
+        code, let big code dropx to the community every 6 monthx or so.
+
+        TODO: Investigate more about the company as there is not much said about
+        it.
+
+        website: heroinewarrior.com/
+
+    b - Other project it is making use of
+        ---------------------------------
+
+      +frei0r: Enable lots of video effects to be used with GStreamer
+
+      +ffmpeg: FFmpeg is a complete, cross-platform solution to record, convert
+        and stream audio and video. It includes libavcodec - the leading audio/
+        video codec library. This project creates most of the codecs in use in
+        MLT, the two communities work in close collaboration.
+
+      +ladspa: Audio effects
+
+    c - Mailling list
+        -------------
+      The software is not really developed as a community based project. Even if
+      a big community is actually supporting a version that they keep in sync
+      with the codebase from heroine virtual, and is called cinelerra-CV. We
+      could analyse this community, but I am not sure it is 100% meaningfull.
+
+      website: cinelerra.org/mailinglists.php
+
+    d- Bug tracker
+      ------------
+      Nb of current bugs: 585
+      Nb of open bugs: 269
+
+      These number need to be analysed, compared with other technologies
+      and understood.
+      website: bugs.cinelerra.org/
+
+    e- What about the code and developers
+       ---------------------------------
+      Datas from gitstats, repo from Einar Runkaru
+      Lines of code:     1 064 372
+      Total Number of devs: 28
+      Number of commits:1044 average 2.2 commits per active day, 0.4 per all days
+      Number of devs last month: 1... meanlingless value
+      Number of commits last month: 47
+      Month of biggest commit merged: 2006-09 with 38 commits
+      Month of first commits: 2003-06
+      Max number of author in a month: 7 in august 2004
+
+    D * Video editors based on this technology
+      --------------------------------------
+
+      This section is not 100% occurate as this is not a framework, but
+      since Lumiera is a video editor that is base on cinelerra, 100% community
+
+4 * Others?
+    ------
+
+  I could also speak about Blender which is an open source 3D content creation
+  tool that also introduce non linear edition concepts and can be used as a
+  video editor even if it is not its first goal.
+
+
+[0]: www.mltframework.org
+[1]: www.mltframework.org/twiki/bin/view/MLT/Features
+[2]: www.cinefx.orgo
+[3]: cinelerra.org/about.php
+
+(File made for vim +
