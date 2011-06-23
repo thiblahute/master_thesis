@@ -6,11 +6,11 @@
   Le montage vidéo professionnel est un domaine très vaste, et l'on peu
   s'attendre à ce que les besoins auxquels doivent répondre les logiciels
   permettant de produire les différents types d'œuvres audiovisuel
-  varient fortement en fonction du type d'œuvre. Il s'agit dans les fait
+  varient fortement en fonction du type de contenu. Il s'agit dans les faits
   de différents cas d'utilisation d'un même logiciel, et afin d'étudier
-  les possibilités des logiciels libres dans ce domaine, il faut
-  définir ces use case, les fonctionnalités qui en découlent\ldots
-  Nous nous allons définir les principaux en cas d'utilisation en fonction des
+  les possibilités d'avenir des logiciels libres dans ce domaine, il faut
+  définir ces use case, les fonctionnalités qui en découlent, et ainsi connaitre
+  les différents besoins.  Nous allons définir les principaux cas d'utilisation en fonction des
   différents types de productions audiovisuel et ainsi définir les fonctionnalités
   nécessaires pour répondre à ces cas d'utilisation.
 
@@ -28,7 +28,7 @@
   \subsection{Les bases de l'édition vidéo}
     \paragraph{}
       Tout d'abord, il est évident que pour qu'un logiciel de montage puisse répondre
-      aux besoin de professionnel, les fonctionnalités basiques de l'édition vidéo
+      aux besoin de professionnels, les fonctionnalités basiques de l'édition vidéo
       doivent être couvertes, cette partie a pour but de définir quels sont ces
       fonctionnalités, et les expliquer succinctement:
       %TODO Look for a def of non-linear video editors
@@ -140,6 +140,7 @@
           \item{Création d'effet}
           \item{Retouche d'image}
           \item{Création d'animation}
+          \item{Utilisation des keyframes}
           \item{\ldots}
         \end{itemize}
 
@@ -169,6 +170,7 @@
           \item{Création et ajout de générique}
           \item{Passerelles avec le reste des logiciels de post production}
           \item{Preview de chaque frame dans le détail}
+          \item{Utilisation des keyframes}
         \end{itemize}
 
       %TODO essayer de trouver des monteurs de films!
@@ -194,7 +196,13 @@
         \item{Création et ajout de titre}
         \item{Création et ajout de génériques}
         \item{Retouche des couleurs}
-        \item{Transition smpte\footnote{FIXME smpte}}
+        \item{Utilisation des keyframes}
+        \item{Transition smpte\footnote{smpte: Society of Motion Picture
+          and Television Engineers, est une association internationale,
+          située aux É.-U., et composée d'ingénieurs. Elle développe
+          des standards vidéos (elle en a déjà plus de 400 à son actif),
+          qui sont utilisés par exemple par la télévision, ou le cinéma numérique
+          (Source: http://fr.wikipedia.org/)}}
       \end{itemize}
 
     \subsubsection {Les émission télévisés (journaux télévisés...)}
@@ -260,7 +268,7 @@
         celle des titres puisqu'il s'agit ni plus ni moins d'ajouter du
         texte au dessus d'un fond qu'il soi animé ou non. Mais en terme d'UI
         \footnote{ UI: User Interface, il s'agit du terme  très largement
-          employé pour définir l'interface utilisateur, en général graphique (GUI)},
+        employé pour définir l'interface utilisateur, en général graphique (GUI)},
         il s'agit belle et bien de deux fonctionnalités différentes puisque de par
         définition, le générique est un texte défilent, qui va, dans une très grande
         majorité des cas, de haut en bas.
@@ -273,30 +281,89 @@
         pas perdre beaucoup de temps à mettre en place le générique (le contenu étant
         créé par d'autres personnes dans la majorité des cas).
 
+    \subsubsection{Gestion des Keyframes:}
+      \paragraph{}
+        Les keyframes sont utilisé dans bien des domaines, mais dans beaucoup de cas, il sont
+        utilisé avec parcimonie. Il s'agit dans les faits d'instant dans la vidéo ou quelque
+        élément ajouté par le monteur (effets, texte, etc\ldots) va changer de propriété. Il
+        apparait donc nécessaire d'avoir une gestion minimal des keyframes,
+        en particulier pour une gestion fine des couleurs, mais leur utilisation est
+        rarement vraiment avancé.
+
+      \paragraph{}
+        Dans la création de clips en particulier, afin de dynamiser la vidéo,
+        les monteurs utilisent de manière intensive les keyframes.
+
   \subsection{Fonctionnalité spécifiques}
-    Ils est apparue intéressant que dans %FIXME
-    les fait, les fonctionnalités utilisés sont assez similaire bien que
-    les œuvres finales soient totalement différentes.
+    %Ils  que dans %FIXME
+    %les fait, les fonctionnalités utilisés sont assez similaire bien que
+    %les œuvres finales soient totalement différentes.
 
     \paragraph{}
-    Quelques fonctionnalités sont apparue comme vraiment propre à la création
-    d'un type d'oeuvre en particulier.
+      Quelques fonctionnalités sont apparue comme vraiment propre à la création
+      d'un type d'oeuvre en particulier.
 
     \subsubsection{Visualisation image par image:}
-      Dans le cadre de la création de film, la preview de chaque frame,
-      de manière précise semble être une fonctionnalité essentiel,
-      cela signifie, que le logiciel de montage doit avoir un moyen de
-      voir de manière simple chaque frame des vidéo présente dans la
-      timeline. Cette fonctionnalités est aussi utile dans le cadre de
-      la création d'autres oeuvre, mais est indispensable dans le cadre
-      de film, afin de s'assurer de la qualité du résultat. En effet,
-      lors de la création d'un film, chaque frame doit être contrôlé,
-      alors que dans d'autre types d'oeuvre, les exigences étant moins
-      élevés ainsi que les moyens, une telle fonctionnalité ne est pas
-      indispensable.
+      \paragraph{}
+        Dans le cadre de la création de film, la preview de chaque frame,
+        de manière précise semble être une fonctionnalité essentiel,
+        cela signifie, que le logiciel de montage doit avoir un moyen de
+        voir de manière simple chaque frame des vidéos présente dans la
+        timeline. Cette fonctionnalités est aussi utile dans le cadre de
+        la création d'autres oeuvre, mais est indispensable dans le cadre
+        de film, afin de s'assurer de la qualité du résultat. En effet,
+        lors de la création d'un film, chaque frame doit être contrôlé,
+        alors que dans d'autre types d'oeuvre, les exigences étant moins
+        élevés ainsi que les moyens, une telle fonctionnalité ne est pas
+        indispensable.
 
-    \subsubsection{Gestion avancé des Keyframes:}
-      Dans la création de clips en particulier, 
+    \subsubsection{Gestion avancé des footages}
+      \paragraph{}
+        Dans le cadre de productions longues, un des problème auquel doit répondre de
+        manière satisfaisante le logiciel d'édition est la gestion et la classification
+        des footages. Cela est en particulier vrai pour les films et les séries télévisés.
+        Dans ces types de production le nombre d'heures de footage peu être très grand, et
+        le monteur doit dans un premier temps, faire un travail énorme sur la classification
+        des footages. Le logiciel de montage doit, pour répondre aux besoins des monteurs,
+        permettre de les ordonner de manière précise et bien pensé.
+
+    \subsubsection{Integration avec un écosystème de logiciel de post production}
+      \paragraph{}
+        Dans le cadre de création de film en particulier, on constate qu'il est nécessaire
+        que le logiciel de montage puisse s'intégrer dans l'écosystème de logiciel de post
+        production. Cela est en général possible si le dit logiciel de montage respecte les
+        quelques standard de la post production d'oeuvre audiovisuel comme par example le
+        Material eXchange Format \footnote{Material eXchange Format ou MXF est un conteneur
+        utilisé par les professionnels pour les données audio et vidéo numériques.
+        Il s'agit d'un format défini par des standards de la SMPTE. (Source: wikipedia)}
+
+    \subsubsection{Time remapping}
+      \paragraph{ }
+        Cette fonctionnalité est particulièrement utilisé dans la création de contenu cours.
+        Il s'agit enfaite d'accélérer, où ralentir une partie d'un clip. Encore une fois,
+        les contenu cours, cherchent en général à être le plus dynamique possible, et pour
+        ce faire, le time remapping est une technique très employé.
+
+    \subsubsection{Gestion des template}
+      \paragraph{ }
+        Le cas d'utilisation lié à la création de contenu live, est assez spécial, et la fonctionnalité
+        qui apparait comme clé pour répondre aux besoins liés à ce type d'oeuvre, est belle et bien la
+        création de template. C'est à dire que dans la création de journaux télévisé, ou autre évènements,
+        sportif (dans les fait presque tout ce qui est montage télévisé) demande une gestion avancé de ``moule``,
+        qui permet par la suite, de simplement lier un certain contenu à un moment donné de la retransmission.
+
+      \paragraph{ }
+        Cette fonctionnalité n'est pas exclusivement utilisé dans la création de contenu live, mais
+        elle est très largement utilisé dans tout ce qui est contenu destiner à la télévision.
+
+    \paragraph{}
+    \paragraph{}
+      Mais l'on s'aperçoit que dans bien des cas, il ne s'agit pas des fonctionnalités en temps
+      que tel qui vont varier en fonction du type d'oeuvre. Il s'agit plus du niveau d'utilisation
+      d'une même fonctionnalité qui est faite. Dependant du type de création, les monteurs font
+      une utilisation plus où moins poussé d'une fonctionnalité. Par example, dans le cas du montage
+      de
+
 
   \paragraph{}
     On constate donc que le champs de fonctionnalités est vaste, de plus dans ce
