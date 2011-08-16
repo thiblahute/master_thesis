@@ -42,7 +42,13 @@ non linéaire doivent être couvertes, cette partie a pour but de définir quell
 sont ces fonctionnalités, et les expliquer succinctement:
 
 \paragraph{Définition des termes techniques}
+
+\subparagraph {}
+Du fait de l'importance des termes suivant pour la compréhension de ce document,
+il est nécessaire qu'ils soient défini au sein même de celui-ci.
+
 \subparagraph{Les Footages}
+\subparagraph{Les clips}
 \subparagraph{Les templates}
 \subparagraph{Les transitions}
 \subparagraph{Les effets}
@@ -61,16 +67,45 @@ clips.
 La timeline, est la partie de l'interface dans laquelle on va disposer les
 différents clips. Certaines fonctionnalités sont indispensables en ce qui
 concerne cette partie du logiciel:
-\begin{itemize}
-  \item{Découpages des clips}
-  \item{Unlinking de la piste audio et de la piste vidéo}
-  \item{Gestion des in point et  out point des clips} %Should that be translated?
-  \item{Notion de layer}
-  \item{Mixing des layer}
-\end{itemize}
 
-FIXME expliquer en détail les différents concept
+\subparagraph{Découpages des clips}
+  La technique du decoupage de clip permet de diviser un footage en plusieurs
+  partie afin de pouvoir les utiliser de manière indépendante.
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{images/splited}
+    \end{center} \caption{Spliting} \label{Yes}
+  \end{figure}
 
+\subparagraph{Unlinking de la piste audio et de la piste vidéo}
+  Le fait de ``des lier'' les clip permet de gérer de manière desynchroniser le son
+  et la video.
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{images/unlinked}
+    \end{center} \caption{Unlinking} \label{Yes}
+  \end{figure}
+
+\subparagraph{Gestion des in point et  out point des clips} %Should that be translated?
+  Permet de définir les temps utilise dans un footage. Cela permet donc de
+  redéfinir la longueur d'un clip dans la timeline, en ne jouant pas le debut
+  ou la fin de celui-ci.
+
+\subparagraph{Notion de layer}
+  La notion de layer est essentielle dans l'édition video avancé dans la
+  timeline, mixer plusieurs sources et ajouter des titres depend de cette
+  fonctionnalité. Afin de comprendre, il est plus simple de faire la comparaison
+  avec de la peinture sur verre. Avec plusieurs vitres superpose les unes au
+  dessus des autres, chacune de ces vitre représentant un layer. Si vous
+  dessiner seulement sur une partie des vitre de la couche supérieur, les vitres
+  inférieurs vont être visibles, et ce qui sera dessine dessus sera donc visible.
+  De plus, il existe un notion d'opacité dans les layer, et dependant de celle-ci,
+  les layers inférieurs, ou non.
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{images/layers}
+    \end{center} \caption{Les layer} \label{Yes}
+  \end{figure}
 
 \subsubsection{Définition du marché}
 
@@ -368,7 +403,6 @@ apparaît donc nécessaire d'avoir une gestion minimale des keyframes,
 en particulier pour une gestion fine des couleurs, mais leur utilisation est
 rarement vraiment avancée.
 
-\newpage
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.9\textwidth]{images/keyframecurves}
@@ -402,7 +436,6 @@ alors que dans d'autres types d'oeuvre, les exigences étant moins
 élevées ainsi que les moyens, une telle fonctionnalité ne est pas
 indispensable.
 
-\newpage
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.9\textwidth]{images/frameByFrame}
@@ -456,6 +489,7 @@ fonctionnalités sont génériques et leur
 utilisation est commune à différents types d'œuvres. Ce qui varie particulièrement  est
 la finesse d'implémentation et le niveau d'utilisation qu'en fait le monteur.
 
+\newpage
 \subsection{Comparaison des principaux logiciels présents sur le marché de
 l'édition vidéo professionnel, et analyse des manques et risques du marché}
 
