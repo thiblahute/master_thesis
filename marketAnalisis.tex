@@ -1,9 +1,6 @@
 \newpage
 
-\section {Analyse du marche de l'édition vidéo}
-
-\subsection{Analyse par segments des besoins logicielles nécessaires au montage
-  de contenu audiovisuel professionnel}
+\section {Analyse du monde de l'édition vidéo professionnel}
 
 \paragraph{}
 Le montage vidéo professionnel est un domaine très vaste, et l'on peut
@@ -33,7 +30,7 @@ déterminer par la suite quels sont ceux auxquels les logiciels libres réponden
 ceux auxquels on peut prétendre répondre dans un futur proche, et ceux qui
 sont hors du scope actuel des technologies libres.
 
-\subsubsection{Les bases de l'édition vidéo}
+\subsection{Les bases de l'édition vidéo}
 
 \paragraph{}
 Tout d'abord, il est évident que pour qu'un logiciel de montage puisse répondre
@@ -41,20 +38,35 @@ aux besoins de professionnels, les fonctionnalités basiques de l'édition vidé
 non linéaire doivent être couvertes, cette partie a pour but de définir quelles
 sont ces fonctionnalités, et les expliquer succinctement:
 
-\paragraph{Définition des termes techniques}
+\subsubsection{Définition des termes techniques}
 
-\subparagraph {}
+\paragraph {}
 Du fait de l'importance des termes suivant pour la compréhension de ce document,
 il est nécessaire qu'ils soient défini au sein même de celui-ci.
 
-\subparagraph{Les Footages}
-\subparagraph{Les clips}
+\paragraph{Les Footages}
+Les footages correspondent à toutes les sources brutes qui ont été enregistrer
+et a partir desquels, le monteur va créer le rendu final de l'œuvre 
+audiovisuel.
+
+\paragraph{Les clips}
+Les clips correspondent dans les faites à un footage éditer (retouche des
+couleur, modification de la durée, ajout d'effets\ldots) par le monteur
+afin de l'utiliser dans un context précis de l'œuvre finale.
+
+\paragraph{Les transitions}
+
+
+\paragraph{Les effets}
+
 \subparagraph{Les templates}
-\subparagraph{Les transitions}
-\subparagraph{Les effets}
-\subparagraph{Time remmaping}
-\subparagraph{Retouche des couleurs}
-\subparagraph{Les keyframes}
+Dans l'édition video, on parle de template pour définir un moule de montage.
+Il permet au monteur de par la suite monter très rapidement des oeuvre en
+s'assurant que le rendu rentre dans un cadre définit précédemment.
+
+\paragraph{Time remmaping}
+\paragraph{Retouche des couleurs}
+\paragraph{Les keyframes}
 
 \paragraph{Gestion des Footages}
 Un logiciel d'édition vidéo doit permettre d'importer les Footages à partir %FIXME index
@@ -62,36 +74,56 @@ desquels on veut faire le montage, c'est à dire les fichiers vidéos, audios,
 et images avec lesquels on travaille. Il doit être possible de prévisualiser ces
 clips.
 
-\paragraph{Gestion de la timeline}
+\subsubsection{Definition du concept de timeline}
 \paragraph{}
 La timeline, est la partie de l'interface dans laquelle on va disposer les
 différents clips. Certaines fonctionnalités sont indispensables en ce qui
 concerne cette partie du logiciel:
 
-\subparagraph{Découpages des clips}
+\newpage
+\paragraph{Découpages des clips}
+  \begin{wrapfigure}{r}{0.6\textwidth}
+    \vspace{-20pt}
+    \begin{center}
+      \includegraphics[width=0.38\textwidth]{images/splited}
+    \end{center}
+    \vspace{-20pt}
+    \caption{Spliting}
+    \label{No}
+  \end{wrapfigure}
   La technique du decoupage de clip permet de diviser un footage en plusieurs
   partie afin de pouvoir les utiliser de manière indépendante.
-  \begin{figure}
-    \begin{center}
-      \includegraphics[width=0.5\textwidth]{images/splited}
-    \end{center} \caption{Spliting} \label{Yes}
-  \end{figure}
 
-\subparagraph{Unlinking de la piste audio et de la piste vidéo}
+\paragraph{}
+\paragraph{Unlinking de la piste audio et de la piste vidéo}
+  \begin{wrapfigure}{r}{0.6\textwidth}
+    \vspace{-20pt}
+    \begin{center}
+      \includegraphics[width=0.38\textwidth]{images/unlinked}
+    \end{center}
+    \vspace{-20pt}
+    \caption{Unlinking}
+    \label{Yes}
+  \end{wrapfigure}
   Le fait de ``des lier'' les clip permet de gérer de manière desynchroniser le son
   et la video.
-  \begin{figure}
-    \begin{center}
-      \includegraphics[width=0.5\textwidth]{images/unlinked}
-    \end{center} \caption{Unlinking} \label{Yes}
-  \end{figure}
 
-\subparagraph{Gestion des in point et  out point des clips} %Should that be translated?
-  Permet de définir les temps utilise dans un footage. Cela permet donc de
+\paragraph{Gestion des in point et  out point des clips} %Should that be translated?
+  Permet de définir le partie d'un footage à utilisé dans le montage final. Cela permet donc de
   redéfinir la longueur d'un clip dans la timeline, en ne jouant pas le debut
   ou la fin de celui-ci.
 
-\subparagraph{Notion de layer}
+\paragraph{}
+\paragraph{Notion de layer}
+  \begin{wrapfigure}{r}{0.6\textwidth}
+    \begin{center}
+      \vspace{-20pt}
+      \includegraphics[width=0.38\textwidth]{images/layers}
+    \end{center}
+    \vspace{-20pt}
+    \caption{Les layer}
+    \label{Yes}
+  \end{wrapfigure}
   La notion de layer est essentielle dans l'édition video avancé dans la
   timeline, mixer plusieurs sources et ajouter des titres depend de cette
   fonctionnalité. Afin de comprendre, il est plus simple de faire la comparaison
@@ -101,15 +133,9 @@ concerne cette partie du logiciel:
   inférieurs vont être visibles, et ce qui sera dessine dessus sera donc visible.
   De plus, il existe un notion d'opacité dans les layer, et dependant de celle-ci,
   les layers inférieurs, ou non.
-  \begin{figure}
-    \begin{center}
-      \includegraphics[width=0.5\textwidth]{images/layers}
-    \end{center} \caption{Les layer} \label{Yes}
-  \end{figure}
 
-\subsubsection{Définition du marché}
-
-\subparagraph{}
+\subsection{Définition du marché par segment}
+\paragraph{}
 Dans un premier temps, nous allons définir et analyser les
 différents types de productions audiovisuelles professionnelles.
 Nous avons interviewé
@@ -119,7 +145,7 @@ couvrir le maximum de champs de l'édition vidéo. Nous
 avons pu récolter des informations provenant de monteurs de clips
 vidéos, de courts métrage, de publicités et de reportages.
 
-\subparagraph{}
+\paragraph{}
 La littérature dans la matière (En particulier \cite{WorldVideoNonlinearEditingMarket})
 nous propose de faire une nette distinction entre  les deux segments du marché que sont:
 \begin{itemize}
@@ -134,7 +160,7 @@ nous propose de faire une nette distinction entre  les deux segments du marché 
     le contenu dans un temps restreint, voir en direct.}
 \end{itemize}
 
-\subparagraph{}
+\paragraph{}
 Certes les deux mondes ont des contenus différents, mais surtout ils ont des contraintes différentes,
 ce qui implique des divergences importantes en terme de besoin de fonctionnalités. Nous allons donc
 nous intéresser à ces deux domaines et découper notre analyse à partir de cette distinction. Tout
@@ -154,7 +180,7 @@ pour le choix des moyens mis en place à ce sujet.
 \subparagraph{}
 De ce fait, les types de contenu suivant peuvent être considérés comme des contenus post produits:
 
-\subparagraph{Les courts métrages}
+\paragraph{Les courts métrages}
 
 \subparagraph{}
 Les courts métrages concentrent en moins de 35 minutes, une histoire. Ils sont donc soumis
@@ -175,7 +201,7 @@ les fonctionnalités qui sont indispensables telles que:
   \item{Création et ajout de génériques}
 \end{itemize}
 
-\subparagraph {Les publicités}
+\paragraph {Les publicités}
 \subparagraph{}
 La publicité peut s'apparenter au court métrage puisqu'il s'agit de création
 courte et généralement dynamique mais dont la visée est différente. Pour atteindre
@@ -187,7 +213,7 @@ identiques.
 En revanche, la qualité du rendu est très importante, aussi des logiciels spécialisés
 sont fréquemment utilisés afin de créer le contenu (audio, effets, images\ldots).
 
-\subparagraph {Les clips vidéos}
+\paragraph {Les clips vidéos}
 \subparagraph{}
 Le clip vidéo est un contenu visuel qui a pour but d'illustrer
 une musique. Ce type de vidéos utilise souvent beaucoup d'effets spéciaux, et demande à
@@ -396,18 +422,18 @@ par les monteurs.
 
 \paragraph{Gestion des Keyframes:}
 \paragraph{}
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=0.48\textwidth]{images/keyframecurves}
+    \end{center} \caption{Les keyframes} \label{Yes}
+\end{wrapfigure}
+
 Les keyframes sont utilisées dans bien des domaines, mais dans beaucoup de cas, elles sont
 utilisées avec parcimonie. Elles permettent dans une vidéo, d'animer les propriétés
 d'éléments ajoutés par le monteur (effets, texte, etc\ldots). Il
 apparaît donc nécessaire d'avoir une gestion minimale des keyframes,
 en particulier pour une gestion fine des couleurs, mais leur utilisation est
 rarement vraiment avancée.
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/keyframecurves}
-  \end{center} \caption{Les keyframes} \label{Yes}
-\end{figure}
 
 \paragraph{}
 Dans la création de clips en particulier, afin de dynamiser la vidéo,
@@ -423,7 +449,12 @@ Quelques fonctionnalités sont apparues comme vraiment propres à la création
 d'un type d'oeuvre en particulier.
 
 \paragraph{Visualisation image par image:}
-\paragraph{}
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=0.48\textwidth]{images/frameByFrame}
+    \end{center} \caption{Visualisation frame par frame} \label{Yes}
+\end{wrapfigure}
+
 Dans le cadre de la création de film, la prévisualisation de chaque frame,
 de manière précise semble être une fonctionnalité essentielle,
 cela signifie, que le logiciel de montage doit permettre de
@@ -435,12 +466,6 @@ lors de la création d'un film, chaque frame doit être contrôlée,
 alors que dans d'autres types d'oeuvre, les exigences étant moins
 élevées ainsi que les moyens, une telle fonctionnalité ne est pas
 indispensable.
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/frameByFrame}
-  \end{center} \caption{Visualisation frame par frame} \label{Yes}
-\end{figure}
 
 \paragraph{Gestion avancée des Footages}
 \paragraph{}
@@ -539,7 +564,9 @@ l'édition vidéo professionnel, et analyse des manques et risques du marché}
       contenu, qu'il soit post produit où non.}
   \end{itemize}
 
-\subsubsection{Fonctionnalités}
+\subsection {Historique du marché}
+
+\subsection{Fonctionnalités}
   Tout d'abord, il convient de voir quelles fonctionnalités existent chez les différents
   acteurs du marché.
   \subsubsection{Prix}
