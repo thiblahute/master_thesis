@@ -54,19 +54,36 @@ Les clips correspondent dans les faites à un footage éditer (retouche des
 couleur, modification de la durée, ajout d'effets\ldots) par le monteur
 afin de l'utiliser dans un context précis de l'œuvre finale.
 
-\paragraph{Les transitions}
-
-
-\paragraph{Les effets}
-
 \subparagraph{Les templates}
 Dans l'édition video, on parle de template pour définir un moule de montage.
-Il permet au monteur de par la suite monter très rapidement des oeuvre en
+Il permet au monteur de par la suite monter très rapidement des oeuvres en
 s'assurant que le rendu rentre dans un cadre définit précédemment.
 
-\paragraph{Time remmaping}
-\paragraph{Retouche des couleurs}
+\paragraph{Colorimétrie (retouche des couleurs)}
+En édition vidéo la colorimétrie est l'art de retoucher les couleurs,
+les étalonner au travers des différents clips.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+   \vspace{-20pt}
+    \begin{center}
+      \includegraphics[width=0.48\textwidth]{images/keyframecurves}
+    \end{center}
+   \vspace{-30pt}
+   \caption{Les keyframes}
+   \vspace{-10pt}
+   \label{Yes}
+\end{wrapfigure}
 \paragraph{Les keyframes}
+Les keyframes définissent le de point de départ et de fin d'une animation,
+en particulier dans le cadre d'effet, de text en mouvement au dessus
+d'une vidéo\ldots
+
+\paragraph{Speed control et time remmaping}
+Le speed control permet de modifier la vitesse de lecture d'un clip dans la
+timeline (ralentir où accélérer). Le time remapping est une technique avancé
+de speed control, et permet de changer la vitesse de lecture de partie de clip,
+et ainsi accélérer ou ralentir des partie d'un même clip. Cette technique est
+couplé au keyframes afin d'obtenir le résultat souhaité.
 
 \paragraph{Gestion des Footages}
 Un logiciel d'édition vidéo doit permettre d'importer les Footages à partir %FIXME index
@@ -74,13 +91,14 @@ desquels on veut faire le montage, c'est à dire les fichiers vidéos, audios,
 et images avec lesquels on travaille. Il doit être possible de prévisualiser ces
 clips.
 
-\subsubsection{Definition du concept de timeline}
+\subsubsection{Definition du concept d'édition timeline}
 \paragraph{}
 La timeline, est la partie de l'interface dans laquelle on va disposer les
-différents clips. Certaines fonctionnalités sont indispensables en ce qui
-concerne cette partie du logiciel:
+différents clips. Il s'agit du concept de base de l'édition vidéo non-linéaire.
+Dans le cadre de l'édition timeline, quelques fonction sont absoluments
+indispensable, et il est nécessaire de comprendre ces différents concepts
+pour comprendre la suite de ce document:
 
-\newpage
 \paragraph{Découpages des clips}
   \begin{wrapfigure}{r}{0.6\textwidth}
     \vspace{-20pt}
@@ -91,8 +109,8 @@ concerne cette partie du logiciel:
     \caption{Spliting}
     \label{No}
   \end{wrapfigure}
-  La technique du decoupage de clip permet de diviser un footage en plusieurs
-  partie afin de pouvoir les utiliser de manière indépendante.
+La technique du decoupage de clip permet de diviser un footage en plusieurs
+partie afin de pouvoir les utiliser de manière indépendante.
 
 \paragraph{}
 \paragraph{Unlinking de la piste audio et de la piste vidéo}
@@ -105,8 +123,8 @@ concerne cette partie du logiciel:
     \caption{Unlinking}
     \label{Yes}
   \end{wrapfigure}
-  Le fait de ``des lier'' les clip permet de gérer de manière desynchroniser le son
-  et la video.
+Le fait de ``des lier'' les clip permet de gérer de manière desynchroniser le son
+et la video.
 
 \paragraph{Gestion des in point et  out point des clips} %Should that be translated?
   Permet de définir le partie d'un footage à utilisé dans le montage final. Cela permet donc de
@@ -124,20 +142,20 @@ concerne cette partie du logiciel:
     \caption{Les layer}
     \label{Yes}
   \end{wrapfigure}
-  La notion de layer est essentielle dans l'édition video avancé dans la
-  timeline, mixer plusieurs sources et ajouter des titres depend de cette
-  fonctionnalité. Afin de comprendre, il est plus simple de faire la comparaison
-  avec de la peinture sur verre. Avec plusieurs vitres superpose les unes au
-  dessus des autres, chacune de ces vitre représentant un layer. Si vous
-  dessiner seulement sur une partie des vitre de la couche supérieur, les vitres
-  inférieurs vont être visibles, et ce qui sera dessine dessus sera donc visible.
-  De plus, il existe un notion d'opacité dans les layer, et dependant de celle-ci,
-  les layers inférieurs, ou non.
+La notion de layer est essentielle dans l'édition video avancé dans la
+timeline, mixer plusieurs sources et ajouter des titres depend de cette
+fonctionnalité. Afin de comprendre, il est plus simple de faire la comparaison
+avec de la peinture sur verre. Avec plusieurs vitres superpose les unes au
+dessus des autres, chacune de ces vitre représentant un layer. Si vous
+dessiner seulement sur une partie des vitre de la couche supérieur, les vitres
+inférieurs vont être visibles, et ce qui sera dessine dessus sera donc visible.
+De plus, il existe un notion d'opacité dans les layer, et dependant de celle-ci,
+les layers inférieurs, ou non.
 
 \subsection{Définition du marché par segment}
 \paragraph{}
 Dans un premier temps, nous allons définir et analyser les
-différents types de productions audiovisuelles professionnelles.
+différents formats de productions audiovisuelles professionnelles.
 Nous avons interviewé
 différents monteurs professionnels, afin de définir leurs besoins,
 (annexes 1) en essayant de
@@ -178,7 +196,7 @@ d'œuvres audiovisuelles dont le temps de post production n'est pas un critère 
 pour le choix des moyens mis en place à ce sujet.
 
 \subparagraph{}
-De ce fait, les types de contenu suivant peuvent être considérés comme des contenus post produits:
+De ce fait, les formats suivants peuvent être considérés comme étants post produits:
 
 \paragraph{Les courts métrages}
 
@@ -422,11 +440,6 @@ par les monteurs.
 
 \paragraph{Gestion des Keyframes:}
 \paragraph{}
-\begin{wrapfigure}{r}{0.5\textwidth}
-    \begin{center}
-      \includegraphics[width=0.48\textwidth]{images/keyframecurves}
-    \end{center} \caption{Les keyframes} \label{Yes}
-\end{wrapfigure}
 
 Les keyframes sont utilisées dans bien des domaines, mais dans beaucoup de cas, elles sont
 utilisées avec parcimonie. Elles permettent dans une vidéo, d'animer les propriétés
