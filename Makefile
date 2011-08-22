@@ -1,7 +1,14 @@
 IMAGES = \
-	images/collabora-logo.svg
+	images/collabora-logo.svg \
+	images/frameByFrame.png \
+	images/layers.png \
+	images/open-source-video-editor-timeline.png \
+	images/unlinked.png \
+	images/keyframecurves.png \
+	images/spiderDiagramFeaturesComparision.png \
+	images/splited.png
 
-DOCUMENT = thesis.tex
+DOCUMENT = Memoire_Thibault_Saunier.tex
 INCLUDES =
 STYLESHEET = template.sty
 
