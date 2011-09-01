@@ -1,24 +1,33 @@
 \chapter {Analyse du monde de l'édition vidéo professionnel}
 \minitoc \mtcskip \newpage
+
+
 \paragraph{}
+
 Le montage vidéo professionnel est un domaine très vaste, et l'on peut
 s'attendre à ce que les besoins auxquels doivent répondre les logiciels
 permettant de produire les différents types d'œuvres audiovisuelles
 varient fortement en fonction du type de contenu. Afin d'étudier
 les possibilités d'avenir des logiciels libres dans ce domaine, il nous faut
 définir, pour en connaître les différents besoins:
+
 \begin{itemize} \setlength{\itemsep}{2mm}
-  \item {les cas d'utilisation (plus communément appelées use cases)}
+
+  \item {les cas d'utilisation (plus communément appelées use cases \index{use cases})}
+
   \item {les fonctionnalités qui en découlent}
+
 \end{itemize}
 
 
 \paragraph{}
+
 Nous allons donc définir les principaux cas d'utilisation en fonction des
 différents types de productions audiovisuelles et ainsi en déduire les fonctionnalités
 nécessaires pour répondre à ces cas d'utilisation.
 
 \paragraph{}
+
 Ensuite on analysera la base commune des fonctionnalités nécessaires à la
 production de tous ces types de production.  Pour finir
 nous verrons si les besoins sont variés, et essayerons de trouver les
@@ -29,9 +38,11 @@ ceux auxquels on peut prétendre répondre dans un futur proche, et ceux qui
 sont hors du scope actuel des technologies libres.
 
 \newpage
+
 \section{Les bases de l'édition vidéo}
 
 \paragraph{}
+
 Tout d'abord, il est évident que pour qu'un logiciel de montage puisse répondre
 aux besoins de professionnels, les fonctionnalités basiques de l'édition vidéo
 non linéaire doivent être couvertes, cette partie a pour but de définir quelles
@@ -40,25 +51,30 @@ sont ces fonctionnalités, et les expliquer succinctement:
 \subsection{Définition des termes techniques}
 
 \paragraph {}
+
 Du fait de l'importance des termes suivant pour la compréhension de ce document,
 il est nécessaire qu'ils soient défini au sein même de celui-ci.
 
-\paragraph{Les Footages\index{footage}}
-Les Footages\index{footage} correspondent à toutes les sources brutes qui ont été enregistrer
-et a partir desquels, le monteur va créer le rendu final de l'œuvre
-audiovisuel.
+\paragraph{Les Footages}
+
+Les footages correspondent à toutes les sources brutes qui ont été enregistrées
+et a partir desquelles, le monteur va créer le rendu final de l'œuvre
+audiovisuelle.
 
 \paragraph{Les clips}
-Les clips correspondent dans les faites à un footage éditer (retouche des
-couleur, modification de la durée, ajout d'effets\ldots) par le monteur
-afin de l'utiliser dans un context précis de l'œuvre finale.
+
+Les clips correspondent dans les faits à un footage édité (retouche des
+couleurs, modification de la durée, ajout d'effets\ldots) par le monteur
+afin de l'utiliser dans le contexte précis d'une œuvre finale.
 
 \subparagraph{Les templates}
+
 Dans l'édition video, on parle de template pour définir un moule de montage.
-Il permet au monteur de par la suite monter très rapidement des oeuvres en
-s'assurant que le rendu rentre dans un cadre définit précédemment.
+Il permet au monteur de monter très rapidement des oeuvres en
+s'assurant que le rendu rentre dans un cadre défini précédemment.
 
 \paragraph{Colorimétrie (retouche des couleurs)}
+
 En édition vidéo la colorimétrie est l'art de retoucher les couleurs,
 les étalonner au travers des différents clips.
 
@@ -72,30 +88,36 @@ les étalonner au travers des différents clips.
    \vspace{-10pt}
    \label{Yes}
 \end{wrapfigure}
+
 \paragraph{Les keyframes}
+
 Les keyframes définissent le de point de départ et de fin d'une animation,
 en particulier dans le cadre d'effet, de text en mouvement au dessus
 d'une vidéo\ldots
 
 \paragraph{Speed control et time remmaping}
-Le speed control permet de modifier la vitesse de lecture d'un clip dans la
-timeline\index{timeline} (ralentir où accélérer). Le time remapping est une technique avancé
-de speed control, et permet de changer la vitesse de lecture de partie de clip,
-et ainsi accélérer ou ralentir des partie d'un même clip. Cette technique est
-couplé au keyframes afin d'obtenir le résultat souhaité.
 
-\paragraph{Gestion des Footages\index{footage}}
-Un logiciel d'édition vidéo doit permettre d'importer les Footages\index{footage} à partir
+Le speed control permet de modifier la vitesse de lecture d'un clip dans la
+timeline (ralentir ou accélérer). Le time remapping est une technique avancée
+de speed control, et permet de changer la vitesse de lecture de partie de clip,
+et ainsi d' accélérer ou de ralentir des parties d'un même clip. Cette technique est
+couplée au keyframes afin d'obtenir le résultat souhaité.
+
+\paragraph{Gestion des Footages}
+
+Un logiciel d'édition vidéo doit permettre d'importer les Footages \index{Footages} à partir
 desquels on veut faire le montage, c'est à dire les fichiers vidéos, audios,
 et images avec lesquels on travaille. Il doit être possible de prévisualiser ces
 clips.
 
-\subsection{Definition du concept d'édition timeline\index{timeline}}
+\subsection{Definition du concept d'édition timeline}
+
 \paragraph{}
-La timeline\index{timeline}, est la partie de l'interface dans laquelle on va disposer les
+
+La timeline, est la partie de l'interface dans laquelle on va disposer les
 différents clips. Il s'agit du concept de base de l'édition vidéo non-linéaire.
-Dans le cadre de l'édition timeline\index{timeline}, quelques fonction sont absoluments
-indispensable, et il est nécessaire de comprendre ces différents concepts
+Dans le cadre de l'édition timeline, quelques fonctions sont absolument
+indispensables, et il est nécessaire de comprendre ces différents concepts
 pour comprendre la suite de ce document:
 
 \paragraph{Découpages des clips}
@@ -109,10 +131,12 @@ pour comprendre la suite de ce document:
     \label{Yes}
     \vspace{-10pt}
   \end{wrapfigure}
+
 La technique du decoupage de clip permet de diviser un footage en plusieurs
 partie afin de pouvoir les utiliser de manière indépendante.
 
 \paragraph{}
+
 \paragraph{Unlinking de la piste audio et de la piste vidéo}
   \begin{wrapfigure}{r}{0.6\textwidth}
     \vspace{-20pt}
@@ -124,15 +148,17 @@ partie afin de pouvoir les utiliser de manière indépendante.
     \label{Yes}
     \vspace{-10pt}
   \end{wrapfigure}
+
 Le fait de ``des lier'' les clip permet de gérer de manière desynchroniser le son
 et la video.
 
 \paragraph{Gestion des in point et  out point des clips} %Should that be translated?
   Permet de définir le partie d'un footage à utilisé dans le montage final. Cela permet donc de
-  redéfinir la longueur d'un clip dans la timeline\index{timeline}, en ne jouant pas le debut
+  redéfinir la longueur d'un clip dans la timeline, en ne jouant pas le debut
   ou la fin de celui-ci.
 
 \paragraph{}
+
 \paragraph{Notion de layer}
   \begin{wrapfigure}{r}{0.6\textwidth}
     \begin{center}
@@ -143,19 +169,23 @@ et la video.
     \caption{Les layer}
     \label{Yes}
   \end{wrapfigure}
-La notion de layer est essentielle dans l'édition video avancé dans la
-timeline\index{timeline}, mixer plusieurs sources et ajouter des titres depend de cette
+
+La notion de layer est essentielle dans l'édition video avancée dans la
+timeline : mixer plusieurs sources et ajouter des titres depend de cette
 fonctionnalité. Afin de comprendre, il est plus simple de faire la comparaison
-avec de la peinture sur verre. Avec plusieurs vitres superpose les unes au
+avec de la peinture sur verre : on superpose plusieurs vitres les unes au
 dessus des autres, chacune de ces vitre représentant un layer. Si vous
-dessiner seulement sur une partie des vitre de la couche supérieur, les vitres
-inférieurs vont être visibles, et ce qui sera dessine dessus sera donc visible.
-De plus, il existe un notion d'opacité dans les layer, et dependant de celle-ci,
-les layers inférieurs, ou non.
+dessinez seulement sur une partie des vitres de la couche supérieure, les vitres
+inférieures vont être visibles, et ce qui sera dessiné dessus sera donc visible.
+De plus, il existe un notion d'opacité dans les layer, c'est à dire que comme dans le cas des vitres,
+si la superieur est plus opaque, celle du dessous ce verra moins. %INCOMPREHENSIBLE il doit manquer des mots C'est mieu?
 
 \newpage
+
 \section{Définition du marché par segment}
+
 \paragraph{}
+
 Dans un premier temps, nous allons définir et analyser les
 différents formats de productions audiovisuelles professionnelles.
 Nous avons interviewé
@@ -166,21 +196,27 @@ avons pu récolter des informations provenant de monteurs de clips
 vidéos, de courts métrage, de publicités et de reportages.
 
 \paragraph{}
+
 La littérature dans la matière (En particulier \cite{WorldVideoNonlinearEditingMarket})
 nous propose de faire une nette distinction entre  les deux segments du marché que sont:
+
 \begin{itemize} \setlength{\itemsep}{2mm}
+
   \item {le monde du contenu post-produit: il s'agit de contenu dont la qualité de
     montage final est très importante. Celui-ci peut être de courte durée, tels que les clips
     vidéos ou publicités, où de longue durée, tels que les films, où séries télévisées. Mais
     il faut toutefois faire une différence entre ces derniers puisque la qualité du
     rendu final des films implique d'autres standards en terme de montage}
+
   \item {le monde de la production diffusée: il s'agit du contenu retransmis à la fois,
     sur internet, et sur les chaînes de télévisions et dont la création et la retransmission
     rapide impliquent des moyens spéciaux afin de permettre de créer et retransmettre
     le contenu dans un temps restreint, voir en direct.}
+
 \end{itemize}
 
 \paragraph{}
+
 Certes les deux mondes ont des contenus différents, mais surtout ils ont des contraintes différentes,
 ce qui implique des divergences importantes en terme de besoin de fonctionnalités. Nous allons donc
 nous intéresser à ces deux domaines et découper notre analyse à partir de cette distinction. Tout
@@ -191,18 +227,22 @@ deux mondes afin de pouvoir par la suite nous rendre compte de ce que l'investis
 implique pour les logiciels de montage vidéo libres.
 
 \paragraph{Le monde du contenu post-produit}
+
 \subparagraph{}
+
 Le monde du contenu post produit est assez vaste, au première abord il peut apparaître comme étant tout le contenu
 qui n'est pas diffusé instantanément. Dans les faits, la distinction est plus complexe, et il s'agit
 d'œuvres audiovisuelles dont le temps de post production n'est pas un critère de première d'importance
 pour le choix des moyens mis en place à ce sujet.
 
 \subparagraph{}
-De ce fait, les formats suivants peuvent être considérés comme étants post produits:
+
+De ce fait, les formats suivants peuvent être considérés comme étant post produits:
 
 \paragraph{Les courts métrages}
 
 \subparagraph{}
+
 Les courts métrages concentrent en moins de 35 minutes, une histoire. Ils sont donc soumis
 à des contraintes importantes.Puisqu'ils répondent à cette exigence de concision,
 il est intéressant de se poser la question de savoir si dans ce genre
@@ -211,6 +251,7 @@ de les rendre plus dynamiques et si des fonctionnalités spéciales sont utilis�
 ce but.
 
 \subparagraph{}
+
 Dans la production de ce type d'œuvre, les interviews, nous ont permis de mettre en évidence
 les fonctionnalités qui sont indispensables telles que:
 \begin{itemize} \setlength{\itemsep}{2mm}
@@ -222,19 +263,24 @@ les fonctionnalités qui sont indispensables telles que:
 \end{itemize}
 
 \paragraph {Les publicités}
+
 \subparagraph{}
+
 La publicité peut s'apparenter au court métrage puisqu'il s'agit de création
 courte et généralement dynamique mais dont la visée est différente. Pour atteindre
 leur objectif (attirer des consommateurs), les monteurs utilisent des
 techniques spéciales mais les fonctionnalités du logiciel nécessaires restent
-identiques.
+identiques à celles du court métrage.
 
 \subparagraph{}
+
 En revanche, la qualité du rendu est très importante, aussi des logiciels spécialisés
 sont fréquemment utilisés afin de créer le contenu (audio, effets, images\ldots).
 
 \paragraph {Les clips vidéos}
+
 \subparagraph{}
+
 Le clip vidéo est un contenu visuel qui a pour but d'illustrer
 une musique. Ce type de vidéos utilise souvent beaucoup d'effets spéciaux, et demande à
 priori une très grande précision au niveau de la synchronisation
@@ -250,12 +296,15 @@ effet. Pour résumer, les fonctionnalités nécessaires sont:
 \end{itemize}
 
 \paragraph {Les films}
+
 \subparagraph{}
+
 La production cinématographique bénéficie de budgets beaucoup plus élevés, les techniques,
 employés dans le cadre de la post production sont plus complexes et permettent de soigneusement
 gérer la qualité du rendu.
 
 \subparagraph{}
+
 Il n'a pas été possible d'interviewer de monteur de film jusqu'à maintenant, mais
 le livre ``The technique of film and video editing, History, Theory, and Practice''
 \cite{TheTechniqueOfFilmAndVideoEditing} est un bon point de départ pour
@@ -264,47 +313,59 @@ sur les autres type de productions audiovisuelles. On peut considérer le film c
 étant l'œuvre audiovisuelle par excellence. %FIXME formulation pourri
 
 \subparagraph{}
+
 Dans le monde du cinéma, le logiciel de montage vidéo est l'un des logiciels
 parmi un système connecté de logiciel de post production. Des spécialistes de
 différents domaines créent les parties du film, et le monteur a pour mission
 de lier tout ces éléments au travers du logiciel de montage. Les logiciels
 de post production sont entre autres:
+
 \begin{itemize} \setlength{\itemsep}{2mm}
+
   \item{Éditeur de son}
+
   \item{Création d'effet}
+
   \item{Retouche d'image}
+
   \item{Création d'animation}
+
   \item{\ldots}
+
 \end{itemize}
 
 \subparagraph{}
-Les logiciels à visée professionnel ne sont donc pas forcément utilisables dans
+
+Les logiciels à visée professionnelle ne sont donc pas forcément utilisables dans
 le monde de la création cinématographique. Il conviendra de faire une réelle
 différence entre ces deux univers du montage vidéo.
 
 \subparagraph{}
-Ce qui résulte dans le fait que le logiciel de montage vidéo à proprement parler ne
+
+Ce qui résulte du fait que le logiciel de montage vidéo à proprement parler ne
 demande pas vraiment de fonctionnalités très évoluées, la base de l'édition
-et la possibilité d'organiser l'immense quantité de Footages\index{footage} de manière efficace
-semblent être les seuls éléments clefs dans ce domaine. Les autres logiciels de
+et la possibilité d'organiser l'immense quantité de Footages de manière efficace
+semblent être éléments clefs dans ce domaine.(Phrase confuse à repréciser) Les autres logiciels de
 post production sont bien évidemment aussi nécessaires afin de permettre de faire
 le montage de films, mais cela est un élément auquel ce document n'est pas destiné
 à répondre dans le détail.
 
 \subparagraph{}
+
 Une autre caractéristique de la production cinématographique, qui découle une
 fois de plus du fait que la qualité du résultat doit être irréprochable, est
 que les logiciels de montage doivent permettre de visualiser chaque image du
 film de manière très précise (le montage de film se fait dans certain cas en
 choisissant chaque image depuis un tableau de frames \index{frame}).
 
-%FIXME, faudrait plus détailler ici?
+%FIXME, faudrait plus détailler ici? Qui doit répondre ? Ton maitre de stage ? Toi?
 
 \subparagraph{}
+
 Bien que ne demandant pas vraiment de fonctionnalités très avancées, la création
 de film a des besoins assez évoluées en ce qui concerne le logiciel de montage:
 \begin{itemize} \setlength{\itemsep}{2mm}
-  \item{Organisation très avancée des Footages\index{footage}}
+  \item{Organisation très avancée des Footages}
   \item{Création et ajout de générique}
   \item{Passerelles avec le reste des logiciels de post production}
   \item{Preview de chaque frame dans le détail}
@@ -315,6 +376,7 @@ de film a des besoins assez évoluées en ce qui concerne le logiciel de montage
 \paragraph {Les séries télévisées}
 
 \paragraph{}
+
 Le niveau de qualité des séries télévisées n'étant pas aussi élevé que pour
 le montage des films, les traitements sont la plupart du temps réalisés
 directement dans le logiciel de montage même. Cela implique un nombre de
@@ -326,10 +388,11 @@ fonctionnalités plus important avec comme nécessité:
 \end{itemize}
 
 \paragraph {Les documentaires}
+
 \paragraph{}
 Le documentaire est en général assez sobre en terme de montage, il est en
 fait, pour la plupart, dans le logiciel de montage, mais ne demande pas
-de fonctionnalités spéciales. En général, les fonctionnalités utilisés
+de fonctionnalités spéciales. En général, les fonctionnalités utilisées
 pour produire ce type d'œuvre sont:
 \begin{itemize} \setlength{\itemsep}{2mm}
   \item{Création et ajout de titre}
@@ -347,20 +410,23 @@ pour produire ce type d'œuvre sont:
 \paragraph{Le monde du contenu diffusé}
 
 \paragraph{}
-La plupart du contenu post produit est par la suite diffusé, la différence que l'on
+
+La plupart du contenu post produit est par la suite diffusée, la différence que l'on
 fait ici entre ces deux types de production réside dans le temps de la post production.
 Dans le cas des journaux télévisés, émission de télé, la post production est soit totalement
 inexistante (dans le cas du direct), soit très courte, dans le cadre de reportages, jeux télévisés
 et autres types de production visant spécifiquement la télévision.
 
 \paragraph {Les émissions télévisées}
+
 \paragraph{}
+
 Les émissions de télévision peuvent selon la manière dont elles sont produites être
 classées plutôt dans le contenu post-produit, où dans le contenu diffusé, mais par le
 fait qu'elles sont en général diffusées très rapidement après la création du contenu (si ce n'est en
 direct), il convient de les considérer comme du contenu diffusé. De plus le fait qu'elles soient
 produites exclusivement pour la diffusion (aucune commercialisation matérielle n'en est faite), cette
-classification paraît naturel.
+classification paraît naturelle.
 
 Du fait de leur temps de production très réduit, les principales fonctionnalités en terme de logiciel
 de montage sont:
@@ -371,6 +437,7 @@ de montage sont:
 \end{itemize}
 
 \paragraph{}
+
 Bien évidemment, dans le cadre de la création de template, les transition ``smpte'' et les effets simples
 sont généralement utilisés. Mais il n'est pas rare que les template à proprement parler ne soient pas créés
 dans le logiciel de montage, mais plutôt dans d'autres logiciels de création de contenu audiovisuel.
@@ -378,6 +445,7 @@ dans le logiciel de montage, mais plutôt dans d'autres logiciels de création d
 \paragraph {Évènements spéciaux (sportif, d'actualité\ldots)}
 
 \paragraph{}
+
 Ce type de production audiovisuelle n'est en principe absolument pas post-produit. Il
 s'agit de production instantanée, et pour ce type de contenu, l'outil de montage non
 linéaire doit permettre de donner une impression de contenu post-produit alors
@@ -385,6 +453,7 @@ qu'il n'en est rien. Les fonctionnalités nécessaires sont assez similaires
 à celles dont on aurait besoin pour produire des émissions de télévision.
 
 \subparagraph{}
+
 De plus, l'acquisition étant aussi fait en direct, il doit être possible
 d'intégrer le logiciel du montage dans le système de capture d'image et de son.
 
@@ -394,12 +463,15 @@ dédiés à cet effet.
 \subsection{Analyse des fonctionnalités communes}
 
 \paragraph{}
+
 On s'aperçoit donc que de nombreuses fonctionnalités sont communes aux différents
 types d'œuvres. Il convient de détailler chacune de ces fonctionnalités afin de
 nous rendre compte de ce qu'elles impliquent en terme de logiciel de montage.
 
 \paragraph{Création et ajout de titre}
+
 \paragraph{}
+
 Cette fonctionnalité est utilisée dans la création de plusieurs types de contenu:
 \begin{itemize} \setlength{\itemsep}{2mm}
   \item {Séries télévisés}
@@ -408,21 +480,24 @@ Cette fonctionnalité est utilisée dans la création de plusieurs types de cont
 \end{itemize}
 
 \paragraph{}
+
 Bien que cette fonctionnalité soit utilisée dans ces différents types de contenu,
 ce qu'elle implique dans le logiciel à proprement parler peut varier en fonction
 de différents paramètres. Par exemple, dans une série télévisée en général le
-travail sur les titre sera assez limité, on aura en général une vidéo en arrière-plan
+travail sur les titre sera assez limité, on aura souvent une vidéo en arrière-plan
 et un titre que fera un fondu arrière. Alors que dans le cadre de clips vidéo,
 il sera fréquent que le titre soit en mouvement et qu'il suive le rythme de la
-musique par exemple. Afin de répondre au besoin du plus grand nombre, il faudrait
-pouvoir répondre à ces différent cas d'utilisation, mais il sera plus difficile
+musique par exemple. Afin de répondre aux besoins du plus grand nombre, il faudrait
+pouvoir répondre à ces différents cas d'utilisation, mais il sera plus difficile
 aussi bien en terme de backend qu'en terme d'interface utilisateur de répondre
 aux besoins le plus spécifiques.
 
 \paragraph{Création et ajout de générique}
+
 \paragraph{}
+
 La création de générique est une fonctionnalité indispensable, à laquelle de
-nombreux monteurs (en particulier professionnels) font appelle. Cette
+nombreux monteurs (en particulier professionnels) font appel. Cette
 fonctionnalité en terme de backend est similaire à
 celle des titres puisqu'il s'agit ni plus ni moins d'ajouter du
 texte au dessus d'un fond qu'il soit animé ou non. Mais en terme d'UI
@@ -433,6 +508,7 @@ le générique est un texte qui défile dans une très grande majorité
 des cas, de haut en bas.
 
 \paragraph{}
+
 Cette fonctionnalité est l'une des plus basiques si
 l'on veut pouvoir répondre aux besoins des professionnels. Elle est utilisée
 dans la plupart des créations vidéo et doit être à priori standardisée et
@@ -441,6 +517,7 @@ des génériques (déjà écrits) soit effectuée de manière simple et rapide
 par les monteurs.
 
 \paragraph{Gestion des Keyframes:}
+
 \paragraph{}
 
 Les keyframes sont utilisées dans bien des domaines, mais dans beaucoup de cas, elles sont
@@ -451,19 +528,22 @@ en particulier pour une gestion fine des couleurs, mais leur utilisation est
 rarement vraiment avancée.
 
 \paragraph{}
+
 Dans la création de clips en particulier, afin de dynamiser la vidéo,
 les monteurs utilisent de manière intensive les keyframes.
 
 \subsection{Fonctionnalités spécifiques}
-%Ils  que dans %FIXME
-%les fait, les fonctionnalités utilisés sont assez similaire bien que
+%Ils ? que dans %FIXME
+%les faits, les fonctionnalités utilisées sont assez similaires bien que
 %les œuvres finales soient totalement différentes.
 
 \paragraph{}
+
 Quelques fonctionnalités sont apparues comme vraiment propres à la création
 d'un type d'oeuvre en particulier.
 
 \paragraph{Visualisation image par image:}
+
 \begin{wrapfigure}{r}{0.5\textwidth}
     \begin{center}
       \includegraphics[width=0.48\textwidth]{images/frameByFrame}
@@ -474,99 +554,111 @@ Dans le cadre de la création de film, la prévisualisation de chaque frame,
 de manière précise semble être une fonctionnalité essentielle,
 cela signifie, que le logiciel de montage doit permettre de
 voir de manière simple chaque frame des vidéos présentes dans la
-timeline\index{timeline}. Cette fonctionnalité est aussi utile dans le cadre de
-la création d'autres oeuvre, mais est indispensable dans le cadre
+timeline. Cette fonctionnalité est aussi utile dans le cadre de
+la création d'autres oeuvres, mais est indispensable dans le cadre
 de film, afin de s'assurer de la qualité du résultat. En effet,
 lors de la création d'un film, chaque frame doit être contrôlée,
-alors que dans d'autres types d'oeuvre, les exigences étant moins
-élevées ainsi que les moyens, une telle fonctionnalité ne est pas
+alors que dans d'autres types d'oeuvres, les exigences étant moins
+élevées ainsi que les moyens, une telle fonctionnalité n'est pas
 indispensable.
 
-\paragraph{Gestion avancée des Footages\index{footage}}
+\paragraph{Gestion avancée des Footages}
+
 \paragraph{}
+
 Dans le cadre de productions longues, un des problème auquel doit répondre de
 manière satisfaisante le logiciel d'édition est la gestion et la classification
-des Footages\index{footage}. Cela est en particulier vrai pour les films et les séries télévisées.
-Dans ces types de production le nombre d'heures de Footages\index{footage} peut être très grand, et
+des Footages. Cela est en particulier vrai pour les films et les séries télévisées.
+Dans ces types de production le nombre d'heures de Footages peut être très grand, et
 le monteur doit dans un premier temps, établir une classification
-des Footages\index{footage}. Le logiciel de montage doit, pour répondre aux besoins des monteurs,
+des Footages. Le logiciel de montage doit, pour répondre aux besoins des monteurs,
 permettre de les ordonner de manière précise et bien pensée.
 
 \paragraph{Intégration dans un écosystème de logiciel de post production}
 
 \paragraph{}
+
 Dans le cadre de création de film en particulier, on constate qu'il est nécessaire
 que le logiciel de montage puisse s'intégrer dans l'écosystème de logiciel de post
 production. Cela est en général possible si ce logiciel de montage respecte les
-quelques standard de la post production d'oeuvre audiovisuel comme par exemple le
-Material eXchange Format \footnote{Material eXchange Format ou MXF est un conteneur
+quelques standard de la post production d'oeuvre audiovisuelle comme par exemple le
+Material eXchange Format \footnote{Material eXchange Format ou MXF qui est un conteneur
 utilisé par les professionnels pour les données audio et vidéo numériques.
 Il s'agit d'un format défini par des standards de la SMPTE. (Source: wikipedia)}
 
 \paragraph{Time remapping}
+
 \paragraph{ }
+
 Le time remapping, comme précédemment indiqué, est particulièrement utilisé dans
 la création de contenu court. Il permet d'accélérer, où ralentir une partie d'un
 clip pour le rendre l'œuvre la plus dynamique possible.
 
 \paragraph{Gestion des templates}
+
 \paragraph{ }
-La création de contenu non post produit demande des particulières. La fonctionnalité
+
+La création de contenu non post produit demande des fonctionnalité particulières. La fonctionnalité
 qui apparaît comme clé pour répondre aux besoins liés à ce type de produit, est la
 création de template. Par exemple, la création de journaux télévisés, ou autres évènements
 sportifs (dans les faits presque tout ce qui est montage télévisé) demande une gestion avancée de ``moule``,
-ou template, qui permet de simplement lier les contenus des différentes caméra
+ou template, qui permet de simplement lier les contenus des différentes caméras
 à un moment donné de la retransmission.
 
 \paragraph{ }
+
 Cette fonctionnalité n'est pas exclusivement utilisée dans la création de contenu en direct, mais
 elle est très largement utilisée dans tout ce qui est contenu destiné à la télévision.
 
 \paragraph{}
 \paragraph{}
+
 En conclusion, on a constaté que le champ de fonctionnalité est vaste, la plupart de ces
 fonctionnalités sont génériques et leur
-utilisation est commune à différents types d'œuvres. Ce qui varie particulièrement  est
+utilisation est,par conséquent, commune à différents types d'œuvres.En revanche ce qui varie particulièrement  est
 la finesse d'implémentation et le niveau d'utilisation qu'en fait le monteur.
 
 \newpage
 \section{Comparaison des principaux logiciels présents sur le marché de
-l'édition vidéo professionnel, et analyse des manques et risques du marché}
+  l'édition vidéo professionnel, et analyse des manques et risques du marché}
 
 \paragraph{}
-  Il conviendra d'analyse en profondeur les logiciels existants, qu'ils soient
-  propriétaires ou libres. Cette partie a pour but de rendre compte de
-  l'état actuel du marcher des logiciels d'édition vidéo qui ont pour principal
-  public les professionnelles. Cette étude portant principalement
-  sur les logiciels libres, ceux-ci seront évidemment inclus dans cette analyse
-  bien que l'on puisse considérer que à cause de leur manque de maturité, ils
-  n'y aient pas totalement leur place.
+
+Il conviendra d'analyser précisément les logiciels existants, qu'ils soient
+propriétaires ou libres. Cette partie a pour but de rendre compte de
+l'état actuel du marché des logiciels d'édition vidéo qui ont pour principal
+public les professionnels. Cette étude portant principalement
+sur les logiciels libres, ceux-ci seront évidemment inclus dans cette analyse
+bien que l'on puisse considérer que à cause de leur manque de maturité, ils
+n'y aient pas totalement leur place.
 
 \paragraph{}
-  Dans cette optique, on analysera les points clés des logiciels.
-  Tout d'abord on comparera les fonctionnalités des
-  logiciels, la manière dont elles sont gérées, et on essayera d'avoir l'avis de
-  professionnels sur ces fonctionnalités et leur implémentation dans les différents
-  logiciels. Ensuite on regardera le prix de ces logiciels, verra en quoi cela
-  peut être un argument de poids pour les logiciels libres et leur éventuelle
-  prise de part de marché. Par la suite nous nous concentrerons sur la documentation,
-  livres et autres tutoriels disponibles pour ces différents logiciel, et verrons
-  quels supports sont offerts aux professionnels pour ces logiciels.
+
+Dans cette optique, on analysera les points clés des logiciels.
+Tout d'abord on comparera les fonctionnalités des
+logiciels, la manière dont elles sont gérées, et on essayera d'avoir l'avis de
+professionnels sur ces fonctionnalités et leur implémentation dans les différents
+logiciels. Ensuite on regardera le prix de ces logiciels,on verra en quoi cela
+peut être un argument de poids pour les logiciels libres et leur éventuelle
+prise de part de marché. Par la suite nous nous concentrerons sur la documentation,
+livres et autres tutoriels disponibles pour ces différents logiciel, et verrons
+quels supports sont offerts aux professionnels pour ces logiciels.
 
 \subsection {Historique du marché}
+
 Les tout premiers logiciels d'édition non linéaire ont vu le jour dans le début des années 70.
 A cette époque les solutions de stockages de données étant très limitantes, les premiers logiciels de montage
 vidéo non linéaire effectivement utilisables ont vu le jour en 1989, ceux-ci étaient basés sur les disques durs
 pour ce qui est du stockage. C'est cette année là que ``Editing Machines Corp.'' et Avid ont mis sur le
-marché les logiciel de montage vidéo non linéaire ainsi que le matérielle qui permettait son
-utilisation. Une fois de plus, les limitations en terme de stockages de données (accès limité à 50 Gigabytes
+marché les logiciels de montage vidéo non linéaire ainsi que le matériel qui permettait son
+utilisation. Une fois de plus, les limitations en terme de stockage de données (accès limité à 50 Gigabytes
 à la fois maximum), rendait l'utilisation des systèmes de montage non linéaire inutilisables dans le domaine
-du cinéma, et même dans de nombreux cas de la télévision. C'est en 1992 que cette limitation a été surmonté,
+du cinéma, et même dans de nombreux cas de la télévision. C'est en 1992 que cette limitation a été surmontée,
 il était alors possible d'accéder jusqu'à 7 Terabytes de données à la fois, ce qui rendait envisageable le montage
 de production longue de manière informatique. C'est en 1993 que Avid prend avantage de cela et s'impose
-comme leader mondiale, remplaçant les équipement de montage de pellicules 35mm de toutes les grosses maison
+comme leader mondial, remplaçant les équipements de montage de pellicules 35mm de toutes les principales maisons
 de production cinématographiques dans le monde. Avid a été le leader incontesté du marché de l'édition
-professionnel jusqu'en 2003, date a laquelle Final Cut Pro a été considéré comme une bonne alternative
+professionnel jusqu'en 2003, date à laquelle Final Cut Pro a été considéré comme une bonne alternative
 à Avid par les grands acteurs de l'édition vidéo professionnel.
 
 \subsection{Définition des plus grands acteurs du marché}
@@ -574,22 +666,26 @@ professionnel jusqu'en 2003, date a laquelle Final Cut Pro a été considéré c
 \paragraph {Logiciels commerciaux}
 
 \subparagraph{Avid Media Composer:}
+
 Leader historique du marché du logiciel de montage non linéaire
 professionnel. Il s'agit du produit phare de Avid Technology publié en 1989. Depuis, ce
 logiciel a joué un rôle essentiel dans l'avènement de ce marché.
 
 \subparagraph{Avid Symphony:}
+
 Evolution de Avid Media Composer, il s'agit d'une version plus complète en terme
-de fonctionnalités qui a pour but de répondre aux besoins des monteurs de productions longues telle que
+de fonctionnalités qui a pour but de répondre aux besoins des monteurs de productions longues tels que
 les documentaires et les séries télévisées.
 
 \subparagraph{Final cut pro:}
+
 logiciel de montage intégré dans la suite de logiciels de post-production
 de Apple, Final Cut Studio. Il s'agit d'un logiciel de montage orienté à la fois
 professionnel et création de film. Il est de nos jours très utilisé et est devenu l'un
 des leaders mondial du marché.
 
 \subparagraph{Adobe Premiere Pro:}
+
 Logiciel de montage de la suite Adobe Creative suite, il s'agit du logiciel
 d'édition vidéo à visée professionnelle de Adobe System. Il est à la fois adapté pour la création
 de contenu diffusé, mais aussi de contenu post produit
@@ -597,24 +693,28 @@ de contenu diffusé, mais aussi de contenu post produit
 \paragraph {Logiciel en cours de libération:}
 
 \subparagraph{lightworks:}
-Logiciel de montage actuellement commercial, très puissant, et offrant des fonctionnalité unique,
-il permet de faire à la fois de la production diffusé et de la création post-produit. Ce produit
-a la grande particularité que ses créateur ont décidé de libéré le code source
-\cite{TheLightworksOpenSourceProjectStartHere}, et ainsi créé une communauté de développeur pour
+
+Logiciel de montage actuellement commercial, très puissant, et offrant des fonctionnalités uniques,
+il permet de faire à la fois de la production diffusée et de la création post-produit. Ce produit
+a la grande particularité La particularité de ce produit est que ses créateurs ont décidé de libérer le code source
+\cite{TheLightworksOpenSourceProjectStartHere}, et ainsi  de créer une communauté de développeurs pour
 en faire un projet de logiciel libre.
 
 \paragraph {Logiciels libres:}
 
 \subparagraph{Cinelerra:}
+
 Logiciel de montage libre sponsorisé par la société Héroïne. Il s'agit d'un logiciel
 de montage non linéaire avec de très nombreuses fonctionnalités. Principalement créé pour le création de contenu
 diffusé, il permet aussi de répondre aux besoins de la production de contenu post-produit.
 
 \subparagraph{Kdenlive:}
+
 Logiciel de montage libre s'intégrant dans la suite logicielle de l'interface graphique KDE.
 Ce logiciel de montage est assez complet et peut répondre aux besoins des monteurs de contenu post-produit.
 
 \subparagraph{PiTiVi:}
+
 Logiciel de montage libre encore basique mais en plein développement.
 Ce logiciel a pour but de répondre aux besoins du plus grand nombre,
 et en particulier à ceux des professionnels de la création de contenu,
@@ -624,9 +724,9 @@ qu'il soit post produit ou non.
 \subsection{Fonctionnalités}
   \paragraph{}
   Tout d'abord, il convient de voir quelles fonctionnalités existent chez les différents
-  acteurs du marché. Afin d'analyser ces fonctionnalités, afin de facilité la lecture et
-  avoir une vision global de ce qui ce fait, le diagramme en toile d'araignée suivant a été créé.
-  D'après les interview et l'analyse précédemment faite, les axes suivants ont été choisis:
+  acteurs du marché. Afin d'analyser ces fonctionnalités, afin de faciliter la lecture et
+  avoir une vision globale de ce qui ce fait, le diagramme en toile d'araignée suivant a été créé.
+  D'après les interview et l'analyse précédemment faites, les axes suivants ont été choisis:
 \begin{itemize} \setlength{\itemsep}{2mm}
     \item{Gestion des formats de fichiers}
     \item{Integration dans un écosystème de post production}
@@ -661,78 +761,88 @@ qu'il soit post produit ou non.
   \subparagraph{}
   En ce qui concerne le choix du logiciel de montage dans une entreprise,
   la connaissance qu'ont les monteurs du logiciel qu'ils utilisent est essentiel.
-  C'est pour cela, que dans de nombreux cas, le premier facteurs de choix, est la part de marché de ce
-  logiciel sur le marché de l'édition vidéo. En effet, les différentes industries veulent être sûre
+  C'est pour cela, que dans de nombreux cas, le premier facteur de choix, est la part de marché de ce
+  logiciel sur le marché de l'édition vidéo. En effet, les différentes industries veulent être sûres
   qu'il est possible de trouver de la main d'oeuvre compétente sur le logiciel qu'elle utilise.
   Mais ce n'est pas seulement la disponibilité de personnes compétentes qui est importante,
   il est également indispensable que ces dernières puissent se former et qu'elles aient
-  accès facilement aux informations concernant les nouvelles résolutions des problèmes poses
+  accès facilement aux informations concernant les nouvelles résolutions des problèmes posés
   par un logiciel au travers des différentes versions.
 
   \subparagraph{}
-  Comme l'a souligné M. Faure lors de son interview (annexe 3), dans son cas, il ne serai pas envisageable de
-  changer de logiciel a moins que le marché n'évolue. C'est a dire que l'un des critère de choix dans son cas
+  Comme l'a souligné M. Faure lors de son interview (annexe 3), dans son cas, il ne serait pas envisageable de
+  changer de logiciel à moins que le marché n'évolue. C'est à dire que l'un des critères de choix dans son cas
   est la position de tel logiciel sur le marché. Cela est principalement une question de crédibilité, et donc
   afin d'éviter la prise de risque, les professionnels préfèrent prendre la référence du marché.
 
   \subparagraph{}
+
   Mais cela est principalement vrai dans les structures de taille moyenne.
   Dans le cadre de petits structures, comme l'a souligné M. Veri (annexe 1) durant son interview,
-  il serait plus probable que afin de ce différentié, d'une manière où d'une autre de la concurrence,
+  il serait plus probable que afin de se différencier, d'une manière où d'une autre de la concurrence,
   de choisir un logiciel
   différent de celui de référence. Bien évidemment, cela à la condition qu'il réponde convenablement
-  à leurs besoins et permet de satisfaire les demandes de leurs clients. Dans son cas, M. Veri estime
-  qu'un tel logiciel n'existe pas et que par et que la référence du marché (Final Cut Pro) est en
-  réalité la meilleur option.
+  à leurs besoins et permette de satisfaire les demandes de leurs clients. Dans son cas, M. Veri estime
+  qu'un tel logiciel n'existe pas  et que la référence du marché (Final Cut Pro) est en
+  réalité la meilleure option.
 
   \paragraph{Dépendance vis-à-vis du créateur}
-  \subparagraph{}
-  L'un des point qui ressort des interviews, est que pout les professionnels du montage (comme dans
-  beaucoup de domaines liées aux nouvelles technologies), le changement de l'expérience utilisateurs au
-  travers des versions est quelque chose de très appréhendé. Un bonne exemple de ce fait est la dernière
-  version de Final Cut Pro, qui a été très négativement critiqué \cite{FinalCutProXReviews}.
-  Apple a décidé de changer le workflow \index{workflow} des professionnels de l'édition vidéo
-  dans cette dernière monture de leur logiciel phare dans ce secteur, et cela a très mal été perçu par
-  les professionnels. Aussi pour M. Faure, ce problème n'est pas trop grave, puisqu'il considère que
-  dans le cas où la transition à cette nouvelle version soit top compliqué (coute trop chère afin de former
-  le personnel, et fasse perdre trop de temps), ils ont toujours l'option de garder, la version coutante.
-  Mais cela est valable sur le court terme, puisqu'il n'est pas envisageable, pour des raison de sécurité
-  et de support, d'utiliser de manière commercial un logiciel non maintenu et non supporté par l'entreprise
-  éditrice. Pour M. Veri, cela pose aussi un problème important, et ayant lui même utilisé cette nouvelle
-  monture, il considère qu'il serait préférable pour son entreprise de trouver
 
   \subparagraph{}
-  Dans le cadre de grosses structures, la dépendance vis-à-vis des éditeurs est parfois considéré comme
-  quelque chose de dangereux, qu'il faut éviter au maximum. Par exemple, Dreamworks Picture,
-  a décidé de créé et de maintenir leur propre suite logiciel \cite {Dreamworks} de poste
-  production. Cela a pour principal objectif de garantir, que les logiciels qu'ils utilisent
-  répondent à leur besoins précis, de maitriser son évolution et ainsi ne pas dépendre sur un éditeur
-  externe. De plus, afin de garantir leur indépendance, cette entreprise a décidé d'utiliser Linux comme
-  système d'exploitation (distribution Red Hat), ce qui leur garantit un grande liberté. De même la société
-  de télévision Française TF1 a développé leur logiciels de post production en intern, mais, ils semblent
+
+  L'un des point qui ressort des interviews, est que pour les professionnels du montage (comme dans
+  beaucoup de domaines liés aux nouvelles technologies), le changement de l'expérience utilisateurs au
+  travers des versions est quelque chose de très appréhendé?. Un bon exemple de ce fait est la dernière
+  version de Final Cut Pro, qui a été très négativement critiquée \cite{FinalCutProXReviews} :
+  Apple a décidé de changer le workflow \index{workflow} des professionnels de l'édition vidéo
+  dans la dernière monture de leur logiciel phare de ce secteur, et cela a très mal été perçu par
+  les professionnels. Toutefois pour M. Faure, ce problème n'est pas trop grave, puisqu'il considère que
+  dans le cas où la transition à cette nouvelle version soit top compliquée (coute trop cher que la formation
+  du personnel soit trop onéreuse, et fasse perdre trop de temps), ils ont Apple a toujours l'option de garder,
+  la version courante.
+  Mais cela n'est valable que sur le court terme, puisqu'il n'est pas envisageable, pour des raison de sécurité
+  et de support, d'utiliser de manière commerciale un logiciel non maintenu et non supporté par l'entreprise
+  éditrice. Pour M. Veri en revanche, cela pose aussi un problème important, et ayant lui même utilisé cette nouvelle
+  monture version, il considère qu'il serait préférable pour son entreprise de trouver ?
+
+  \subparagraph{}
+
+  Dans le cadre de grosses structures importantes, la dépendance vis-à-vis des éditeurs est parfois considérée comme
+  quelque chose de dangereuse, qu'il faut  à éviter au maximum. Par exemple, Dreamworks Picture,
+  a décidé de créer et de maintenir leur propre suite logiciel \cite {Dreamworks} de poste
+  production. Cela a pour Leur principal principal objectif  est de garantir que les logiciels qu'ils utilisent
+  répondent à leurs besoins précis, d'en maitriser son leur évolution et ainsi de ne pas dépendre d' un éditeur
+  externe. De plus, afin de garantir leur son indépendance, cette entreprise a décidé d'utiliser Linux comme
+  système d'exploitation (distribution Red Hat), ce qui leur lui garantit un grande liberté. De même la société
+  de télévision Française TF1 a développé ses logiciels de post production en interne, mais, elle semble
   les abandonner petit à petit au profit de Final Cut Pro.
 
 \newpage
 \section {Bilan}
+
   \paragraph { }
+
   Nous constatons donc, que, bien que le marché soit vaste et varié, à l'heure actuelle, seuls
   quelques logiciels permettent de répondre aux besoins de la grande majorité des utilisateurs.
 
   \paragraph{}
+
   Les professionnels sont plutôt satisfaits par les logiciels
-  existants, mais il existe des limitations dues au fait que les
+  existants dont ils disposent, mais il existe des limitations dues au fait que les
   logiciels actuellement utilisés par les professionnels,  sont des
   logiciels fermés, et édités par une seule entreprise qui décide
-  de ce dont les utilisateurs ont besoins. C'est en particulier
-  pour cela, que l'ont peut se demander si l'utilisation de logiciels
-  ouverts et édités par de nombreuses entreprises, pourrait prendre une
-  place sur le marché, en offrant de nouvelles perspectives pour
+  de ce dont les utilisateurs ont besoin des besoins des utilisateurs. C'est en particulier
+  pour cela, Partant de ce constat que l'on peut se demander si l'utilisation de les logiciels
+  ouverts et édités par de nombreuses entreprises, pourraient prendre une
+  place significative sur le marché, en offrant de nouvelles perspectives pour
   les acteurs du marché du montage vidéo. Les points suivants peuvent
   être considérés comme des points importants sur un marché fermé,
   et contrôlé par un nombre très restreint d'entreprises:
 
   \paragraph{Plus grande autonomie vis-à-vis de la société éditrice (développeur/designer):}
+
     \subparagraph{ }
+
       Grâce à l'utilisation de logiciel libre,
       il est possible de garantir, et maintenir le logiciel en interne tout
       en profitant du fait que des personnes externes à l'entreprise,
@@ -740,15 +850,20 @@ qu'il soit post produit ou non.
       a pour conséquence que les coûts sont très largement réduits en
       comparaison à ce qui est actuellement pratiqué chez Dreamworks
       et TF1 par  exemple.
+
   \paragraph{Possibilité collaboration et communication avec les développeurs:}
+
     \subparagraph{ }
+
     Le développement des logiciels libres étant en principe fait publiquement,
     les utilisateurs (entreprises qui font le montage vidéos) peuvent
     voir l'évolution du logiciel au fur et à mesure de sa progression. Cela leur
     permet aussi de donner leur avis sur les directions à prendre.
 
   \paragraph{Réduction de coût:}
+
     \subparagraph{ }
+
     Comme l'ont souligné  M. Veri et M. Hachemi au cours de leur interview, dans le cadre de petites
     structures c'est un argument important.  En effet,  actuellement les frais liés à l'achat de licences
     pour les logiciels de montage constituent une charge financière importante compte tenu des prix de
@@ -756,15 +871,17 @@ qu'il soit post produit ou non.
     réduire considérablement les coûts de montage, puisque le code source est libre d'accès.
 
   \paragraph{Possibilité d'adaptation aux besoins précis de l'entreprise:}
+
     \subparagraph{ }
+
     L'ouverture du code et sa mise à disposition à tous ouvre la possibilité d'effectuer
     des adaptations dans le core même du logiciel, et ainsi de développer des versions
-    spécialement adaptées aux besoins des l'entreprise.
+    spécialement adaptées aux besoins de l'entreprise utilisatrice.
+
     \subparagraph{ }
-    Alors que dans le cadre de projets commerciaux, cela n'est possible que par l'entreprise éditrice.
-    On peut cependant, même dans ce cadre-là,  modifier, ajouter des fonctionnalités grâce aux systèmes
-    d'extension logicielle, mais la flexibilité offerte par ce système reste limitée à ce que la société éditrice
-    veut bien mettre à disposition des développeurs externes. (En terme d'API \index{API}).
 
+    Alors que dans le cadre de projets commerciaux,  le développement et l'adaptation de différentes
+    versions ne sont faites que par l'entreprise éditrice. On peut cependant, même dans ce cadre-là,
+    modifier, ajouter des fonctionnalités grâce aux systèmes d'extension logicielle, mais la flexibilité
+    offerte par ce système reste limitée à ce que la société éditrice veut bien mettre à disposition des développeurs externes. (En terme d'API \index{API}).
 
-% PAD http://titanpad.com/0ZF7cBNb0u
