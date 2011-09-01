@@ -1,0 +1,47 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{template}
+\makeindex
+\makeglossary
+
+\begin{document}
+
+\title{Avenir des logiciels de montage vidéo libres}
+\subtitle{En milieu professionnel}
+\author{Thibault Saunier}
+\withdate
+\subject{Les logiciels de montage vidéos libre en milieu professionnel}
+\keywords{latex, stylesheet, reporting, thesis}
+\maketitle
+
+\bibliographystyle{plain}
+
+\setcounter{secnumdepth}{3}
+\setcounter{minitocdepth}{3}
+\shorttableofcontents{}{1}
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+\dominitoc
+%\include{introduction}
+\include{marketAnalisis}
+\include{fossPotentialAndPlan}
+
+\section{Conclusion}
+
+\newpage
+\pagestyle{empty}
+\shorttableofcontents{}{3}
+
+\include{annexes}
+
+\newpage
+\printindex
+\listoffigures
+
+\newpage
+\printglossary
+
+\newpage
+\bibliography{biblio}
+
+\end{document}
