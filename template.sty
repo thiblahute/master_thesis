@@ -36,8 +36,6 @@
 \newcommand{\@revision}{}
 
 \pagestyle{fancy}
-%% redefine \maketitle %%
-%
 \renewcommand{\maketitle}{%
   \hypersetup{pdftitle={\@title},
               pdfauthor={\@author, Collabora Ltd., EPSI Lyon},
@@ -67,12 +65,10 @@
     \end{center}
   \end{titlepage}
 
-  % change the headers
   \rhead{{\small{\@title}}}
-  % add the Confidential marker
   \ifthenelse{\value{confidential} = 1}{%
     \lhead{{\bfseries\small{Confidential}}}
-  }{%
+  }{
     \lhead{}
   }
 }
