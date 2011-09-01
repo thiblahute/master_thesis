@@ -1,6 +1,7 @@
 \documentclass[a4paper,11pt]{book}
 \usepackage{template}
 \makeindex
+\makeglossary
 
 \begin{document}
 
@@ -30,13 +31,15 @@
 \newpage
 \pagestyle{empty}
 \shorttableofcontents{}{3}
-\listoffigures
 
-\newpage
 \include{annexes}
 
 \newpage
 \printindex
+\listoffigures
+
+\newpage
+\printglossary
 
 \newpage
 \bibliography{biblio}
