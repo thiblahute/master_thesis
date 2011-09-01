@@ -1,7 +1,6 @@
 \usepackage{graphicx}
-\usepackage{a4wide}		% use wide pages to save paper
-%\usepackage[compact]{titlesec}	% compact titles to save space
-\usepackage{placeins}		% provides \FloatBarrier
+\usepackage{a4wide}    % use wide pages to save paper %\usepackage[compact]{titlesec}  % compact titles to save space
+\usepackage{placeins}    % provides \FloatBarrier
 \usepackage{ifthen}
 \usepackage[margin=15pt,font=small,labelfont=bf]{caption}
 \usepackage{tocloft}
@@ -17,15 +16,12 @@
 \usepackage{minitoc}
 \usepackage{nopageno}
 \usepackage{glossary}
-\onehalfspacing
-
-% hyperref should be last in any LaTex doc
+\onehalfspacing % hyperref should be last in any LaTex doc
 \usepackage{hyperref}
 \hypersetup{colorlinks,
             linkcolor=blue,
-            urlcolor=cyan}
+            urlcolor=cyan} % change some spacings
 
-% change some spacings
 \addtolength{\parskip}{2.5mm}
 \parindent = 0.0in
 \setlength{\belowdisplayskip}{0.5in}
@@ -39,37 +35,35 @@
 \newcommand{\@keywords}{}
 \newcommand{\@revision}{}
 
-% headers
 \pagestyle{fancy}
-
 %% redefine \maketitle %%
 %
 \renewcommand{\maketitle}{%
   \hypersetup{pdftitle={\@title},
               pdfauthor={\@author, Collabora Ltd., EPSI Lyon},
-	      pdfsubject={\@subject},
-	      pdfkeywords={\@keywords},
-	     }
+        pdfsubject={\@subject},
+        pdfkeywords={\@keywords},
+       }
   \begin{titlepage}
     \thispagestyle{empty}
     \begin{center}
-    	\null
-	\vskip 6cm
-    	{\Huge\bfseries{\@title}}\\[2mm]
-	{\Large{\@subtitle}}\ \\[4mm]
-	\@revision\ \\[4mm]
-	\ifthenelse{\value{withdate} = 1}{%
-	 \@date
-	}{}
-	\vskip 3cm
-	{\large\@client}
-	\includegraphics[width=8cm]{images/collabora-logo}
-	\vskip 2mm
-	{\Large{\@author}}\ \\
+      \null
+  \vskip 6cm
+      {\Huge\bfseries{\@title}}\\[2mm]
+  {\Large{\@subtitle}}\ \\[4mm]
+  \@revision\ \\[4mm]
+  \ifthenelse{\value{withdate} = 1}{%
+   \@date
+  }{}
+  \vskip 3cm
+  {\large\@client}
+  \includegraphics[width=8cm]{images/collabora-logo}
+  \vskip 2mm
+  {\Large{\@author}}\ \\
     Collabora Ltd. And  EPSI Lyon\\[1cm]
-	\ifthenelse{\value{confidential} = 1}{%
-	 {\Large\bfseries{Confidential}}
-	}{}
+  \ifthenelse{\value{confidential} = 1}{%
+   {\Large\bfseries{Confidential}}
+  }{}
     \end{center}
   \end{titlepage}
 
@@ -103,13 +97,12 @@
   \subsection*{#1}
 }
 
-%% define a note environment %%
-%
+
 \newenvironment{note}[1][Note]
-{% beginning of the environment
+{
 \begin{quote}
 {\bfseries{#1}}\\
 }
-{% end of the environment
+{
 \end{quote}
 }
