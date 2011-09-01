@@ -1,0 +1,9 @@
+The research notes are accessible in the research/ dir, and are
+written with the notes plugin for vim.
+
+You need rubber to be able to compile the sources
+
+This should be compile running a simple:
+  $make
+
+The full bibliographie is accessible in biblio.bbl

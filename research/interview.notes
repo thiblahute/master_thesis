@@ -1,0 +1,82 @@
+# Copyright (C) 2011 Thibault Saunier <thibault.saunier@collabora.co.uk>
+# Released under the Creative Commons License
+
+__Title__: Video editors interview __Author__: Thibault Saunier
+
+================================================================================
+
+1. Publique cible:
+  * Monteur de clips vidéos
+  * Monteur de court métrages
+  * Monteur de films
+  * Monteur de séries télés
+  * Monteur de publicités
+  * Monteur de documentaires
+  * Monteur d'émission télés (journaux télévisés...)
+
+2. Buts du questionnaire:
+  * Définir les besoins de chacun de ces professionnels
+  * Trouver les défaut des outils utilisés à l'heure actuels
+  * Trouver les points commun entre les besoins des différents utilisateurs visés
+  * Avoir un point de vu des professionnel de l'édition vidéo sur les logiciels libres.
+
+
+3. Questions:
+ * 1-  Quel logiciel d'édition vidéo utilisez vous à l'heure actuel ?
+
+ * 2- Quel types de vidéo produisez vous?
+
+ * 3- Ce logiciel répond t il à tout vos besoin en terme de montage?
+
+ * 4- Quels défauts vous viennent à l'esprit quand vous penser à cette outil?
+
+ * 5- Pour toi finalcut est la meilleur solution de montage?
+
+ * 6-  Quels fonctionnalité utilisez vous au quotidien (ex: Multicamera, effets,
+      transitions, keyframes, time remapping, outils collaboratifs, proxy
+      editing, templates...)
+
+  * 7-  Quels fonctionnalités considérez vous comme indispensable, (même si vous
+        ne les utilisé pas au quotidien)?
+
+  * 8- Quel pourcentage des fonctionnalité du logiciel pensez vous utilisez
+        en tout?
+
+  * 9- Seriez vous prêts à utilisez des logiciels ayant moins de fonctionnalités,
+        mais qui répondrais de manière plus efficace à vos besoins ?
+
+  * 10-  Le prix du logiciel est-il un critère de choix selon vous?
+
+  * 11- Avez-vous des problèmes de stabilité (de bugs) avec finalcut?
+
+  * 12- La dépendance vis-à-vis du créateur du logiciel que vous utilisez
+        vous parait-il être quelque chose de dangereu ?
+
+  * 13- Connaissez vous certains logiciels libre d'édition vidéo?
+  ...
+
+4. Notes d'après interview de M. Faure
+--------------------------------------
+
+Devellopement spécifique => Archivage a partir de Final Cut pro
+
+  *Synthe == text informatif
+      => Brule, le synte est prit dedans
+      => Enregistrer les different
+
+  * TF1 logiciel interne.
+
+  * 3 Type de montage pour la chaine de télé stéphanoise:
+    * Montage simple, montage cut
+    * Film de commande => client a contenter:
+      + multimage
+      + infographique
+      + typos de titre => Templates
+                            |-> imovie qui est bon
+    * Film d'exeption:
+        implique au niveau de la capture:
+          + chef operateur lumiere
+          + prenneur de son.
+        => LUMIERE ultra important, et complexe.
+        En terme de montage, rien de très spécial
+
