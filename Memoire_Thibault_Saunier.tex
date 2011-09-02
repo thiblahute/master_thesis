@@ -1,4 +1,5 @@
 \documentclass[a4paper,11pt]{book}
+\let\cleardoublepage\clearpage
 \usepackage{template}
 \makeindex
 \makeglossary
@@ -15,14 +16,15 @@
 
 \bibliographystyle{plain}
 
+\dominitoc
 \setcounter{secnumdepth}{3}
 \setcounter{minitocdepth}{3}
-\shorttableofcontents{}{1}
-\thispagestyle{empty}
-\setcounter{page}{0}
+\setcounter{tocdepth}{1}
+\tableofcontents{}{1}
 
-\dominitoc
-%\include{introduction}
+\thispagestyle{empty}
+
+\include{introduction}
 \include{marketAnalisis}
 \include{fossPotentialAndPlan}
 
@@ -30,14 +32,15 @@
 
 \newpage
 \pagestyle{empty}
-\shorttableofcontents{}{3}
-\listoffigures
+\setcounter{tocdepth}{3}
+%\tableofcontents{}{1}
+%\shorttableofcontents{}{1}
 
-\newpage
 \include{annexes}
 
 \newpage
 \printindex
+\listoffigures
 
 \newpage
 \printglossary

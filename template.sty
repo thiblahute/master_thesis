@@ -1,6 +1,7 @@
 \usepackage{graphicx}
-\usepackage{a4wide}    % use wide pages to save paper %\usepackage[compact]{titlesec}  % compact titles to save space
-\usepackage{placeins}    % provides \FloatBarrier
+\usepackage{a4wide}   % use wide pages to save paper
+%\usepackage[compact]{titlesec} % compact titles to save space
+\usepackage{placeins}   % provides \FloatBarrier
 \usepackage{ifthen}
 \usepackage[margin=15pt,font=small,labelfont=bf]{caption}
 \usepackage{tocloft}
@@ -16,12 +17,15 @@
 \usepackage{minitoc}
 \usepackage{nopageno}
 \usepackage{glossary}
-\onehalfspacing % hyperref should be last in any LaTex doc
+\onehalfspacing
+
+% hyperref should be last in any LaTex doc
 \usepackage{hyperref}
 \hypersetup{colorlinks,
             linkcolor=blue,
-            urlcolor=cyan} % change some spacings
+            urlcolor=cyan}
 
+% change some spacings
 \addtolength{\parskip}{2.5mm}
 \parindent = 0.0in
 \setlength{\belowdisplayskip}{0.5in}
@@ -35,7 +39,11 @@
 \newcommand{\@keywords}{}
 \newcommand{\@revision}{}
 
+% headers
 \pagestyle{fancy}
+
+%% redefine \maketitle %%
+%
 \renewcommand{\maketitle}{%
   \hypersetup{pdftitle={\@title},
               pdfauthor={\@author, Collabora Ltd., EPSI Lyon},
@@ -65,10 +73,12 @@
     \end{center}
   \end{titlepage}
 
+  % change the headers
   \rhead{{\small{\@title}}}
+  % add the Confidential marker
   \ifthenelse{\value{confidential} = 1}{%
     \lhead{{\bfseries\small{Confidential}}}
-  }{
+  }{%
     \lhead{}
   }
 }
@@ -93,12 +103,13 @@
   \subsection*{#1}
 }
 
-
+%% define a note environment %%
+%
 \newenvironment{note}[1][Note]
-{
+{% beginning of the environment
 \begin{quote}
 {\bfseries{#1}}\\
 }
-{
+{% end of the environment
 \end{quote}
 }
