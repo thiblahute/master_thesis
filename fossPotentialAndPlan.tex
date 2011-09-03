@@ -57,12 +57,13 @@ projets:
 
 Plusieurs projets, libre permettent ou visent à répondre au besoins
 des amateurs, mais à l'heure actuel même ce cas d'utilisation n'est
-pas pleinement satisfait par les logiciel libres. Parmi les logiciels
+pas pleinement satisfait par les logiciels libres. Parmi les logiciels
 ayant l'objectif de permettre de créer des montage simple on distingue:
 
 \begin {itemize}
 
-  \item {openshot: Logiciel avec de nombreuses fonctionnalité.}
+  \item {openshot: Logiciel avec de nombreuses fonctionnalité, mais don la
+    qualité d'implémentation laisse à désirer.}
 
   \item {kino: Logiciel avec peu de fonctionnalité permettant de faire des
     petit montages éfficacement}
@@ -267,7 +268,11 @@ une API \index{API} autour du core du logiciel. Cela résulte dans le
 fait que le core est un programme (librairie) externe, réutilisable par
 n'importe quel autre application.  On peut considérer que les avantages
 des frameworks sont les inconvénients des applications monolithique
-\index{monolithique} et vis versa.
+\index{monolithique} et vis versa. Le gros avantages des frameworks sur
+une conception monolithique\index{monolithique} est la possibilité de
+partager un même code à travers de multiple application. Celà permet de
+réunir les efforts au travers, dans notre cas précis, de tout type d'application
+multimedia.
 
 Dans le cadre de l'édition vidéo, on peu encore distinguer deux manière
 d'envisager son développement:
@@ -284,7 +289,8 @@ d'envisager son développement:
 \end {itemize}
 
 Dans le monde du logiciel libre, ces deux manière d'envisager le
-développement d'un framework multimedia ont été abordé:
+développement d'un framework multimedia ont été abordé par les deux
+projets de framework leader sur ce segment:
 
 \begin {itemize}
 
@@ -300,19 +306,92 @@ développement d'un framework multimedia ont été abordé:
 
 \subparagraph {}
 
-Le logiciel PiTiVi utilise le Framework multimedia GStreamer alors que
-Kdenlive utilise le framework\index{framework} orienté édition et
-broadcasting MLT. Dans le cadre des Frameworks, nous nous intéresserons
+Au dessus de ces frameworks, deux application (interfaces graphique)
+de montage vidéo se sont développé.
+
+\begin {itemize}
+
+  \item {PiTiVi: utilise le Framework multimedia GStreamer}
+
+  \item {Kdenlive utilise le framework\index{framework} orienté édition et
+    broadcasting MLT.}
+
+\end {itemize}
+
+\paragraph {}
+
+Dans le cadre des Frameworks, nous nous intéresserons
 en particulier à l'analyse de ceux-ci puisque les notions relatives
 à l'édition vidéo, et la gestion de toute la partie multimédia est
 réalisée par ceux-ci. Les logiciels d'édition ne sont à priori que
 de simples interfaces graphiques basées sur ces frameworks, et par
 conséquent leur analyse ne présente qu'un faible intérêt.
 
-\section{Analyse technique}
+\newpage \section{Analyse technique}
 
-\section{Analyse des communauté}
+\paragraph {}
 
-\section{Lacunes}
+Dans cette partie nous allons analyser les entrailles des trois logiciels précédemment
+définis: Cinelerra, PiTiVi et Kdenlive.
 
-\section{Solutions possibles}
+\subsection{Cinelerra:}
+
+\paragraph {}
+
+Cinelerra est le logiciel d'édition audio et vidéo et de composition le plus
+avancé dans le monde de logiciel libre. Il est développé principalement par
+Adam Williams pour l'entreprise Heroine Virtual Ltd. Ce projet a été initié
+en 2001 sous le nom de broadcast2000 par cette même entreprise.
+
+\paragraph{}
+
+Le logiciel Cinelerra a été développer principalement en C++ et est composé de 3 partie
+principal interdépendantes:
+
+\begin{itemize}
+
+  \item{Lecture/et rendering audio vidéo}
+
+  \item{Edition vidéo non-linéaire}
+
+  \item{Interface graphique}
+
+\end{itemize}
+
+\subsubsection{Lecture et rendering}
+
+\paragraph{}
+
+Dans le cadre de la lecture audio et video, Cinelerra fait appelle à diverse library:
+
+\begin{itemize}
+
+  \item{ffmpeg: Solution compete, cross plateforme d'enregistrement, lecture, conversion
+    de flux audio et vidéo. Il inclus libavcodec, librairie leader dans le domaines des codec.
+    Il s'agit du core de la lecture audio et vidéo de Cinelerra.}
+
+  \item{faac/faad: AAC audio encoder}
+
+  \item{x264: h264 encoder}
+
+  \item{x264: h264 encoder}
+
+  \item{\ldots}
+
+\end{itemize}
+
+\subparagraph{}
+
+Toutes ces librairies sont utilisé dans le but de lire et écrire des fichiers multimedia.
+Afin de standardizer, et permettre l'utilisation de ces libraries de manière similaire
+au sein du logiciel, les développeur de Cinelerra ont développé au cas par cas des pont entre
+ces librairies et le reste du logiciel (Fichier dans le dossier quicktime).
+
+\paragraph{Edition non linéaire}
+
+
+\newpage \section{Analyse des communauté}
+
+\newpage \section{Lacunes}
+
+\newpage \section{Solutions possibles}
