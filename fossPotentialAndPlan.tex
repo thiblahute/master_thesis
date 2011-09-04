@@ -58,14 +58,14 @@ projets:
 Plusieurs projets libres permettent ou visent à répondre aux besoins
 des amateurs, mais à l'heure actuelle même ce cas d'utilisation n'est
 pas pleinement satisfait par les logiciels libres. Parmi les logiciels
-%dont l'objectif %est de permettre de créer des montages simples on distingue:
+dont l'objectif est de permettre de créer des montages simples on distingue:
 
 \begin {itemize}
 
-  \item {openshot: Logiciel %présentant  de nombreuses fonctionnalités, mais dont la
-    qualité d'implémentation %présente des faiblesses.}
+  \item {openshot: Logiciel présentant  de nombreuses fonctionnalités, mais dont la
+    qualité d'implémentation présente des faiblesses.}
 
-  \item {kino: Logiciel avec %un nombre de fonctionnalités limité permettant de faire des
+  \item {kino: Logiciel avec un nombre de fonctionnalités limité permettant de faire des
     petit montages éfficacement}
 
   \item {Vidiot qui vise la production de vidéo amateur simple}
@@ -75,21 +75,21 @@ pas pleinement satisfait par les logiciels libres. Parmi les logiciels
 \paragraph {}
 
 Mais les logiciels ayant pour objectif de pourvoir aux besoins plus
-avancés %en particulier à ceux des professionnels (précédemment présenté
+avancés en particulier à ceux des professionnels (précédemment présenté
 dans le cadre de la définition des plus grands acteur du marché)
 peuvent être utilisés dans le cadre de montage amateur.
 
 \paragraph{}
 
-Un nouveau projet a aussi récemment vu le jour, %dont la finalité est assez
+Un nouveau projet a aussi récemment vu le jour, dont la finalité est assez
 différente des logiciels actuellement présents. Il s'agit de Novacut,
-qui %permet aux créateurs de films et séries web de
-faire le montage de manière collaborative %avec Internet, en
+qui permet aux créateurs de films et séries web de
+faire le montage de manière collaborative à travers d'Internet, en
 partageant les ressources (footage).
 
 \paragraph{}
 
-%En définitive aucun projet n'a encore réussi à s'imposer et ainsi
+En définitive aucun projet n'a encore réussi à s'imposer et ainsi
 regrouper les développeurs au sein de projets majeurs. Dans d'autre
 domaines, cela a été le cas, par exemple dans le domaine des lecteurs
 vidéo, Vlc a su surpasser ses concurrents, et ainsi supplanter le
@@ -100,12 +100,12 @@ fait d'eux des plateformes de référence.
 
 \paragraph{}
 
-Il est donc intéressant de se demander quelles technologies %et quels
+Il est donc intéressant de se demander quelles technologies et quels
 logiciel(s), pourraient se voir attribuer cette place dans le monde
 de l'édition vidéo libre. Nous allons donc analyser les logiciels
-et %les technologies libres les plus avancés, (précédemment mentionnés
+et les technologies libres les plus avancés, (précédemment mentionnés
 dans le cadre de l'analyse de marché: Cinelerra, Kdenlive et PiTiVi).
-%Nous verrons ainsi s'ils ont le potentiel de pouvoir un
+Nous verrons ainsi s'ils ont le potentiel de pouvoir un
 jour rivaliser avec les logiciels propriétaires sur le marché très
 fermé du montage vidéo professionnel.
 
@@ -113,7 +113,7 @@ fermé du montage vidéo professionnel.
 
 NB: Il aurait été intéressant d'analyser le logiciel lightworks,
 en voie de libération, mais à l'heure actuelle, aucun code n'a été
-libéré, et par conséquent, celui-ci ne peut %pas faire partie de cette
+libéré, et par conséquent, celui-ci ne peut pas faire partie de cette
 analyse.
 
 \newpage
@@ -164,19 +164,21 @@ entité de code:
 
 \paragraph{}
 
-Par le terme logiciel monolithique\index{monolithique}, il %faut
-%réaliser que le logiciel peut utiliser des librairies externes,
+Par le terme logiciel monolithique\index{monolithique}, il faut
+réaliser que le logiciel peut utiliser des librairies externes,
 mais le core de ce même logiciel, et la logique d'édition linéaire
-à proprement parler %sont directement faits à l'intérieur du logiciel
+à proprement parler sont directement faits à l'intérieur du logiciel
 et non par une librairie ou framework \index{framework} externe. Cela a
-pour principal avantage %de présenter une conception % simplifiée pour %les raisons suivantes:
+pour principal avantage de présenter une conception simplifiée pour les
+raisons suivantes:
 
 \paragraph{}
 
 Les logiciels professionnels (commerciaux) utilisent très probablement
 tout ce mode de fonctionnement (même si probablement, en interne il ont
-un core qui ressemble fortement à un framework \index{framework}).%dans le monde des logiciels libres,les développeures de Cinelerra ont décidé d'utiliser ce mode de
-fonctionnement.
+un core qui ressemble fortement à un framework \index{framework}).dans le
+monde des logiciels libres,les développeures de Cinelerra ont décidé
+d'utiliser ce mode de fonctionnement.
 
 On peut voir plusieurs conséquences immédiates de ce mode de
 développement:
@@ -185,19 +187,19 @@ développement:
 
   \item {Les développeurs n'ont pas la nécessité de penser
     en terme d'interface publique de programmation (API\index{API}), et
-    n'ont pas à garantir la stabilité de celle-ci%:le risque réside dans le fait que
-    la qualité de l'architecture %ne soit pas optimale car
+    n'ont pas à garantir la stabilité de celle-ci: le risque réside dans le fait que
+    la qualité de l'architecture ne soit pas optimale car
     la création d'API\index{API} oblige les développeurs/architectes
     à réellement analyser les besoins de manière plus large dès le
     début de la conception. Dans le cas où l'on ne crée pas d'interface
     publique de programmation vouée à être réutilisée, le risque est
     que le travail de design et d'architecture ne soit pas réalisé,
     et que le code grandisse de manière anarchique avec les différents
-    développeurs qui %font des extensions au fur et à mesure de leurs besoins.}
+    développeurs qui font des extensions au fur et à mesure de leurs besoins.}
 
-  \item {Les développeurs n'ont besoin de penser l'architecture %seulement pour
-    les % cas d'utilisation qui sont liés à ce même logiciel:
-    ils n'ont pas à voir au delà de ces %???je ne comprends pas "uses cases".}
+  \item {Les développeurs n'ont besoin de penser l'architecture
+	seulement pour les cas d'utilisation qui sont liés à ce même logiciel:
+    ils n'ont pas à voir au delà de ces use cases.}
 
   \item {Les erreurs en terme de design n'ont pas d'incidences aussi
     graves que dans le cas d'un framework\index{framework}.}
@@ -209,8 +211,8 @@ On se rend compte que cette manière de faire a pour principal avantage
 le fait que le logiciel peut être développé plus rapidement puisque
 le core du logiciel, et donc le code qui implémente la logique de
 l'édition non linéaire, est conçue avec pour seul cas d'utilisation,
-celui du logiciel. Cependant, de nombreux inconvénients existent %à cause de
-% la nature monolithique\index{monolithique} du design:
+celui du logiciel. Cependant, de nombreux inconvénients existent à cause de
+la nature monolithique\index{monolithique} du design:
 
 \subparagraph{Besoins en main d'oeuvre considérables:}
 
@@ -222,11 +224,11 @@ Cinelerra à lui seul fait plus d'un million de lignes. Une telle
 quantité de code est difficile à maintenir et requiert des ressources
 importantes en terme de main d'oeuvre. Le fait que le logiciel soit
 monolithique\index{monolithique} implique que celui-ci va être utilisé
-%seulement par ce logiciel, et par conséquent, les développeurs ne peuvent 
-%pas compter sur d'autre utilisation de ce code pour améliorer et développer le core
-du logiciel.
+seulement par ce logiciel, et par conséquent, les développeurs ne peuvent
+pas compter sur d'autre utilisation de ce code pour améliorer et développer
+le core du logiciel.
 
-\paragraph{Réutilisabilité:%néologisme qui n'existe pas en français}
+\paragraph{Réutilisabilité:}
 
 \subparagraph { }
 
@@ -243,13 +245,15 @@ Cette façon de faire a été utilisée par le projet Cinelerra. Ce
 logiciel est le plus avancé en terme de fonctionnalités que le
 marché des logiciels libres de montage offre. On peut penser que son
 architecture monolithique\index{monolithique} explique ce développement
-plus abouti%,bien qu'il y ait évidemment de nombreux autres facteurs qui interviennent
-%en particulier le fait que ce logiciel a été développé par la société
-Heroine Virtual.
+plus abouti, bien qu'il y ait évidemment de nombreux autres facteurs qui
+interviennent en particulier le fait que ce logiciel a été développé par
+la société Heroine Virtual.
 
 \subsubsection {Utilisation de  frameworks \index{framework}}
 
-\paragraph{} L'autre possibilité est de séparer en deux parties%
+\paragraph{}
+
+L'autre possibilité est de séparer en deux parties
 bien distinctes l'implémentation de la logique de l'édition, lecture,
 encoding vidéo (core logiciel), de la partie graphique, interaction
 avec l'utilisateur final.
@@ -265,11 +269,11 @@ une API \index{API} autour du core du logiciel. Cela résulte dans le
 fait que le core est un programme (librairie) externe, réutilisable par
 n'importe quel autre application.  On peut considérer que les avantages
 des frameworks sont les inconvénients des applications monolithiques
-\index{monolithique} et vice-versa. L'%avantage principal des frameworks sur
+\index{monolithique} et vice-versa. L'avantage principal des frameworks sur
 une conception monolithique\index{monolithique} est la possibilité de
 partager un même code à travers de multiples applications. Celà permet de
-réunir les efforts au travers, dans notre cas précis, de tout type d'application
-multimedia.
+réunir les efforts au travers, dans notre cas précis, de tout type
+d'application multimedia.
 
 Dans le cadre de l'édition vidéo, on peut encore distinguer deux manière
 d'envisager son développement:
@@ -364,7 +368,8 @@ Dans le cadre de la lecture audio et video, Cinelerra fait appelle à diverse li
 \begin{itemize}
 
   \item{ffmpeg: Solution compete, cross plateforme d'enregistrement, lecture, conversion
-    de flux audio et vidéo. Il inclue libavcodec, librairie leader dans le domaines des codec.
+    de flux audio et vidéo. Il inclue libavcodec, librairie leader dans le domaines des
+    codec.
     Il s'agit du core de la lecture audio et vidéo de Cinelerra.}
 
   \item{faac/faad: AAC audio encoder}
@@ -381,7 +386,7 @@ Dans le cadre de la lecture audio et video, Cinelerra fait appelle à diverse li
 
 Toutes ces librairies sont utilisées dans le but de lire et écrire des fichiers multimedia.
 Afin de standardiser, et permettre l'utilisation de ces libraries de manière similaire
-au sein du logiciel, les développeurs de Cinelerra ont %élaboré au cas par cas des pont entre
+au sein du logiciel, les développeurs de Cinelerra ont élaboré au cas par cas des pont entre
 ces librairies et le reste du logiciel (Fichier dans le dossier quicktime).
 
 \paragraph{Edition non linéaire}
