@@ -41,31 +41,31 @@ Le schéma suivant permet de résumer facilement la situation:
 
 On constate donc que de nombreux projets de logiciel libre de montage
 vidéo on vu le jours ces 10 dernières années, ayant différents
-objectifs.  On peu distinguer deux types de publique visés par ces
+objectifs.  On peu distinguer deux types de public visés par ces
 projets:
 
 \begin {itemize}
 
   \item {Les amateurs}
 
-  \item {Les professionnels ou semi professionnels}
+  \item {Les professionnels ou semi-professionnels}
 \end {itemize}
 
 \paragraph {Les amateurs de montages vidéo}
 
 \subparagraph{}
 
-Plusieurs projets, libre permettent ou visent à répondre au besoins
-des amateurs, mais à l'heure actuel même ce cas d'utilisation n'est
+Plusieurs projets libres permettent ou visent à répondre aux besoins
+des amateurs, mais à l'heure actuelle même ce cas d'utilisation n'est
 pas pleinement satisfait par les logiciels libres. Parmi les logiciels
-ayant l'objectif de permettre de créer des montage simple on distingue:
+%dont l'objectif %est de permettre de créer des montages simples on distingue:
 
 \begin {itemize}
 
-  \item {openshot: Logiciel avec de nombreuses fonctionnalité, mais don la
-    qualité d'implémentation laisse à désirer.}
+  \item {openshot: Logiciel %présentant  de nombreuses fonctionnalités, mais dont la
+    qualité d'implémentation %présente des faiblesses.}
 
-  \item {kino: Logiciel avec peu de fonctionnalité permettant de faire des
+  \item {kino: Logiciel avec %un nombre de fonctionnalités limité permettant de faire des
     petit montages éfficacement}
 
   \item {Vidiot qui vise la production de vidéo amateur simple}
@@ -74,46 +74,46 @@ ayant l'objectif de permettre de créer des montage simple on distingue:
 
 \paragraph {}
 
-Mais les logiciels ayant pour objectif de pouvoir aux besoins plus
-avancés tel que ceux des professionnels (précédemment présenté
+Mais les logiciels ayant pour objectif de pourvoir aux besoins plus
+avancés %en particulier à ceux des professionnels (précédemment présenté
 dans le cadre de la définition des plus grands acteur du marché)
-peuvent être utiliser dans le cadre de montage amateur.
+peuvent être utilisés dans le cadre de montage amateur.
 
 \paragraph{}
 
-Un nouveau projet a aussi récemment vu le jours, ayant un but assez
-différent des logiciel actuellement présent. Il s'agit de Novacut,
-qui a pour but de permettre aux créateur de film et séries web de
-faire le montage de manière collaborative à travers d'Internet, en
+Un nouveau projet a aussi récemment vu le jour, %dont la finalité est assez
+différente des logiciels actuellement présents. Il s'agit de Novacut,
+qui %permet aux créateurs de films et séries web de
+faire le montage de manière collaborative %avec Internet, en
 partageant les ressources (footage).
 
 \paragraph{}
 
-Cela montre qu'aucun projet n'a encore réussi à s'imposer et ainsi
+%En définitive aucun projet n'a encore réussi à s'imposer et ainsi
 regrouper les développeurs au sein de projets majeurs. Dans d'autre
-domaine, cela a été le cas, par example dans le domaine des lecteurs
-vidéo, Vlc a su surpassé ces concurrent, et ainsi supplanté le
-marché des lecteur vidéo, qu'il soit libre ou non. Dans le domaine
+domaines, cela a été le cas, par exemple dans le domaine des lecteurs
+vidéo, Vlc a su surpasser ses concurrents, et ainsi supplanter le
+marché des lecteurs vidéo, qu'il soit libre ou non. Dans le domaine
 des environnements de Bureau graphique, KDE et Gnome sont arrivés à un
-stade ou leur supériorité technique, et en terme de fonctionnalités
+stade où leur supériorité technique, et en terme de fonctionnalités,
 fait d'eux des plateformes de référence.
 
 \paragraph{}
 
-Il est donc intéressant de se demander quel(s) technologie(s),
-logiciel(s), pourrai(ent) se voir attribuer cette place dans le monde
-de l'édition vidéo libre. Nous allons donc analyser les logiciel
-et technologies libre les plus avancés, (précédemment mentionné
-dans le cadre de l'analyse de marché: Cinelerra, Kdenlive et PiTiVi)
-et ainsi voir si celui-ci, ou ceux-ci, ont le potentiel de pouvoir un
-jours rivaliser avec les logiciels propriétaires sur le marché très
-fermé du montage vidéo professionnels.
+Il est donc intéressant de se demander quelles technologies %et quels
+logiciel(s), pourraient se voir attribuer cette place dans le monde
+de l'édition vidéo libre. Nous allons donc analyser les logiciels
+et %les technologies libres les plus avancés, (précédemment mentionnés
+dans le cadre de l'analyse de marché: Cinelerra, Kdenlive et PiTiVi).
+%Nous verrons ainsi s'ils ont le potentiel de pouvoir un
+jour rivaliser avec les logiciels propriétaires sur le marché très
+fermé du montage vidéo professionnel.
 
 \paragraph{}
 
 NB: Il aurait été intéressant d'analyser le logiciel lightworks,
-en voix de libération, mais à l'heure actuel, aucun code n'a été
-libéré, et par conséquent, celui-ci ne peut faire partit de cette
+en voie de libération, mais à l'heure actuelle, aucun code n'a été
+libéré, et par conséquent, celui-ci ne peut %pas faire partie de cette
 analyse.
 
 \newpage
@@ -125,7 +125,7 @@ analyse.
 Pour faire une analyse technique des produits permettant de faire
 de l'édition vidéo, il est nécessaire d'analyser le ``core'' des
 logiciels, c'est à dire la partie du logiciel où les opérations
-d'édition sont effectivement réalisées. Dans ce domaines, il existe
+d'édition sont effectivement réalisées. Dans ces domaines, il existe
 deux façon de procéder:
 
 \begin{itemize} \setlength{\itemsep}{2mm}
@@ -139,7 +139,7 @@ deux façon de procéder:
 
 \end{itemize}
 
-\subsection {Technologies monolithique\index{monolithique} VS technologies
+\subsection {Technologies monolithiques\index{monolithique} VS technologies
 modulaires, frameworks}
 
 
@@ -164,43 +164,40 @@ entité de code:
 
 \paragraph{}
 
-Par le terme logiciel monolithique\index{monolithique}, il convient
-de comprendre que le logiciel peut utiliser des librairies externes,
+Par le terme logiciel monolithique\index{monolithique}, il %faut
+%réaliser que le logiciel peut utiliser des librairies externes,
 mais le core de ce même logiciel, et la logique d'édition linéaire
-à proprement parler est directement faite à l'intérieur du logiciel
-et non par une librairie où framework \index{framework} externe. Cela a
-pour principal avantage que la conception est simplifiée pour plusieurs
-raisons à savoir:
+à proprement parler %sont directement faits à l'intérieur du logiciel
+et non par une librairie ou framework \index{framework} externe. Cela a
+pour principal avantage %de présenter une conception % simplifiée pour %les raisons suivantes:
 
 \paragraph{}
 
 Les logiciels professionnels (commerciaux) utilisent très probablement
-tous ce mode de fonctionnement (même si probablement, en interne il ont
-un core qui ressemble fortement à un framework \index{framework}). Au
-niveau des logiciels libres, le logiciel Cinelerra est un exemple
-dans lequel les développeurs ont décidé d'utiliser ce mode de
+tout ce mode de fonctionnement (même si probablement, en interne il ont
+un core qui ressemble fortement à un framework \index{framework}).%dans le monde des logiciels libres,les développeures de Cinelerra ont décidé d'utiliser ce mode de
 fonctionnement.
 
-On peu voir plusieurs conséquences immédiate de ce mode de
+On peut voir plusieurs conséquences immédiates de ce mode de
 développement:
 
 \begin{itemize} \setlength{\itemsep}{2mm}
 
   \item {Les développeurs n'ont pas la nécessité de penser
     en terme d'interface publique de programmation (API\index{API}), et
-    n'ont pas à garantir la stabilité de celle-ci. Cela a pour effet que
-    la qualité de l'architecture risque de ne pas être optimale puisque
+    n'ont pas à garantir la stabilité de celle-ci%:le risque réside dans le fait que
+    la qualité de l'architecture %ne soit pas optimale car
     la création d'API\index{API} oblige les développeurs/architectes
     à réellement analyser les besoins de manière plus large dès le
     début de la conception. Dans le cas où l'on ne crée pas d'interface
-    publique de programmation voué à être réutilisée, le risque est
+    publique de programmation vouée à être réutilisée, le risque est
     que le travail de design et d'architecture ne soit pas réalisé,
     et que le code grandisse de manière anarchique avec les différents
-    développeurs qui ajoute leur morceau au fur qu'ils en ont besoin.}
+    développeurs qui %font des extensions au fur et à mesure de leurs besoins.}
 
-  \item {Les développeurs n'ont besoin de penser l'architecture que pour
-    les seuls cas d'utilisation qui sont liés à ce même logiciel,
-    ils n'ont pas à voir au delà de ces use cases.}
+  \item {Les développeurs n'ont besoin de penser l'architecture %seulement pour
+    les % cas d'utilisation qui sont liés à ce même logiciel:
+    ils n'ont pas à voir au delà de ces %???je ne comprends pas "uses cases".}
 
   \item {Les erreurs en terme de design n'ont pas d'incidences aussi
     graves que dans le cas d'un framework\index{framework}.}
@@ -211,9 +208,9 @@ développement:
 On se rend compte que cette manière de faire a pour principal avantage
 le fait que le logiciel peut être développé plus rapidement puisque
 le core du logiciel, et donc le code qui implémente la logique de
-l'édition non linéaire est conçue avec pour seul cas d'utilisation,
-celui du logiciel. Cependant, de nombreux inconvénients existent de
-par la nature monolithique\index{monolithique} du design:
+l'édition non linéaire, est conçue avec pour seul cas d'utilisation,
+celui du logiciel. Cependant, de nombreux inconvénients existent %à cause de
+% la nature monolithique\index{monolithique} du design:
 
 \subparagraph{Besoins en main d'oeuvre considérables:}
 
@@ -225,11 +222,11 @@ Cinelerra à lui seul fait plus d'un million de lignes. Une telle
 quantité de code est difficile à maintenir et requiert des ressources
 importantes en terme de main d'oeuvre. Le fait que le logiciel soit
 monolithique\index{monolithique} implique que celui-ci va être utilisé
-que par ce logiciel, et par conséquent, les développeurs ne peuvent
-conté sur d'autre usage de ce code pour améliorer, développer le core
+%seulement par ce logiciel, et par conséquent, les développeurs ne peuvent 
+%pas compter sur d'autre utilisation de ce code pour améliorer et développer le core
 du logiciel.
 
-\paragraph{Réutilisabilité:}
+\paragraph{Réutilisabilité:%néologisme qui n'existe pas en français}
 
 \subparagraph { }
 
@@ -245,15 +242,15 @@ et dupliquer le code.
 Cette façon de faire a été utilisée par le projet Cinelerra. Ce
 logiciel est le plus avancé en terme de fonctionnalités que le
 marché des logiciels libres de montage offre. On peut penser que son
-architecture monolithique\index{monolithique} expliquer ce développement
-plus abouti. Bien qu'il y ait évidemment de nombreux autre facteurs
-tel que le fait que ce logiciel a été développé par la société
+architecture monolithique\index{monolithique} explique ce développement
+plus abouti%,bien qu'il y ait évidemment de nombreux autres facteurs qui interviennent
+%en particulier le fait que ce logiciel a été développé par la société
 Heroine Virtual.
 
 \subsubsection {Utilisation de  frameworks \index{framework}}
 
-\paragraph{} L'autre possibilité est de séparer en deux parties logiciel
-bien distincts l'implémentation de la logique de l'édition, lecture,
+\paragraph{} L'autre possibilité est de séparer en deux parties%
+bien distinctes l'implémentation de la logique de l'édition, lecture,
 encoding vidéo (core logiciel), de la partie graphique, interaction
 avec l'utilisateur final.
 
@@ -267,14 +264,14 @@ réside dans le le fait que dans le cadre d'un framework, on développe
 une API \index{API} autour du core du logiciel. Cela résulte dans le
 fait que le core est un programme (librairie) externe, réutilisable par
 n'importe quel autre application.  On peut considérer que les avantages
-des frameworks sont les inconvénients des applications monolithique
-\index{monolithique} et vis versa. Le gros avantages des frameworks sur
+des frameworks sont les inconvénients des applications monolithiques
+\index{monolithique} et vice-versa. L'%avantage principal des frameworks sur
 une conception monolithique\index{monolithique} est la possibilité de
-partager un même code à travers de multiple application. Celà permet de
+partager un même code à travers de multiples applications. Celà permet de
 réunir les efforts au travers, dans notre cas précis, de tout type d'application
 multimedia.
 
-Dans le cadre de l'édition vidéo, on peu encore distinguer deux manière
+Dans le cadre de l'édition vidéo, on peut encore distinguer deux manière
 d'envisager son développement:
 
 \begin {itemize}
@@ -288,26 +285,26 @@ d'envisager son développement:
 
 \end {itemize}
 
-Dans le monde du logiciel libre, ces deux manière d'envisager le
-développement d'un framework multimedia ont été abordé par les deux
+Dans le monde du logiciel libre, ces deux manières d'envisager le
+développement d'un framework multimedia ont été abordées par les deux
 projets de framework leader sur ce segment:
 
 \begin {itemize}
 
-  \item {MLT qui se défini comme étant un ``Framework multimedia design
+  \item {MLT qui se définit comme étant un ``Framework multimedia design
     et développé pour le brodcasting télévisé.''}
 
-  \item {Gstreamer qui se défini comme étant un ``framework multimédia
+  \item {Gstreamer qui se définit comme étant un ``framework multimédia
     basé sur la notion de pipeline ce qui lui permet de nombreux types
-    d'applications multimedia tel que des lecteurs multimédia, des
+    d'applications multimedia tels que des lecteurs multimédia, des
     logiciels de broadcasting, des logiciel de montage vidéo\ldots''}
 
 \end {itemize}
 
 \subparagraph {}
 
-Au dessus de ces frameworks, deux application (interfaces graphique)
-de montage vidéo se sont développé.
+Au dessus de ces frameworks, deux applications (interfaces graphique)
+de montage vidéo se sont développées.
 
 \begin {itemize}
 
@@ -345,8 +342,8 @@ en 2001 sous le nom de broadcast2000 par cette même entreprise.
 
 \paragraph{}
 
-Le logiciel Cinelerra a été développer principalement en C++ et est composé de 3 partie
-principal interdépendantes:
+Le logiciel Cinelerra a été développé principalement en C++ et est composé de 3 parties
+principales interdépendantes:
 
 \begin{itemize}
 
@@ -367,7 +364,7 @@ Dans le cadre de la lecture audio et video, Cinelerra fait appelle à diverse li
 \begin{itemize}
 
   \item{ffmpeg: Solution compete, cross plateforme d'enregistrement, lecture, conversion
-    de flux audio et vidéo. Il inclus libavcodec, librairie leader dans le domaines des codec.
+    de flux audio et vidéo. Il inclue libavcodec, librairie leader dans le domaines des codec.
     Il s'agit du core de la lecture audio et vidéo de Cinelerra.}
 
   \item{faac/faad: AAC audio encoder}
@@ -382,15 +379,15 @@ Dans le cadre de la lecture audio et video, Cinelerra fait appelle à diverse li
 
 \subparagraph{}
 
-Toutes ces librairies sont utilisé dans le but de lire et écrire des fichiers multimedia.
-Afin de standardizer, et permettre l'utilisation de ces libraries de manière similaire
-au sein du logiciel, les développeur de Cinelerra ont développé au cas par cas des pont entre
+Toutes ces librairies sont utilisées dans le but de lire et écrire des fichiers multimedia.
+Afin de standardiser, et permettre l'utilisation de ces libraries de manière similaire
+au sein du logiciel, les développeurs de Cinelerra ont %élaboré au cas par cas des pont entre
 ces librairies et le reste du logiciel (Fichier dans le dossier quicktime).
 
 \paragraph{Edition non linéaire}
 
 
-\newpage \section{Analyse des communauté}
+\newpage \section{Analyse des communautés}
 
 \newpage \section{Lacunes}
 
