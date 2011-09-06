@@ -382,35 +382,51 @@ précédemment définis: Cinelerra, PiTiVi et Kdenlive.
 
 \subsection{Cinelerra:}
 
-\paragraph {}
+\subsubsection{Documentation du code}
 
-Cinelerra est le logiciel d'édition audio et vidéo et de composition
-le plus avancé dans le monde de logiciel libre. Il est développé
-principalement par Adam Williams pour l'entreprise Heroine Virtual
-Ltd. Ce projet a été initié en 2001 sous le nom de broadcast2000 par
-cette même entreprise.
+\subparagraph{}
 
-\paragraph{}
+Au niveau de la documentation, celle-ci est inexistante et le code
+lui même ne contient que très peu de commentaires. Il est donc très
+compliqué de comprendre le fonctionnement et les relation entre ces
+centaines de millier de ligne de code. L'analyse de son fonctionnement
+est par conséquent assez complexe, et il est possible que cette analyse
+contienne des incertitudes.
 
-Le logiciel Cinelerra a été développé principalement en C++ et est
-composé de 3 parties principales interdépendantes:
+\subsubsection {Structuration du code}
+
+En terme de structure, le code de Cinelerra est décomposé en 3 partie:
 
 \begin{itemize}
 
-  \item{Lecture/et rendering audio vidéo}
+  \item{Lecture, rendering  audio vidéo: ce code est principalement
+    contenu dans les dossiers ``quicktime'', ``thirdparty'' et
+    ``libmpeg3''.}
 
-  \item{Edition vidéo non-linéaire et interface graphique}
+  \item{Effets audios et vidéos: Ceux-ci sont développé comme plugins,
+    et le code est donc présent de le dossier ``plugins`` }
 
-  \item{Système de plugins}
+  \item{Edition vidéo non linéaire et interface graphique: ce code est
+    contenu dans un seul et unique dossier, ``cinelerra''}
+
+  \item{Système de plugins: Aussi développé dans le dossier
+  ``cinelerra``}
 
 \end{itemize}
 
-\subsubsection{Lecture et rendering}
+\paragraph{}
+
+Cette structure semble être assez limité puisqu'il convient en théorie
+de décomposer le code par petites parties, alors que dans le cadre de
+Cinelerra, le dossier ``cinelerra'' contient non  moins de 1000 fichiers
+et 207789 lignes de code.
+
+\subsubsection{Lecture, rendering}
 
 \paragraph{}
 
 Dans le cadre de la lecture audio et video, Cinelerra fait appelle à
-diverse library:
+diverse librairies:
 
 \begin{itemize}
 
@@ -497,18 +513,115 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
     d’applications. Source: Wikipedia}} et permet l'édition vidéo en
     utilisant ces format bien que pas conçu pour ce cas d'utilisation.}
 
-  \item {}
+\end{itemize}
+
+\subsubsection {Effets audio et vidéo}
+
+Afin de permettre la création d'effets, Cinelerra utilise du  code
+provenant de deux librairies:
+
+\begin{itemize}
+
+  \item {ladspa, Linux Audio Developers Simple Plugins API: Librairie
+  d'effets audios qui
+    contient une multitude de plugins.}
+
+  \item {frei0r: Framework minimalist multi platform de création
+  d'effets vidéo,
+    il permet la création d'effet à travers de plugins. Il s'agit du
+    standard de fait en terme d'effets vidéo.}
 
 \end{itemize}
 
-\paragraph{Edition non linéaire et Interface graphique}
+\paragraph{}
+
+Afin de permettre l'utilisation d'effets, les développeurs de Cinelerra
+on mis en place un système de plugins. En terme d'implémentation,
+Cinelerra reprend le code de ces librairie dans un set de plugins
+Cinelerra en ajoutant l'implémentation de l'interface graphique qui
+permet la configuration de ces effets.
+
+\subsubsection{Interface Graphique}
+
+\paragraph{}
+
+L'interface graphique est développé en utilisant directement le server
+X sans aucune librairie graphique au dessus. Celà a pour conséquence
+d augmenté le code à produire mais permet de controller complètement
+le projet sans dépendre de ces librairies.  Dans le cadre de Cinelerra,
+cela est sensé puisque ce logiciel est développé quasi intégralement
+en interne.
+
+\begin{figure} [H]
+
+  \begin{center}
+
+    \includegraphics[width=0.95\textwidth]{images/cinelerra}
+
+  \end{center}
+
+  \caption{Interface graphique de cinelerra}
+
+  \label{Yes}
+
+\end{figure}
+
+\paragraph{Structure de l'interface graphique:}
+
+L'interface graphique de cinelerra est composé de quatre fenêtres
+principales:
+
+\begin{itemize}
+  \item {La timeline (en bas à gauche sur le screenshot): cette
+    partie permet de gérer un grand nombre d'action sur le contenu de
+    la timeline.}
+
+  \item {La fenêtre de ressource (un bas à droite sur le screenshot):
+    dans, cette fenêtre, l'utilisateur peu accéder au différent
+    footage qu'il a importer, il peut aussi accéder au différent effets,
+    transitions\ldots}
+
+  \item {Le fenêtre de preview (en haut à gauche sur le screenshot):
+    cette fenêtre permet la prévisualisation des footage avant de les
+    importer dans la timeline}
+
+  \item {La fenêtre de composition (en haut à droite sur le screenshot):
+    cette fenêtre permet d'effectuer des operation sur les vidéo et
+    de prévisualiser la timeline.}
+
+\end{itemize}
+
+\subsubsection{Edition non linéaire}
+
+\paragraph{Conception}
 
 \subparagraph{}
 
-Dans Cinelerra, l'interface utilisateur et la logique de l'édition vidéo
-sont deux partie complètement interdépendante. Au sein du code, il n'est
-pas possible de savoir quel partie est plutôt liée à l'interface
-graphique et quel partie fait les calculs.
+Dans Cinelerra, l'interface utilisateur et la logique de l'édition
+vidéo sont deux partie complètement interdépendante. Au sein du
+code, il n'est pas possible de savoir quel partie est plutôt liée à
+l'interface graphique et quel partie fait les calculs. Celà est due au
+fait de sa conception monolithique, les développeurs n'ont pas pris la
+peine de dissocier ces deux parties qui sont conceptuelement complètement
+différente. On s'aperçoit en lisant le code que
+
+\paragraph{Acceleration materiel}
+
+\subparagraph{}
+
+Lorsque openGL\index{openGL} est présent sur le système, Cinelerra
+est en mesure de l'utiliser directement, dans la mesure où cette
+fonctionnalité ai été activé lors de la compilation. Celà à pour
+effet d'accélérer, principalement la fonction de compositing, mais
+aussi la gestion des effets vidéo.
+
+\subsection {Kdenlive}
+
+Comme précedemment anoncé, Kdenlive utilise le framework orienté montage
+et broadcasting MLT. Dans cette partit, nous allons dans un premier temps
+analyser ce framework.
+
+\subsubsection {Framework multimedia orienté montage: MLT}
 
 
 \newpage \section{Analyse des communautés}
