@@ -382,6 +382,9 @@ précédemment définis: Cinelerra, PiTiVi et Kdenlive.
 
 \subsection{Cinelerra:}
 
+Cinelerra est développé en C++ et utilise par concéquent la paradigm
+objet.  Il est distribué sous licence GPL Version 2 ou plus.
+
 \subsubsection{Documentation du code}
 
 \subparagraph{}
@@ -617,12 +620,145 @@ aussi la gestion des effets vidéo.
 
 \subsection {Kdenlive}
 
-Comme précedemment anoncé, Kdenlive utilise le framework orienté montage
-et broadcasting MLT. Dans cette partit, nous allons dans un premier temps
-analyser ce framework.
+Comme précédemment énoncé, Kdenlive utilise le framework orienté
+montage et broadcasting MLT. Dans cette partit, nous allons dans un
+premier temps analyser ce framework.
 
 \subsubsection {Framework multimedia orienté montage: MLT}
 
+\paragraph {Panorama de la technologie} %Overview?
+
+\subparagraph{}
+
+Le framework MLT est écrit en C et offre une API\index{API} stable
+simple et minimalist. Il n'est basé sur aucun library (seulement POSIX
+
+\glossary {name={POSIX}, description={POSIX est le nom d'une famille
+de standards définie depuis 1988 par l'Institute of Electrical and
+Electronics Engineers et formellement désignée IEEE 1003. Ces standards
+ont émergé d'un projet de standardisation des API des logiciels
+destinés à fonctionner sur des variantes du système d'exploitation
+UNIX. Il s'agit de la standardisation des API des système communément
+appelé UNIX. Source: Wikipedia}}
+
+
+et le standard C, C99). MLT bien qu'écrit en C utilise le paradigme
+de la programmation orienté objet en implémentant en intern le
+concept d'objet. Ce framework est modulaire, et conçue pour permettre
+le développement nouveaux composants. Il permet l'utilisation des
+différents core des processeur pour faire les calculs, afin d'utiliser
+au mieux les processeur modernes. Il est aussi cross platform et peu
+être utilisé sur les principaux système d'exploitation: Linux, BSD,
+OS X et windows.
+
+\subparagraph{}
+
+MLT est distribué sous licence LGPL Version
+
+\paragraph{Concepts de base}
+
+\subparagraph{}
+
+Le framework MLT est basé sur le concept très simple de de réseau de
+service sur lequel on distingue trois entité (classes) clés: producteur,
+filtre et consommateur.
+
+On peu schématiser ce concept de la manière suivante:
+
+\begin{figure} [H]
+
+  \begin{center}
+
+    \includegraphics[width=0.95\textwidth]{images/producerConsumer}
+
+  \end{center}
+
+  \caption{Schéma du concept de producteur, filtre, consomateur}
+
+  \label{Yes}
+
+\end{figure}
+
+Le producteur a pour rôle de produire des données (lire un fichier
+audio, vidéo\ldots) et de les faire passer au consommateur qui lui est
+connecté. Le consommateur a pour but de faire passer ces donné (output
+datas) à la carte son, device vidéo, un autre fichier, où retransmettre
+à travers d'un moyen de télécommunication (broadcasting).  Le filtre
+qui n'est pas obligatoire afin de lire des donnés multimedias, permet
+de modifier les donnés (par exemple produisant un effet vidéo/audio),
+il peu aussi être connecté à plusieurs producteur, par exemple afin
+de produire une transition entre ceux-ci.
+
+\subparagraph{}
+
+Mais cela ne permet pas la creation d'éditeur de vidéo non linéaire,
+mais seulement la lecture et création de fichier. Pour permettre cette
+fonctionnalité, la classe multitrack a étés mise en place. Celle-ci
+permet de gérer plusieurs producteurs et filtres les uns à la suite des
+autres. La multitrack contient plusieurs producteurs et les dispose les
+hein à la suite des autres. Ces même producer peuvent aussi provenir
+d'une playlist qui est un concept différent, et celles-ci peuvent aussi
+être ajouter directement à un multitrack, et enregistrer sous forme
+de fichier de playlist (dans les différents standards existants).
+
+\subparagraph{}
+
+Afin de coordonner le tout, les devellopeurs on créés une classe
+``service'' qui contient les différents élément et sur laquelle on
+connect directement les différents consommateurs, ce qui permet au
+final de créer des timelines, avec mes outputs voulus.  On peu donc
+schématiser les services de la manière suivante:
+
+\begin{figure} [H]
+
+  \begin{center}
+
+    \includegraphics[width=1.0\textwidth]{images/service}
+
+  \end{center}
+
+  \caption{Schéma simplifié d'un service MLT (point de vu intern et
+    non utilisateur du framework)}
+
+  \label{Yes}
+
+\end{figure}
+
+\paragraph{Acceleration materiel}
+
+\subparagraph{}
+
+Au niveau de l'accélération materiel, MLT supporte le decoding vidéo
+pour les cartes graphique Nvidia
+
+\glossary{name={Nvidia}, description={Nvidia Corporation est l'un des
+plus grands fournisseurs de processeurs graphiques, de cartes graphiques
+et de chipsets pour PC et consoles de jeux}}
+
+(via VDPAU), et pour l'affichage mais pas le compositing vidéo accéléré.
+
+\glossary{name={VDPAU}, description={VDPAU (Video Decode and
+Presentation API for Unix) est une bibliothèque open source (libvdpau)
+et une interface de programmation conçus par NVIDIA initialement pour ses
+cartes graphiques GeForce 8 et ses derniers processeurs graphiques. Cette
+interface permet à des programmes de vidéo de décharger de la mémoire
+des parties du processus de décodage de vidéo et de son traitement
+aval vers le processeur graphique.}}
+
+\paragraph{Fonctionnalités haut niveau (High level features)}
+
+\subparagraph{}
+
+Il intègre un système de serialisation, deserialization, ce qui permet
+de sauvegarder facilement les projets, avec les différents tracks,
+effets, transition\ldots dans le cadre d'application de montage vidéo.
+
+\subparagraph{}
+
+Le framework MLT offre des bindings haut niveau pour les languages:
+C++, C\#, Java, Lua, Perl, PHP, Ruby, TCL et Python. Celà permet à
+beaucoup plus de développeur d'envisager l'utilisation de MLT dans
+leurs applications.
 
 \newpage \section{Analyse des communautés}
 
