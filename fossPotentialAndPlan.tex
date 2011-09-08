@@ -657,13 +657,17 @@ MLT est distribué sous licence LGPL Version
 
 \paragraph{Concepts de base}
 
+\subparagraph{Réseau de service}
+
 \subparagraph{}
 
 Le framework MLT est basé sur le concept très simple de de réseau de
 service sur lequel on distingue trois entité (classes) clés: producteur,
-filtre et consommateur.
+filtre et consommateur. Ces différent classes de sont des sous classe
+de la classe appelé ``service``.
 
-On peu schématiser ce concept de la manière suivante:
+On peu schématiser le concept de réseau de service le plus simple de
+la manière suivante:
 
 \begin{figure} [H]
 
@@ -703,11 +707,10 @@ de fichier de playlist (dans les différents standards existants).
 
 \subparagraph{}
 
-Afin de coordonner le tout, les devellopeurs on créés une classe
-``service'' qui contient les différents élément et sur laquelle on
-connect directement les différents consommateurs, ce qui permet au
-final de créer des timelines, avec mes outputs voulus.  On peu donc
-schématiser les services de la manière suivante:
+Grace à la création de ces reseau de service, il est possible de créer
+des timelines complexe, et ainsi créer des logiciel d'édition vidéo
+non linéaire. On peu donc schématiser les réseaux de services de la
+manière suivante:
 
 \begin{figure} [H]
 
@@ -724,22 +727,107 @@ schématiser les services de la manière suivante:
 
 \end{figure}
 
+\paragraph{Les modules}
+
+\subparagraph{}
+
+Dans MLT, les de producteur, consomateur où filtre sont des classes
+extern implémenté sous form de plugins. Certain sont implémenté
+directement dans MLT tel que :
+
+\begin{itemize}
+
+  \item {Le filtre ``transition'': permet la création de transition}
+
+  \item {Le filtre mono: permet de convertir un flux audio en mono}
+
+  \item {Le filtre resize: Permet de redimmensionner une vidéo}
+
+  \item {\ldots}
+
+\end{itemize}
+
+Cela est fait grace à des libraries extern en implementant des modules
+externes afin de faire le lien (wrapper)
+
+\glossary{name={adapter}, description={Il permet de convertir l'interface
+d'une classe en une autre interface que le client attend. L' Adaptateur
+fait fonctionner ensemble des classes qui n'auraient pas pu fonctionner
+sans lui, à cause d'une incompatibilité d'interfaces. Source:
+Wikipedia}}
+
+entre ces librairie et l'API\index{API} précédemment présenté. Les
+principalles libraries actuelement utilisables à travers de ce framework
+sont:
+
+\begin{itemize}
+
+  \item {libav, libdv et libvorbis pour ce qui en ai des codecs et
+  muxers/demuxers}
+
+  \item {frei0r pour les effets vidéos}
+
+  \item {ladspa pour les effets audios}
+
+  \item {\ldots}
+
+\end{itemize}
+
+\subparagraph{}
+
+
+Ces différents services disponibles permette de lire un nombre
+concidéreable de vidéo, en particulier grace à libav, et d'effectuer
+de très nombreuses operation sur les vidéo principalement grace aux
+plugins frei0r et ladspa pour ce qui concerne l'audio.
+
+\paragraph{Gestion des services}
+
+\subparagraph{Le ``repository``}
+
+Afin de permettre à l'utilisateur de connaitre les différent services
+présents sur le système, il existe une classe Repository. Celle-ci
+pffre une API\index{API} simple listant les différent service par type
+(consommateurs, producteur où filtre).  par example, le simple code
+suivant, permet de recuperer la liste de touts les effets présent sur
+le système:
+
+\subparagraph{}
+
+\begin{lstlisting}
+  mlt_repository repo = mlt_repository_init (NULL) /* We just use the
+  standard module path */ mlt_properties filters = mlt_repository_filters
+  (repo); /*
+\end{lstlisting}
+
+\subparagraph{Les ``factory''}
+
+Afin de permettre de simplifier la création de services de différents
+types, MLT utilise le design pattern de la factory. Cela permet de
+créer n'importe quel type de service de manière simple en utilisant les
+différentes factories existante.  Par exemple, afin de créer un effet
+``invert'' depuis MLT il suffi de faire:
+
+\subparagraph{}
+
+\begin{lstlisting}
+  filter = mlt_factory_filter ( "invert", "my-invert-effect");
+\end{lstlisting}
+
 \paragraph{Acceleration materiel}
 
 \subparagraph{}
 
-Au niveau de l'accélération materiel, MLT supporte le decoding vidéo
-pour les cartes graphique Nvidia
+Au niveau de l'accélération materiel, MLT supporte le decoding
+vidéo pour les cartes graphique Nvidia \glossary{name={Nvidia},
+description={Nvidia Corporation est l'un des plus grands fournisseurs
+de processeurs graphiques, de cartes graphiques et de chipsets pour
+PC et consoles de jeux}} (via VDPAU), et pour l'affichage mais pas le
+compositing vidéo accéléré.
 
-\glossary{name={Nvidia}, description={Nvidia Corporation est l'un des
-plus grands fournisseurs de processeurs graphiques, de cartes graphiques
-et de chipsets pour PC et consoles de jeux}}
-
-(via VDPAU), et pour l'affichage mais pas le compositing vidéo accéléré.
-
-\glossary{name={VDPAU}, description={VDPAU (Video Decode and
-Presentation API for Unix) est une bibliothèque open source (libvdpau)
-et une interface de programmation conçus par NVIDIA initialement pour ses
+\glossary{name={VDPAU}, description={VDPAU (Video Decode and Presentation
+API for Unix) est une bibliothèque open source (libvdpau) et une
+interface de programmation conçus par NVIDIA initialement pour ses
 cartes graphiques GeForce 8 et ses derniers processeurs graphiques. Cette
 interface permet à des programmes de vidéo de décharger de la mémoire
 des parties du processus de décodage de vidéo et de son traitement
@@ -758,7 +846,60 @@ effets, transition\ldots dans le cadre d'application de montage vidéo.
 Le framework MLT offre des bindings haut niveau pour les languages:
 C++, C\#, Java, Lua, Perl, PHP, Ruby, TCL et Python. Celà permet à
 beaucoup plus de développeur d'envisager l'utilisation de MLT dans
-leurs applications.
+leurs applications. C'est grosse au binding C++ que Kdenlive à pu être
+développé au dessus du framework\index{framework} MLT
+
+\subsubsection {Logiciel de montage vidéo basé sur MLT: Kdenlive}
+
+\subparagraph{}
+
+Kdenlive est l'éditeur vidéo créé par la communauté en charge
+du bureau libre KDE. Ce logiciel est donc écrit en C++ utilisant le
+framework graphique QT \glossary{name={QT}, description={framework
+orienté objet et développé en C++ par Qt Development Frameworks,
+filiale de Nokia. Il offre des composants d'interface graphique
+(widgets), d'accès aux données, de connexions réseaux, de gestion des
+fils d'exécution, d'analyse XML, etc. Qt est par certains aspects un
+framework lorsqu'on l'utilise pour concevoir des interfaces graphiques
+ou que l'on architecture son application en utilisant les mécanismes
+des signaux et slots par exemple.}} ainsi que les kdelibs qui forment
+le framework permettant la création d'application intégré au bureaux
+du même nom.
+
+
+\paragraph {Interface Graphique}
+
+\subparagraph{}
+
+\begin{figure}[H]
+
+  \begin{center}
+
+    \includegraphics[width=0.90\textwidth]{images/kdenlive}
+
+  \end{center}
+
+  \caption{Screenshot de Kdenlive}
+
+  \label{Yes}
+
+\end{figure}
+
+\subparagraph{}
+
+L'interface graphique de Kdenlive est composé d'un seul fenetre et de quatre partie majeurs:
+
+\begin{itemize}
+  \item {La timeline en bas}
+  \item {La gestion des footage, en haut à gauche}
+  \item {La gestion des effets et transitions, au centre en haut}
+  \item {Le previewer, en haut à droite}
+\end{itemize}
+
+\subparagraph{}
+
+On constate que l'interface offre un grand nombre d'options au travers des différents éléments
+qui la compose.
 
 \newpage \section{Analyse des communautés}
 
