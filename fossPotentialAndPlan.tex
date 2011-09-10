@@ -487,15 +487,7 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
 
   \item {Quicktime 4 Linux: supporte en particulier les format DV,
     les codecs H.264 et AAC, et implémente des éléments de conversion
-    d'espaces colorimétrique \glossary {name={espace colorimétrique},
-    description={Un espace colorimétrique ou espace de couleur associe
-    des nombres aux couleurs visibles. Compte tenu des limites de la
-    vision humaine, ces nombres se présentent généralement sous
-    la forme de triplets. Chaque couleur de lumière peut donc être
-    caractérisée par un point dans un espace à trois dimensions. Lors
-    d'une impression, pour des raisons liées à la qualité des pigments,
-    l'espace utilisé comporte alors généralement au moins quatre
-    dimensions. Source: Wikipedia}} (colorspace conversion)}
+    d'espaces colorimétrique (colorspace conversion)}
 
 % Human readable
 
@@ -526,13 +518,39 @@ provenant de deux librairies:
 \begin{itemize}
 
   \item {ladspa, Linux Audio Developers Simple Plugins API: Librairie
-  d'effets audios qui
-    contient une multitude de plugins.}
+  d'effets audios qui contient une multitude de plugins.Il s'agit d'une
+  API très simple et extrêmement flexible qui théoriquement permet
+  la création de plugins permettant n'importe quel manipulation
+  et transformation du son. Bien que dans les fait, certaines
+  fonctionnalités ne soient pas implémenté pour éviter de complexifier
+  le core de la librairies.}
 
   \item {frei0r: Framework minimalist multi platform de création
-  d'effets vidéo,
-    il permet la création d'effet à travers de plugins. Il s'agit du
-    standard de fait en terme d'effets vidéo.}
+    d'effets vidéo, il permet la création d'effet à travers de
+    plugins. Il s'agit du standard de fait en terme d'effets vidéo
+    dans le milieu des logiciels libre. Cette librairies a été
+    développé par de nombreux développeurs issues de différentes
+    communautés de logiciels libre en relation avec le multimedia. De
+    nombreux plugins existent et sont stables, mais un inconvénient
+    default assez important existe concernant ce set d'effet, ils
+    ne supportent uniquement l'espace de couleur RGB. Celà a pour
+    conséquence que dans le cas ou le flux vidéo n'est pas dans
+    cette espace de couleur,\glossary {name={espace colorimétrique},
+    description={Un espace colorimétrique ou espace de couleur associe
+    des nombres aux couleurs visibles.  Compte tenu des limites de
+    la vision humaine, ces nombres se présentent généralement sous
+    la forme de triplets. Chaque couleur de lumière peut donc être
+    caractérisée par un point dans un espace à trois dimensions. Lors
+    d'une impression, pour des raisons liées à la qualité des
+    pigments, l'espace utilisé comporte alors généralement au moins
+    quatre dimensions. Source: Wikipedia}} une conversion d'espace
+    colorimétrique est nécessaire afin de les utiliser. Un autre
+    inconvénient de cette librairies est que les effets sont fait de
+    manière logiciel, alors qu'à l'heure actuel, l'utilisation de la
+    carte graphique, permettrai de tirer partit de manière beaucoup
+    plus intéressante le materiel dans l'application d'effets sur
+    les vidéos.}
+
 
 \end{itemize}
 
@@ -616,7 +634,15 @@ Lorsque openGL\index{openGL} est présent sur le système, Cinelerra
 est en mesure de l'utiliser directement, dans la mesure où cette
 fonctionnalité ai été activé lors de la compilation. Celà à pour
 effet d'accélérer, principalement la fonction de compositing, mais
-aussi la gestion des effets vidéo.
+aussi la gestion des effets vidéo openGL.
+
+%TODO %\paragraph{Fonctionnalités}
+
+%\subparagraph{}
+
+%En terme de fonctionnalité, le logiciel cinelerra permet de répondre
+
+%de très nombreux besoins des professionnel.
 
 \subsection {Kdenlive}
 
@@ -639,17 +665,14 @@ Electronics Engineers et formellement désignée IEEE 1003. Ces standards
 ont émergé d'un projet de standardisation des API des logiciels
 destinés à fonctionner sur des variantes du système d'exploitation
 UNIX. Il s'agit de la standardisation des API des système communément
-appelé UNIX. Source: Wikipedia}}
-
-
-et le standard C, C99). MLT bien qu'écrit en C utilise le paradigme
-de la programmation orienté objet en implémentant en intern le
-concept d'objet. Ce framework est modulaire, et conçue pour permettre
-le développement nouveaux composants. Il permet l'utilisation des
-différents core des processeur pour faire les calculs, afin d'utiliser
-au mieux les processeur modernes. Il est aussi cross platform et peu
-être utilisé sur les principaux système d'exploitation: Linux, BSD,
-OS X et windows.
+appelé UNIX. Source: Wikipedia}} et le standard C, C99). MLT bien
+qu'écrit en C, utilise le paradigme de la programmation orienté objet en
+implémentant en intern le concept d'objet. Ce framework est modulaire,
+et conçue pour permettre le développement nouveaux composants. Il
+permet l'utilisation des différents core des processeur pour faire
+les calculs, afin d'utiliser au mieux les processeur modernes. Il est
+aussi cross platform et peu être utilisé sur les principaux système
+d'exploitation: Linux, BSD, OS X et windows.
 
 \subparagraph{}
 
@@ -661,9 +684,9 @@ MLT est distribué sous licence LGPL Version
 
 \subparagraph{}
 
-Le framework MLT est basé sur le concept très simple de de réseau de
-service sur lequel on distingue trois entité (classes) clés: producteur,
-filtre et consommateur. Ces différent classes de sont des sous classe
+Le framework MLT est basé sur le concept de de réseau de service sur
+lequel on distingue trois entité (classes) clés: producteur, filtre
+et consommateur. Ces différentes classes sont toutes des sous classe
 de la classe appelé ``service``.
 
 On peu schématiser le concept de réseau de service le plus simple de
@@ -707,10 +730,10 @@ de fichier de playlist (dans les différents standards existants).
 
 \subparagraph{}
 
-Grace à la création de ces reseau de service, il est possible de créer
-des timelines complexe, et ainsi créer des logiciel d'édition vidéo
-non linéaire. On peu donc schématiser les réseaux de services de la
-manière suivante:
+Grace à la création de ces réseau de service, il est possible de
+créer des timelines complexe, et ainsi créer des logiciel d'édition
+vidéo non linéaire. On peu donc schématiser les réseaux de services
+de la manière suivante:
 
 \begin{figure} [H]
 
@@ -731,7 +754,7 @@ manière suivante:
 
 \subparagraph{}
 
-Dans MLT, les de producteur, consomateur où filtre sont des classes
+Dans MLT, les de producteur, consommateurs où filtres sont des classes
 extern implémenté sous form de plugins. Certain sont implémenté
 directement dans MLT tel que :
 
@@ -741,13 +764,13 @@ directement dans MLT tel que :
 
   \item {Le filtre mono: permet de convertir un flux audio en mono}
 
-  \item {Le filtre resize: Permet de redimmensionner une vidéo}
+  \item {Le filtre resize: Permet de redimensionner une vidéo}
 
   \item {\ldots}
 
 \end{itemize}
 
-Cela est fait grace à des libraries extern en implementant des modules
+Cela est fait grace à des libraries extern en implémentant des modules
 externes afin de faire le lien (wrapper)
 
 \glossary{name={adapter}, description={Il permet de convertir l'interface
@@ -757,7 +780,7 @@ sans lui, à cause d'une incompatibilité d'interfaces. Source:
 Wikipedia}}
 
 entre ces librairie et l'API\index{API} précédemment présenté. Les
-principalles libraries actuelement utilisables à travers de ce framework
+principales libraries actuellement utilisables à travers de ce framework
 sont:
 
 \begin{itemize}
@@ -775,11 +798,10 @@ sont:
 
 \subparagraph{}
 
-
 Ces différents services disponibles permette de lire un nombre
-concidéreable de vidéo, en particulier grace à libav, et d'effectuer
-de très nombreuses operation sur les vidéo principalement grace aux
-plugins frei0r et ladspa pour ce qui concerne l'audio.
+considérable de vidéo, en particulier grace à libav, et d'effectuer
+de très nombreuses operation principalement grace aux plugins frei0r
+pour la vidéo et ladspa pour ce qui concerne l'audio.
 
 \paragraph{Gestion des services}
 
@@ -787,10 +809,10 @@ plugins frei0r et ladspa pour ce qui concerne l'audio.
 
 Afin de permettre à l'utilisateur de connaitre les différent services
 présents sur le système, il existe une classe Repository. Celle-ci
-pffre une API\index{API} simple listant les différent service par type
-(consommateurs, producteur où filtre).  par example, le simple code
-suivant, permet de recuperer la liste de touts les effets présent sur
-le système:
+offre une API\index{API} simple listant les différent service par type
+(consommateurs, producteur où filtre),  par example, le simple code
+suivant, permet de récupérer la liste de touts les effets présent
+sur le système:
 
 \subparagraph{}
 
@@ -805,8 +827,26 @@ le système:
 Afin de permettre de simplifier la création de services de différents
 types, MLT utilise le design pattern de la factory. Cela permet de
 créer n'importe quel type de service de manière simple en utilisant les
-différentes factories existante.  Par exemple, afin de créer un effet
-``invert'' depuis MLT il suffi de faire:
+différentes factories existante. Bien que tout les objets d'un réseau
+de service soient des descendant de la classe Service, les développeur
+ont décidé de créer 4 méthode différente de la classe factory:
+
+\begin{itemize}
+
+  \item {mlt\_factory\_producer: permet d'instancier des producteurs}
+
+  \item {mlt\_factory\_filter: permet d'instancier des filtres}
+
+  \item {mlt\_factory\_transition: permet d'instancier des transitions}
+
+  \item {mlt\_factory\_consumer: permet d'instancier des consommateurs}
+
+\end{itemize}
+
+\subparagraph{}
+
+Par exemple, afin de créer un effet ``invert'' depuis MLT il suffi
+de faire:
 
 \subparagraph{}
 
@@ -814,16 +854,82 @@ différentes factories existante.  Par exemple, afin de créer un effet
   filter = mlt_factory_filter ( "invert", "my-invert-effect");
 \end{lstlisting}
 
+Il sera ensuite possible d'ajouter ce service au réseau de service.
+
+\subparagraph{Les données dans un réseau de services}
+
+\subparagraph{La classe Frame}
+
+\subparagraph{}
+
+Les données qui transite dans un réseau de service sont contenus dans
+des objets de type frame. Celles-ci contiennent à la fois les donnés
+audio et les donnés vidéos. Les producteurs peuvent setter ces données
+grace aux méthodes mlt\_frame\_set\_audio et mlt\_frame\_set\_video.
+
+\subparagraph{Relation entre les différents services en terme de flux
+de données}
+
+Afin commencer le flux de données dans un réseau de service, le
+consommateur est celui qui tire les données depuis le service sur
+lequel il est connecté.  Les autre services réagissent en fonction,
+et forme une chaine jusqu'au producteur qui produits les données, et
+les fait suivre aux service suivant et ainsi de suite. Ce processus peu
+être schématisé de la manière suivante:
+
+\begin{center}
+
+  \begin{tabular}{ | c | c | c | c |}
+
+    \hline
+
+      Phase & producteur              & Filtre                      &
+      Consommateur    \\ \hline \hline
+
+      1     &                         &                             &
+      Request frame   \\ \hline 2     &                         &
+      Réception de la demande     &                 \\
+            &                         & Demande la frame à son tour&
+            \\ \hline
+      3     & Réception de la demande &                             & \\
+            & Génération de la frame à la position &                &
+            \\ & Mise à jours de la position          &                &
+            \\ & Mise à disposition de la frame       &                &
+            \\ \hline
+      4     &                         & Réception de la frame       & \\
+            &                         & Update de la frame          & \\ &
+            & Mise à disposition          & \\ \hline
+      5     &                         &                             &
+      Réception et    \\
+            &                         &                             &
+            process de      \\ &                         & & la
+            frame        \\
+
+    \hline
+
+  \end{tabular}
+
+\end{center}
+
+\subparagraph{}
+
+Cette manière de fonctionner implique que seul le consommateur est
+le moteur du réseau, il est celui qui doit faire partit d'un thread
+séparé et les appel à la fonction get\_frame doivent être fait dans
+une boucle principal.  Ces appels s'arrêteront au moment ou le flux a
+été terminé (EOS).
+
+
 \paragraph{Acceleration materiel}
 
 \subparagraph{}
 
 Au niveau de l'accélération materiel, MLT supporte le decoding
-vidéo pour les cartes graphique Nvidia \glossary{name={Nvidia},
-description={Nvidia Corporation est l'un des plus grands fournisseurs
-de processeurs graphiques, de cartes graphiques et de chipsets pour
-PC et consoles de jeux}} (via VDPAU), et pour l'affichage mais pas le
-compositing vidéo accéléré.
+avec acceleration materiel pour les cartes graphiques Nvidia
+\glossary{name={Nvidia}, description={Nvidia Corporation est l'un des plus
+grands fournisseurs de processeurs graphiques, de cartes graphiques et de
+chipsets pour PC et consoles de jeux}} (via VDPAU), et pour l'affichage
+mais pas le compositing vidéo accéléré.
 
 \glossary{name={VDPAU}, description={VDPAU (Video Decode and Presentation
 API for Unix) est une bibliothèque open source (libvdpau) et une
@@ -834,6 +940,25 @@ des parties du processus de décodage de vidéo et de son traitement
 aval vers le processeur graphique.}}
 
 \paragraph{Fonctionnalités haut niveau (High level features)}
+
+\subparagraph{}
+
+La petit API qu'offre ce framework comporte des méthode et fonction
+haut niveau et permettent de répondre à des besoins spécifiques de
+l'édition vidéo de manière simple pour l'utilisateur.
+
+\subparagraph{Génération de waveform/thumbnail depuis une frame}
+
+\subparagraph{}
+
+Le framework offre par example une fonction permettant la génération
+(sous forme d'image) des waveform de la partie audio d'une frame, et de
+thumbnail depuis la partier audio.  Dans la partie précédente, nous
+avons constaté que la visualisation avancé de chaque frame était une
+fonctionnalité très utile en particulier dans le cadre de la création
+de films.
+
+\subparagraph{Serialization et deserialization de projets}
 
 \subparagraph{}
 
@@ -849,6 +974,41 @@ beaucoup plus de développeur d'envisager l'utilisation de MLT dans
 leurs applications. C'est grosse au binding C++ que Kdenlive à pu être
 développé au dessus du framework\index{framework} MLT
 
+\paragraph{Fonctionnalités}
+
+\subparagraph{ }
+
+Cette analyse technique du projet MLT nous permet de constater que
+son fonctionnement est simple, et son API petite, et facile à prendre
+en main.  Il permet de répondre à différents besoins de base  des
+professionnels en terme de fonctionnalités:
+
+\begin{itemize}
+
+  \item {Ajout de titres et génériques: A travers du module développé
+  par la
+    communauté Kdenlive: QImage.}
+
+  \item {Gestion des keyframes: possible dans les modules implémentant
+    cette fonctionnalités, pas de solution générique au niveau du
+    core de MLT}
+
+  \item {Visualization image par images et waveform: Directement
+  accessible à
+    travers du core de MLT.}
+
+  \item {Visualization image par images et waveform: Directement
+  accessible à
+    travers du core de MLT.}
+
+\end{itemize}
+
+\subparagraph{}
+
+Le principale manque en terme de fonctionnalité est la possibilité de
+faire du time remapping, mais il est tout de même possible de gérer le
+control de la vitesse de lecture des clips, ce qui est un point essentiel.
+
 \subsubsection {Logiciel de montage vidéo basé sur MLT: Kdenlive}
 
 \subparagraph{}
@@ -857,17 +1017,22 @@ Kdenlive est l'éditeur vidéo créé par la communauté en charge
 du bureau libre KDE. Ce logiciel est donc écrit en C++ utilisant le
 framework graphique QT \glossary{name={QT}, description={framework
 orienté objet et développé en C++ par Qt Development Frameworks,
-filiale de Nokia. Il offre des composants d'interface graphique
-(widgets), d'accès aux données, de connexions réseaux, de gestion des
-fils d'exécution, d'analyse XML, etc. Qt est par certains aspects un
-framework lorsqu'on l'utilise pour concevoir des interfaces graphiques
-ou que l'on architecture son application en utilisant les mécanismes
-des signaux et slots par exemple.}} ainsi que les kdelibs qui forment
-le framework permettant la création d'application intégré au bureaux
-du même nom.
-
+filiale de Nokia. Il offre des composants d'interface graphique (widgets),
+d'accès aux données, de connexions réseaux, de gestion des fils
+d'exécution, d'analyse XML, etc. Qt est par certains aspects un framework
+lorsqu'on l'utilise pour concevoir des interfaces graphiques ou que l'on
+architecture son application en utilisant les mécanismes des signaux
+et slots par exemple.}} ainsi que les kdelibs qui forment le framework
+permettant la création d'application intégré au bureaux du même nom.
+L'analyse technique de ce logiciel n'a pas vraiment d'intérêt,
+s'agissant d'une interface graphique tirant partit du framework MLT.
 
 \paragraph {Interface Graphique}
+
+\subparagraph{}
+
+Il conviendra tout de monde de presenter succintement cette interface,
+pour ce voici un screenshot:
 
 \subparagraph{}
 
@@ -885,21 +1050,60 @@ du même nom.
 
 \end{figure}
 
-\subparagraph{}
-
-L'interface graphique de Kdenlive est composé d'un seul fenetre et de quatre partie majeurs:
+L'interface graphique de Kdenlive est composé d'une seule fenetre et
+decomposer en quatre elements majeurs:
 
 \begin{itemize}
+
   \item {La timeline en bas}
+
   \item {La gestion des footage, en haut à gauche}
-  \item {La gestion des effets et transitions, au centre en haut}
+
+  \item {La gestion des effets et transitions, au centre en haut. La
+  configuration de ceux-ci ce fait dans cette même partie.}
+
   \item {Le previewer, en haut à droite}
+
 \end{itemize}
+
+\subsection {PiTiVi}
+
+Comme précédemment énoncé, PiTiVi utilise le framework multimedia
+GStreamer. Dans cette partie, nous nous concentrerons sûre l'analyse
+de ce framework.
+
+\subsubsection {Framework multimedia: GStreamer}
+
+\paragraph {Panorama de la technologie} %Overview?
 
 \subparagraph{}
 
-On constate que l'interface offre un grand nombre d'options au travers des différents éléments
-qui la compose.
+Le framework GStreamer est aussi écrit en C. Base sur le concept du
+pipeline, concept assez similaire a ce que sont les réseaux de
+service, c'est a dire que les données transit d'un element (equivalent
+a un service dans MLT) a un autre afin d'obtenir le résultat dans le
+dernier element de la chaine. L' API de ce framework est plus complete que celle de
+MLT puisque les use-cases auxquels celui- ci cherche a répondre sont plus
+nombreux. Ce framework, bien qu'écrit en C, utilise le paradigme objet,
+a travers de la librairie Glib. Cette librairie implémente de nombreuse
+nombreuse API et en particulier la notion d'objet en C a travers du
+module GObject.  Cette librairie permet aussi la gestion des thread, des
+signaux\ldots De très nombreux projets de logiciel libre l'utilisent,
+en particulier le projet d'interface graphique Gnome. GStreamer offre
+une API stable aussi bien pour les développeur de plugins que pour les
+développeurs d'applications. Il est hautement multi threaded, et est
+thread safe.
+
+et offre en core assez petit a partir duquel de nombreux plugins sont
+devellope. Les plugins GStreamer sont classifie par set selon des
+criteres precis:
+
+\begin{itemize}
+  \item {}
+\end{itemize}
+
+
+\subsection {}
 
 \newpage \section{Analyse des communautés}
 
