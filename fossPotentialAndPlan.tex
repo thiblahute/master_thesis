@@ -47,7 +47,7 @@ objectifs.  On peu distinguer deux types de public visés par ces projets:
 
   \item {Les amateurs}
 
-  \item {Les professionnels ou semi-professionnels}
+  \item {Les professionnels ou semi professionnels}
 \end {itemize}
 
 \paragraph {Les amateurs de montages vidéo}
@@ -114,7 +114,7 @@ du système ainsi modifié est été créé. Source: Wikipedia} dans
 aucune distribution Linux \footnote {Une distribution Linux, appelée
 aussi distribution GNU/Linux pour faire référence aux logiciels du
 projet GNU, est un ensemble cohérent de logiciels, la plupart étant
-logiciels libres, assemblés autour du noyau Linux. Source: Wikipedia}.
+logiciels libres, assemblés autour du noyau Linux. Source: Wikipedia}
 montre que même ce logiciel est le seul à avoir réussi à prendre une
 part de marché dans le milieu de l'édition professionnel, celui-ci n'a
 pas réussi à rassembler les développeurs et utilisateurs standard de
@@ -179,8 +179,7 @@ deux façon de procéder:
 technologies modulaires, frameworks}
 
 
-\subsubsection{Logiciels monolithiques \index{monolithique}} %FIXME Look
-                                                             %for a def
+\subsubsection{Logiciels monolithiques \index{monolithique}}
 
 \paragraph{}
 
@@ -213,7 +212,7 @@ raisons suivantes:
 Les logiciels professionnels (commerciaux) utilisent très probablement
 tout ce mode de fonctionnement (même si probablement, en interne il ont
 un core qui ressemble fortement à un framework \index{framework}).dans
-le monde des logiciels libres,les développeures de Cinelerra ont décidé
+le monde des logiciels libres,les développeurs de Cinelerra ont décidé
 d'utiliser ce mode de fonctionnement.
 
 On peut voir plusieurs conséquences immédiates de ce mode de
@@ -337,7 +336,7 @@ deux projets de framework leader sur ce segment:
 \begin {itemize}
 
   \item {MLT qui se définit comme étant un ``Framework multimedia design
-    et développé pour le brodcasting télévisé.''}
+    et développé pour le broadcasting télévisé.''}
 
   \item {Gstreamer qui se définit comme étant un ``framework multimédia
     basé sur la notion de pipeline ce qui lui permet de nombreux types
@@ -499,7 +498,7 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
 
   \item {Libmepg3: supporte la plupart des formats du ``Mpeg Picture
     Motion Group'' \glossary{name={mpeg}, description={MPEG, sigle de
-    Moving Picture Experts Group, est le groupe de travail SC 29/WG 11
+    Moving Picture Experts Group, est le groupe de travail SC 29/G 11
     du comité technique mixte JTC 1 de l’ISO et de la CEI pour les
     technologies de l’information. Ce groupe d’experts est chargé
     du développement de normes internationales pour la compression, la
@@ -593,7 +592,7 @@ L'interface graphique de cinelerra est composé de quatre fenêtres
 principales:
 
 \begin{itemize}
-  \item {La timeline (en bas à gauche sur le screenshot): cette
+  \item {La timeline (en bas à gauches sur le screenshot): cette
     partie permet de gérer un grand nombre d'action sur le contenu de
     la timeline.}
 
@@ -602,7 +601,7 @@ principales:
     footage qu'il a importer, il peut aussi accéder au différent effets,
     transitions\ldots}
 
-  \item {Le fenêtre de preview (en haut à gauche sur le screenshot):
+  \item {Le fenêtre de preview (en haut à gauches sur le screenshot):
     cette fenêtre permet la prévisualisation des footage avant de les
     importer dans la timeline}
 
@@ -700,7 +699,7 @@ la manière suivante:
 
   \end{center}
 
-  \caption{Schéma du concept de producteur, filtre, consomateur}
+  \caption{Schéma du concept de producteur, filtre, consommateur}
 
   \label{Yes}
 
@@ -750,7 +749,7 @@ de la manière suivante:
 
 \end{figure}
 
-\paragraph{Les modules}
+\paragraph{Modularité}
 
 \subparagraph{}
 
@@ -777,11 +776,9 @@ externes afin de faire le lien (wrapper)
 d'une classe en une autre interface que le client attend. L' Adaptateur
 fait fonctionner ensemble des classes qui n'auraient pas pu fonctionner
 sans lui, à cause d'une incompatibilité d'interfaces. Source:
-Wikipedia}}
-
-entre ces librairie et l'API\index{API} précédemment présenté. Les
-principales libraries actuellement utilisables à travers de ce framework
-sont:
+Wikipedia}} entre ces librairie et l'API\index{API} précédemment
+présenté. Les principales libraries actuellement utilisables à travers
+de ce framework sont:
 
 \begin{itemize}
 
@@ -799,9 +796,9 @@ sont:
 \subparagraph{}
 
 Ces différents services disponibles permette de lire un nombre
-considérable de vidéo, en particulier grace à libav, et d'effectuer
-de très nombreuses operation principalement grace aux plugins frei0r
-pour la vidéo et ladspa pour ce qui concerne l'audio.
+considérable de format multimedia, en particulier grace à libav,
+et d'effectuer de très nombreuses operation principalement grace aux
+plugins frei0r pour la vidéo et ladspa pour ce qui concerne l'audio.
 
 \paragraph{Gestion des services}
 
@@ -897,8 +894,8 @@ les fait suivre aux service suivant et ainsi de suite. Ce processus peu
             \\ & Mise à disposition de la frame       &                &
             \\ \hline
       4     &                         & Réception de la frame       & \\
-            &                         & Update de la frame          & \\ &
-            & Mise à disposition          & \\ \hline
+            &                         & Update de la frame          &
+            \\ & & Mise à disposition          & \\ \hline
       5     &                         &                             &
       Réception et    \\
             &                         &                             &
@@ -1031,7 +1028,7 @@ s'agissant d'une interface graphique tirant partit du framework MLT.
 
 \subparagraph{}
 
-Il conviendra tout de monde de presenter succintement cette interface,
+Il conviendra tout de monde de presenter succinctement cette interface,
 pour ce voici un screenshot:
 
 \subparagraph{}
@@ -1050,14 +1047,14 @@ pour ce voici un screenshot:
 
 \end{figure}
 
-L'interface graphique de Kdenlive est composé d'une seule fenetre et
+L'interface graphique de Kdenlive est composé d'une seule fenêtre et
 decomposer en quatre elements majeurs:
 
 \begin{itemize}
 
   \item {La timeline en bas}
 
-  \item {La gestion des footage, en haut à gauche}
+  \item {La gestion des footage, en haut à gauches}
 
   \item {La gestion des effets et transitions, au centre en haut. La
   configuration de ceux-ci ce fait dans cette même partie.}
@@ -1078,32 +1075,228 @@ de ce framework.
 
 \subparagraph{}
 
-Le framework GStreamer est aussi écrit en C. Base sur le concept du
-pipeline, concept assez similaire a ce que sont les réseaux de
-service, c'est a dire que les données transit d'un element (equivalent
-a un service dans MLT) a un autre afin d'obtenir le résultat dans le
-dernier element de la chaine. L' API de ce framework est plus complete que celle de
-MLT puisque les use-cases auxquels celui- ci cherche a répondre sont plus
-nombreux. Ce framework, bien qu'écrit en C, utilise le paradigme objet,
-a travers de la librairie Glib. Cette librairie implémente de nombreuse
-nombreuse API et en particulier la notion d'objet en C a travers du
-module GObject.  Cette librairie permet aussi la gestion des thread, des
-signaux\ldots De très nombreux projets de logiciel libre l'utilisent,
-en particulier le projet d'interface graphique Gnome. GStreamer offre
-une API stable aussi bien pour les développeur de plugins que pour les
-développeurs d'applications. Il est hautement multi threaded, et est
-thread safe.
+GStreamer un framework multimedia basé sur le concept de pipeline
+écrit en C.  L' API de ce framework est plus complete que celle de
+MLT puisque les use-cases auxquels celui- ci cherche a répondre sont
+plus nombreux. En effet, la communauté GStreamer a pour objectif de
+créer un framework open source permettant de répondre au plus grand
+nombre possible de cas d'utilisation ayant un lien avec le multimedia
+(depuis les telephone mobile jusqu'au render farms en passant par les
+logiciels de montage videos).  Ce framework, bien qu'écrit en C,
+utilise le paradigme objet, a travers de la librairie Glib. Cette
+librairie implémente de nombreuses API et en particulier la notion
+d'objet en C a travers du module GObject. La Glib permet aussi la
+gestion des threads, des signaux\ldots De très nombreux projets
+de logiciel libre l'utilisent, en particulier le projet d'interface
+graphique Gnome. GStreamer offre une API stable aussi bien pour les
+développeur de plugins que pour les développeurs d'applications. Il
+est hautement multi threaded\glossary{name={thread}, description={Il
+s'agit de la plus petit unite de processus qui peu être execute par un
+système d'exploitation. Il permette a un même ``programme'', processus
+d'exécuter du code de manière concurrente.}}, et est thread safe,
+c'est a dire que la mémoire partager par les different threads est ne
+peut être corrompu dans le cas ou plusieurs thread veille la modifier
+en même temps(en utilisant le system d'exclusion mutuel).
 
-et offre en core assez petit a partir duquel de nombreux plugins sont
-devellope. Les plugins GStreamer sont classifie par set selon des
-criteres precis:
+Les schéma suivant permet de représenter graphiquement l'architecture
+globale du framework:
+
+\begin{figure} [H]
+
+  \begin{center}
+
+    \includegraphics[width=0.95\textwidth]{images/gstoverview}
+
+  \end{center}
+
+  \caption{Architecture du framework GStreamer}
+
+  \label{Yes}
+
+\end{figure}
+
+\subparagraph{}
+
+GStreamer est distribué sous licence LGPL Version
+
+\paragraph{Concepts de base}
+
+\subparagraph{Le concept de pipeline}
+
+\subparagraph{}
+
+La grande majorité des classes dans GStreamer derive de la class
+GstElement qui est l'élément de base dans un pipeline, lui même
+GstElement. Un schema permet d'expliquer cette notion de pipeline assez
+facilement:
+
+\begin{figure} [H]
+
+  \begin{center}
+
+    \includegraphics[width=0.95\textwidth]{images/gstpipeline}
+
+  \end{center}
+
+  \caption{Un pipeline GStreamer permettant la lecture d'un fichier
+  audio ogg
+    ayant pour codec vorbis (ce schema prend en compte d'autres notions
+    importantes du framework).}
+
+  \label{Yes}
+
+\end{figure}
+
+\subparagraph{}
+
+On constate que l'architecture est assez similaire a celle MLT, avec
+pour grande difference le fait que les element composant le ``réseau
+de service'' sont tous dans un même element: le pipeline. Cet element
+GStreamer execute un thread séparer a partir du moment ou l'on cherche a
+jouer son contenu. Des lors, les données transitent entre les différents
+element gstreamer, a commencer par l'élément source, dans l'exemple
+donne par ce schema, il s'agit d'un file-source, et terminant par le
+sink, dans notre example alsa-output. Les elements entre les deux se
+charge du demuxing (ogg-demux), et du decoding (vorbis-decoder).
+
+\subparagraph{}
+
+Une autre différence réside dans le fait que l'utilisateur de
+GStreamer a un contrôle plus importantes que dans le cas de MLT sur
+les composant de la chaines d'éléments permettant la reproduction de
+contenu multimedia.  Dans GStreamer chaque tache est effectué par un
+élément, c'est à dire qu'un service MLT sera décomposé en plusieurs
+élément GStreamer, dans le cadre d'un producteur en particulier, chez
+GStreamer, cela est effectué à travers d'un élément pour chaque étape
+du coding/decoding/muxing/demuxing, et dans certain cas, du parsing du
+bitstream. Cette décomposition en petit éléments effectuant une tache
+a le gros avantage de permettre la réutilisabilité de chacun d'eux et
+ceux, dans les différents  context d'applications multimédia.
+
+\subparagraph{Communication entre les éléments}
+
+\subparagraph{}
+
+La communication entre ces différents éléments ce fait au travers des
+GstPad, il convient de représenter un élément (dans ce cas un démuxer,
+qui permet de recevoir un flux en entré, de le décomposer afin d'avoir
+deux sorties, l'une contenant les données audios, et l'autre avec les
+données vidéos), de la manière suivante:
+
+\begin{figure} [H]
+
+  \begin{center}
+
+    \includegraphics[width=0.30\textwidth]{images/gstdemuxer}
+
+  \end{center}
+
+  \caption{Représentation graphique d'un GstElement permettant le
+  demuxing.}
+
+  \label{Yes}
+
+\end{figure}
+
+Sur ce schéma, on constate la présence d'un sink pad, nommé ``sink'',
+et deux source pad, nomé ``audio'' et ``video''. Ces objets, permettent
+la connection entre les différents élément. Il peuvent être comparé
+au ``prise'' et ``port'' dans le monde réel.  Afin de brancher une prise
+dans un port, il convient de s'assurer que ceux-ci soient compatibles,
+c'est ce but qu'on les caps, assurer la compatibilité de la communication
+entre différents éléments.
+
+\paragraph {Modularité}
+
+\subparagraph{}
+
+GStreamer est extrêmement modulaire, et l'on peu l'étendre facilement
+en créant de nouveaux elements. Ils suffit d'ajouter ces element (sous
+forme de plugins) sur le système pour que l'utilisateur puisse tirer
+partit des nouvelles fonctionnalités. La communauté GStreamer offre des
+collections de plugins contenant un très grand nombre d'élément. Ces
+set de plugins sont classifie par set selon des critères précis:
 
 \begin{itemize}
-  \item {}
+
+  \item {base: Plugins de grande qualité et très bien maintenu. Il
+  offre aussi
+    des classes de base afin de faciliter la creation d'éléments.}
+
+  \item {good: Plugins de qualité, ayant une licence LGPL}.
+
+  \item {Ugly: Plugins de qualité, ayant des problems au niveau de
+  la licence.}
+
+  \item {bad: Plugins de moins grande qualité, ayant des problems
+  au niveau
+    de la licence ou non. Il s'agit d'élément dont le code a été
+    moins teste et par consequent, risque de contenir plus de bug.}
+
 \end{itemize}
 
+\subparagraph{}
 
-\subsection {}
+De nombreuse librairies sont wrapper dans ces différentes collection de plugins, par example, dans ``bad'', les librairies d'effets ladspa
+et frei0r y sont incluses et donc a partir du moment ou elles sont
+installées sur le system, n'importe quelle application basée GStreamer
+peut bénéficier de leurs fonctionnalités.  Ces plugins sont distribué
+sous forme de librairies partagé, et peuvent donc être chargé à la
+volé, durant l'exécution du framework.
+
+\subparagraph{}
+
+En terme de lecture de contenu multimedia, les développeurs GStreamer
+conseillent l'utilisation de la collection de plugins ``gst-ffmpeg''
+qui permet de bénéficier de touts les codec, muxer et demuxer de cet
+librairies. D'autres librairies tel que libogg, libdv, x264\ldots sont
+wrapper dans les différentes collections de plugins précédemment
+présenté.
+
+\paragraph{Gestion des elements}
+
+\subparagraph{}
+
+La gestion des éléments est très comparable à ce qui est fait
+dans le framework MLT, c'est à dire, que l'on a une classe GstRegistry
+(comparable à la classe repository de MLT), et des GstFactory qui permet
+la fabrication facile d'éléments.
+
+\paragraph{Et l'édition vidéo?}
+
+\subparagraph{}
+
+En effet, tout cela ne nous permet pas de faire l'édition vidéo. Pour
+ceux, il faut permettre la création de pipeline dynamique. C'est
+à dire, permettre de faire évoluer les elements présents dans le
+pipeline au file du temps.  Pour ceux, les élément du plugins Gnonlin
+ont été développés. Il s'agit de 4 éléments principaux que l'on
+peu définir ainsi:
+
+\begin{itemize}
+
+  \item {GnlComposition: élément le plus important qui permet de
+  faire évoluer
+    le pipeline de manière dynamique}
+
+  \item{Gnl[uri/file]Source: Element source qui a les propriété
+    nécessaire pour savoir à quel moment il doit être présent ou
+    non dans le pipeline}
+
+  \item{GnlOperation: Element qui permet l'application d'effet, transition
+    etc\ldots il a aussi les propriété permettant de savoir à quel moment il
+    doit être présent ou non dans le pipeline}
+
+\end{itemize}
+
+\subparagraph{}
+
+Mais ces éléments ne permettent pas de facilement créer des application de
+montage audio/ou vidéo. Le core actuel de PiTiVi utilise directement ces
+élément afin de gérer les notion propre à l'édition vidéo, mais les développeur
+se sont rendu compte que cela était trop complexe à utiliser, et par concéquent
+PiTiVi n'est pas une simple interface au dessus de GStreamer, mais introduit de
+plusieurs concepts supplémentaires au dessus de ces éléments.
 
 \newpage \section{Analyse des communautés}
 
