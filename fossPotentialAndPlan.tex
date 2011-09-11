@@ -20,8 +20,8 @@ avantages et inconvénients de ces fonctionnements. Par la suite nous
 nous concentrerons sur les frameworks existants pour faire une analyse
 technique de ces technologies. Puis, nous analyserons les communautés
 qui portent ces différents projets afin de déterminer les points forts
-et les points faibles de chacun des projets.  Pour finir, nous tirerons les
-conclusions de cette analyse afin de trouver des solutions aux défis
+et les points faibles de chacun des projets.  Pour finir, nous tirerons
+les conclusions de cette analyse afin de trouver des solutions aux défis
 qu'est la création d'un logiciel libre de montage vidéo.
 
 \newpage
@@ -40,8 +40,9 @@ Le schéma suivant permet de résumer facilement la situation:
 \paragraph{ }
 
 On constate donc que de nombreux projets de logiciel libre de montage
-vidéo on vu le jours ces 10 dernières années% et dont les objectifs sont différents
-.  On peut distinguer deux types de public visés par ces projets:
+vidéo on vu le jours ces 10 dernières années et dont les objectifs
+sont différents.  On peut distinguer deux types de public visés par
+ces projets:
 
 \begin {itemize}
 
@@ -55,9 +56,9 @@ vidéo on vu le jours ces 10 dernières années% et dont les objectifs sont diff
 \subparagraph{}
 
 Plusieurs projets libres permettent ou visent à répondre aux besoins
-des amateurs, mais à l'heure actuelle %ils ne sont que partiellment adaptés à ces besoins.
-. Parmi les logiciels dont l'objectif est de permettre de créer des montages
-simples on distingue:
+des amateurs, mais à l'heure actuelle ils ne sont que partiellment
+adaptés à ces besoins.  . Parmi les logiciels dont l'objectif est de
+permettre de créer des montages simples on distingue:
 
 \begin {itemize}
 
@@ -66,8 +67,7 @@ simples on distingue:
     qualité d'implémentation présente des faiblesses.}
 
   \item {kino: Logiciel avec un nombre de fonctionnalités limité
-  permettant de faire des
-    petit montages %avec efficacité.}
+  permettant de faire des petit montages avec efficacité.}
 
   \item {Vidiot qui vise la production de vidéo amateur simple}
 
@@ -75,19 +75,19 @@ simples on distingue:
 
 \paragraph {}
 
-Mais %il existe des logiciels ayant pour objectif de %répondre aux besoins plus
-avancés en particulier à ceux des professionnels (précédemment
+Mais il existe des logiciels ayant pour objectif de répondre aux besoins
+plus avancés en particulier à ceux des professionnels (précédemment
 présenté dans le cadre de la définition des plus grands acteurs du
-marché) % qui peuvent être utilisés dans le cadre de montage amateur. 
-%Leur utilisation (et c'est plus particulièrement le cas du logiciel Cinelerra)
-%demeure complexe.
+marché) qui peuvent être utilisés dans le cadre de montage amateur.
+Leur utilisation (et c'est plus particulièrement le cas du logiciel
+Cinelerra) demeure complexe.
 
 \paragraph{}
 
 Un nouveau projet a aussi récemment vu le jour, dont la finalité est
 assez différente des logiciels actuellement présents. Il s'agit de
 Novacut, qui permet aux créateurs de films et séries web de faire le
-montage de manière collaborative %avec Internet en partageant
+montage de manière collaborative à travers d'Internet en partageant
 les ressources (footage).
 
 \paragraph{}
@@ -115,9 +115,9 @@ aussi distribution GNU/Linux pour faire référence aux logiciels du
 projet GNU, est un ensemble cohérent de logiciels, la plupart étant
 logiciels libres, assemblés autour du noyau Linux. Source: Wikipedia}
 montre que même ce logiciel est le seul à avoir réussi à prendre une
-part de marché dans le milieu de l'édition professionnel, celui-ci n'a
-pas réussi à rassembler les développeurs et utilisateurs standard de
-logiciel libre.
+part de marché dans le milieu de l'édition professionnelle, celui-ci
+n'a pas réussi à rassembler les développeurs et utilisateurs standard
+de logiciel libre.
 
 \paragraph{}
 
@@ -199,20 +199,20 @@ entité de code:
 \paragraph{}
 
 Par le terme logiciel monolithique\index{monolithique}, il faut réaliser
-que le logiciel peut utiliser des librairies externes, mais le core de
-ce même logiciel, et la logique d'édition linéaire à proprement
-parler sont directement %élaborés à l'intérieur du logiciel et non par
-une librairie ou framework \index{framework} externe. Cela a pour
+que le logiciel peut utiliser des librairies externes, mais le core
+de ce même logiciel, et la logique d'édition linéaire à proprement
+parler sont directement élaborés à l'intérieur du logiciel et non
+par une librairie ou framework \index{framework} externe. Cela a pour
 principal avantage de présenter une conception simplifiée pour les
 raisons suivantes:
 
 \paragraph{}
 
 Les logiciels professionnels (commerciaux) utilisent très probablement
-tous ce mode de fonctionnement (même si vraisemblablement, en interne il ont
-un core qui ressemble fortement à un framework \index{framework}).Dans
-le monde des logiciels libres,les développeurs de Cinelerra ont décidé
-d'utiliser ce mode de fonctionnement.
+tous ce mode de fonctionnement (même si vraisemblablement,
+en interne il ont un core qui ressemble fortement à un framework
+\index{framework}).Dans le monde des logiciels libres,les développeurs
+de Cinelerra ont décidé d'utiliser ce mode de fonctionnement.
 
 On peut voir plusieurs conséquences immédiates de ce mode de
 développement:
@@ -253,10 +253,10 @@ cause de la nature monolithique\index{monolithique} du design:
 
 \subparagraph { }
 
-Dans le cadre de logiciel d'édition vidéo, le code à produire est
-considérable, comme le montre les statistiques (Annexes 2). Le logiciel
-Cinelerra à lui seul fait plus d'un million de lignes. Une telle
-quantité %(je dirai plutôt "un tel volume")de code est difficile à maintenir et requiert des ressources
+Dans le cadre de logiciel d'édition vidéo, le code à produire
+est considérable, comme le montre les statistiques (Annexes 2). Le
+logiciel Cinelerra à lui seul fait plus d'un million de lignes. Un tel
+volume de code est difficile à maintenir et requiert des ressources
 importantes en terme de main d'oeuvre. Le fait que le logiciel soit
 monolithique\index{monolithique} implique que celui-ci va être utilisé
 seulement par ce logiciel, et par conséquent, les développeurs ne
@@ -267,22 +267,23 @@ et développer le core du logiciel.
 
 \subparagraph { }
 
-L'un des inconvénients de cette manière de faire est que le code %présent
+L'un des inconvénients de cette manière de faire est que le code
+présent
  à l'intérieur du logiciel n'est pas réutilisable directement
-par d'autres projets. %On le considère comme
-``individualiste``, %situation qu'il convient d'éviter dans le cadre du
-développement de logiciel libre afin de ne pas multiplier les efforts,
-et dupliquer le code.
+par d'autres projets. On le considère comme ``individualiste``, situation
+qu'il convient d'éviter dans le cadre du développement de logiciel
+libre afin de ne pas multiplier les efforts, et dupliquer le code.
 
 \paragraph{}
 
 Cette façon de faire a été utilisée par le projet Cinelerra. Ce
-logiciel est le plus avancé en terme de fonctionnalités %dans l'offre 
-des logiciels libres de montage . On peut penser que son
-architecture monolithique\index{monolithique} explique ce développement
-plus abouti, bien qu'il y ait évidemment de nombreux autres facteurs qui
-interviennent, en particulier le fait que ce logiciel ait été développé
-par la société Heroine Virtual.
+logiciel est le plus avancé en terme de fonctionnalités dans l'offre
+des logiciels libres de montage . On peut penser que son architecture
+monolithique\index{monolithique} explique ce développement plus
+abouti, bien qu'il y ait évidemment de nombreux autres facteurs
+qui interviennent, en particulier le fait que ce logiciel ait
+été développé par la société Heroine Virtual pour ces besoins
+professionnels.
 
 \subsubsection {Utilisation de  frameworks \index{framework}}
 
@@ -346,8 +347,8 @@ deux projets de framework leader sur ce segment:
 
 \subparagraph {}
 
-Au dessus de ces frameworks, plusieurs applications (interfaces graphiques)
-de montage vidéo se sont développées.
+Au dessus de ces frameworks, plusieurs applications (interfaces
+graphiques) de montage vidéo se sont développées.
 
 \begin {itemize}
 
@@ -366,8 +367,8 @@ vidéo, et la gestion de toute la partie multimédia est réalisée
 par ceux-ci. Les logiciels d'édition ne sont à priori que de simples
 interfaces graphiques basées sur ces frameworks. Dans les faits,
 l'implémentation actuelle de PiTiVi n'est pas qu'un simple interface
-graphique au dessus de GStreamer, mais une partie de la
-logique d'édition vidéo est actuellement réalisée dans le logiciel même.
+graphique au dessus de GStreamer, mais une partie de la logique
+d'édition vidéo est actuellement réalisée dans le logiciel même
 (ceci est en train de changer avec la migration \cite{PitviPortToGes}
 vers gstreamer-editing-services\cite{PresentationOfGes}).
 
@@ -375,9 +376,8 @@ vers gstreamer-editing-services\cite{PresentationOfGes}).
 
 \paragraph {}
 
-Dans cette partie nous allons analyser les entrailles %(EST-CE UN TERME TECHNIQUE,, JE REMPLACERAI CE MOT "ENTRAILLES" PLUTÔT PAR "STRUCTURE" 
-des trois logiciels
-précédemment définis: Cinelerra, PiTiVi et Kdenlive.
+Dans cette partie nous allons analyser la structure intern des trois
+logiciels précédemment définis: Cinelerra, PiTiVi et Kdenlive.
 
 \subsection{Cinelerra:}
 
@@ -462,50 +462,23 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
 
 \subparagraph{}
 
-% humaine readable
-
-%De plus, les créateurs de Cinelerra ont développé des librairies de
-
-%codec\index{codec}, muxer et demuxer (En
-
-%particulier Mpeg et quicktime) afin d'ameliorer l'utilisation de ces
-
-%formats dans le cadre de l'édition vidéo. Cela a tout de même été
-
-%effectué dans de librairies externes réutilisables par d'autres projets:
-
 \begin{itemize}
-
-% Human readable:
-
-% Quicktime 4 Linux: supporte en particulier les formats DV,
-
-% les codecs H.264 et AAC, et implémente des éléments de conversion
-
-% d'espaces colorimétriques (colorspace conversion)
 
   \item {Quicktime 4 Linux: supporte en particulier les formats DV,
     les codecs H.264 et AAC, et implémente des éléments de conversion
     d'espaces colorimétriques (colorspace conversion)}
 
-% Human readable
-
-% Libmepg3: supporte la plupart des formats du ``Mpeg Picture
-
-% Motion Group''  et permet l'édition vidéo en utilisant ces
-
-% formats bien qu'il ne soit pas conçu pour ce type d'utilisation.
-
   \item {Libmepg3: supporte la plupart des formats du ``Mpeg Picture
     Motion Group'' \glossary{name={mpeg}, description={MPEG, sigle de
-    Moving Picture Experts Group, est le groupe de travail SC 29/G 11
+    Moving Picture Experts Group, est le groupe de travail SC 29/WG 11
     du comité technique mixte JTC 1 de l’ISO et de la CEI pour les
     technologies de l’information. Ce groupe d’experts est chargé
-    du développement de normes internationales pour la compression, la
-    décompression, le traitement et le codage de la vidéo, de l’audio
-    et de leur combinaison, de façon à satisfaire une large gamme
-    d’applications. Source: Wikipedia}} et permet l'édition vidéo en
-    utilisant ces formats bien qu'il ne soit pas conçu pour ce %type d'utilisation.}
+    du développement de normes internationales pour la compression,
+    la décompression, le traitement et le codage de la vidéo, de
+    l’audio et de leur combinaison, de façon à satisfaire une large
+    gamme d’applications. Source: Wikipedia}} et permet l'édition
+    vidéo en utilisant ces formats bien qu'il ne soit pas conçu pour
+    ce type d'utilisation.}
 
 \end{itemize}
 
@@ -519,22 +492,22 @@ provenant de deux librairies:
   \item {ladspa, Linux Audio Developers Simple Plugins API: Librairie
   d'effets audios qui contient une multitude de plugins.Il s'agit d'une
   API très simple et extrêmement flexible qui théoriquement permet
-  la création de plugins permettant n'importe quelle manipulation
-  et transformation du son. Dans les faits, certaines
-  fonctionnalités ne sont pas implémentées pour éviter de complexifier
-  le core de la librairies.}
+  la création de plugins permettant n'importe quelle manipulation et
+  transformation du son. Dans les faits, certaines fonctionnalités
+  ne sont pas implémentées pour éviter de complexifier le core de
+  la librairie.}
 
   \item {frei0r: Framework minimalist multi-platform de création
-    d'effets vidéo. Il permet la création d'effets à travers des
-    plugins. Il s'agit du standard de fait en terme d'effets vidéo
-    dans le milieu des logiciels libres. Cette librairie a été
-    %élaborée par de nombreux développeurs issus de différentes
-    communautés de logiciels libres en relation avec le multimedia. De
-    nombreux plugins existent et sont stables, mais %ils présentent un inconvénient
-    assez important existe concernant ce set d'effet %car ils
-    supportent uniquement l'espace de couleur RGB. Cela a pour
-    conséquence que dans le cas ou le flux vidéo n'est pas dans
-    cette espace de couleur,%CE N'EST PAS CLAIR COMME EXPLICATION\glossary {name={espace colorimétrique}
+    d'effets vidéo. Il permet la création d'effets à travers de
+    plugins. Il s'agit du standard de fait en terme d'effets vidéo dans
+    le milieu des logiciels libres. Cette librairie a été élaborée
+    par de nombreux développeurs issus de différentes communautés
+    de logiciels libres en relation avec le multimedia. De nombreux
+    plugins existent et sont stables, mais il présentent un inconvénient
+    assez important concernant ce set d'effet, ils supportent uniquement
+    l'espace de couleur RGB. Cela a pour conséquence que dans le cas ou
+    le flux vidéo n'est pas dans cette espace de couleur,%CE N'EST PAS
+    CLAIR COMME EXPLICATION \glossary {name={espace colorimétrique},
     description={Un espace colorimétrique ou espace de couleur associe
     des nombres aux couleurs visibles.  Compte tenu des limites de
     la vision humaine, ces nombres se présentent généralement sous
@@ -544,11 +517,11 @@ provenant de deux librairies:
     pigments, l'espace utilisé comporte alors généralement au moins
     quatre dimensions. Source: Wikipedia}} une conversion d'espace
     colorimétrique est nécessaire afin de les utiliser. Un autre
-    inconvénient de cette librairie %réside dans le fait que les effets sont réalisés de
-    manière logicielle, alors qu'à l'heure actuelle, l'utilisation de la
-    carte graphique permettrait de tirer partie de manière beaucoup
-    plus intéressante dans l'application d'effets sur
-    les vidéos.}
+    inconvénient de cette librairie %réside dans le fait que les effets
+    sont réalisés de manière logicielle, alors qu'à l'heure actuelle,
+    l'utilisation de la carte graphique permettrait de tirer partie de
+    manière beaucoup plus intéressante dans l'application d'effets
+    sur les vidéos.}
 
 %SAMEDI SOIR
 
@@ -753,6 +726,23 @@ de la manière suivante:
 
 \paragraph{Modularité}
 
+\subsubsection{Documentation du code}
+
+\subparagraph{}
+
+Mlt possède une documentation accessible en ligne qui permet de connaitre
+les différents services existants. Le code est plutôt bien documenté,
+chaque fonction de l'API possède une description. Aussi, des documents
+texts dans les source (dossier docs/) permette au développeurs d'avoir un
+aperçu de la technologie. De plus il existe un outil en ligne de commande
+(melt) qui permet de tester de manière simple le framework. Le gros
+soucis étant qu'il est difficile de trouver une documentation claire
+de toute l'API, celle-ci ne semble pas être généré automatiquement
+lors de la compilation. Dans les sources de MLT, il n'existe pas vraiment
+d'exemple expliquant chacune des fonctionnalités une par une, il faut
+pour cela regarder le code de melt, qui permet d'avoir un aperçu de
+comment utiliser l'API comme elle a été pensé par les développeurs.
+
 \subparagraph{}
 
 Dans MLT, les de producteur, consommateurs où filtres sont des classes
@@ -882,29 +872,34 @@ les fait suivre aux service suivant et ainsi de suite. Ce processus peu
 
     \hline
 
-      Phase & producteur              & Filtre                      &
-      Consommateur    \\ \hline \hline
+Phase & producteur & Filtre & Consommateur    \\ \hline \hline
 
-      1     &                         &                             &
-      Request frame   \\ \hline 2     &                         &
-      Réception de la demande     &                 \\
-            &                         & Demande la frame à son tour&
-            \\ \hline
-      3     & Réception de la demande &                             & \\
-            & Génération de la frame à la position &                &
-            \\ & Mise à jours de la position          &                &
-            \\ & Mise à disposition de la frame       &                &
-            \\ \hline
-      4     &                         & Réception de la frame       & \\
-            &                         & Update de la frame          &
-            \\ & & Mise à disposition          & \\ \hline
-      5     &                         &                             &
-      Réception et    \\
-            &                         &                             &
-            process de      \\ &                         & & la
-            frame        \\
+1 & & & Request frame   \\ \hline
 
-    \hline
+2 & & Réception de la demande & \\
+
+  & & Demande la frame à son tour & \\ \hline
+
+
+3 & Réception de la demande & & \\
+
+  & Génération de la frame à la position & & \\
+
+  & Mise à jours de la position & & \\
+
+  & Mise à disposition de la frame & & \\ \hline
+
+4 & & Réception de la frame       & \\
+
+  & & Update de la frame & \\
+
+  & & Mise à disposition & \\ \hline
+
+5 & & & Réception et    \\
+
+  & & & process de      \\
+
+  & & & la frame        \\ \hline
 
   \end{tabular}
 
@@ -1201,12 +1196,12 @@ données vidéos), de la manière suivante:
 \end{figure}
 
 Sur ce schéma, on constate la présence d'un sink pad, nommé ``sink'',
-et deux source pad, nomé ``audio'' et ``video''. Ces objets, permettent
-la connection entre les différents élément. Il peuvent être comparé
-au ``prise'' et ``port'' dans le monde réel.  Afin de brancher une prise
-dans un port, il convient de s'assurer que ceux-ci soient compatibles,
-c'est ce but qu'on les caps, assurer la compatibilité de la communication
-entre différents éléments.
+et deux source pad, nommé ``audio'' et ``video''. Ces objets (GstPad),
+permettent la connection entre les différents élément. Il peuvent être
+comparé au ``prise'' et ``port'' dans le monde réel.  Afin de brancher
+une prise dans un port, il convient de s'assurer que ceux-ci soient
+compatibles, c'est ce rôle qu'ont les caps, assurer la compatibilité
+de la communication entre différents éléments.
 
 \paragraph {Modularité}
 
@@ -1239,7 +1234,8 @@ set de plugins sont classifie par set selon des critères précis:
 
 \subparagraph{}
 
-De nombreuse librairies sont wrapper dans ces différentes collection de plugins, par example, dans ``bad'', les librairies d'effets ladspa
+De nombreuse librairies sont wrapper dans ces différentes collection
+de plugins, par example, dans ``bad'', les librairies d'effets ladspa
 et frei0r y sont incluses et donc a partir du moment ou elles sont
 installées sur le system, n'importe quelle application basée GStreamer
 peut bénéficier de leurs fonctionnalités.  Ces plugins sont distribué
@@ -1286,19 +1282,34 @@ peu définir ainsi:
     non dans le pipeline}
 
   \item{GnlOperation: Element qui permet l'application d'effet, transition
-    etc\ldots il a aussi les propriété permettant de savoir à quel moment il
-    doit être présent ou non dans le pipeline}
+    etc\ldots il a aussi les propriété permettant de savoir à quel
+    moment il doit être présent ou non dans le pipeline}
 
 \end{itemize}
 
 \subparagraph{}
 
-Mais ces éléments ne permettent pas de facilement créer des application de
-montage audio/ou vidéo. Le core actuel de PiTiVi utilise directement ces
-élément afin de gérer les notion propre à l'édition vidéo, mais les développeur
-se sont rendu compte que cela était trop complexe à utiliser, et par concéquent
-PiTiVi n'est pas une simple interface au dessus de GStreamer, mais introduit de
-plusieurs concepts supplémentaires au dessus de ces éléments.
+Mais ces éléments ne permettent pas de facilement créer des application
+de montage audio/ou vidéo. Le core actuel de PiTiVi utilise directement
+ces élément afin de gérer les notion propre à l'édition vidéo,
+mais les développeur se sont rendu compte que cela était trop complexe
+à utiliser, et par concéquent PiTiVi n'est pas une simple interface au
+dessus de GStreamer, mais introduit de plusieurs concepts supplémentaires
+au dessus de ces éléments.
+
+\subparagraph{}
+
+Et plus récemment, les développeurs de GStreamer ont décidé de créer
+une nouvelle librairie basé sur GStreamer permettant de faciliter
+au maximum la création d'un logiciel d'édition vidéo basé sur
+GStreamer: gst-editing-services.  L'objectif premier de cette libraire
+est d'implémenter les concepts même d'édition vidéo directement dans
+le backend. C'est à dire qu'au cœur de cette librairie, on retrouve
+les concepts de timeline, de layer, de transition, d'effets\ldots Mais
+bien évidemment, celle-ci étant basée sur GStreamer, le concept the
+pipeline continu d'exister, et il est très facile de créer un pipeline
+directement depuis un pipeline.
+
 
 \newpage \section{Analyse des communautés}
 
