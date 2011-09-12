@@ -1,5 +1,5 @@
-\chapter{Analyse des opportunités des technologies libres dans le
-domaine de l'édition vidéo et prévisions}
+\chapter{Analyse des opportunités des technologies libres dans le domaine
+de l'édition vidéo et prévisions}
 
 \minitoc \newpage
 
@@ -56,7 +56,7 @@ ces projets:
 \subparagraph{}
 
 Plusieurs projets libres permettent ou visent à répondre aux besoins
-des amateurs, mais à l'heure actuelle ils ne sont que partiellment
+des amateurs, mais à l'heure actuelle ils ne sont que partiellement
 adaptés à ces besoins. Parmi les logiciels dont l'objectif est de
 permettre de créer des montages simples on distingue:
 
@@ -466,7 +466,7 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
 
   \item {Quicktime 4 Linux: supporte en particulier les formats DV,
     les codecs H.264 et AAC, et implémente des éléments de conversion
-    d'espaces colorimétriques (colorspace conversion)}
+    d'espaces colorimétrique (colorspace conversion)}
 
   \item {Libmepg3: supporte la plupart des formats du ``Mpeg Picture
     Motion Group'' \glossary{name={mpeg}, description={MPEG, sigle de
@@ -566,7 +566,7 @@ L'interface graphique de cinelerra est composée de quatre fenêtres
 principales:
 
 \begin{itemize}
-  \item {La timeline (en bas à gauche sur le screenshot): cette
+  \item {La timeline (en bas à gauches sur le screenshot): cette
     partie permet de gérer un grand nombre d'opérations sur le contenu
     de la timeline.}
 
@@ -594,12 +594,12 @@ principales:
 Dans Cinelerra, l'interface utilisateur et la logique de l'édition
 vidéo sont deux parties intégralement interdépendante. Au sein du
 code, il n'est pas possible de savoir quelle partie est plutôt liée à
-l'interface graphique et quelle partie %réalise les calculs. Ceci est dû
-%à sa conception monolithique, les développeurs n'ont pas pris la peine
-de dissocier ces deux parties qui sont conceptuellement complètement
+l'interface graphique et quelle partie %réalise les calculs. Ceci est
+dû %à sa conception monolithique, les développeurs n'ont pas pris la
+peine de dissocier ces deux parties qui sont conceptuelement complètement
 différentes. %On s'aperçoit en lisant le code que c'est le bazar?
 
-\paragraph{Accélération materielle}
+\paragraph{Accélération materiel}
 
 \subparagraph{}
 
@@ -917,7 +917,7 @@ flux a été terminé (EOS).
 \subparagraph{}
 
 Au niveau de l'accélération materiel, MLT supporte le decoding
-avec accéleration matériel pour les cartes graphiques Nvidia
+avec acceleration matériel pour les cartes graphiques Nvidia
 \glossary{name={Nvidia}, description={Nvidia Corporation est l'un des plus
 grands fournisseurs de processeurs graphiques, de cartes graphiques et de
 chipsets pour PC et consoles de jeux}} (via VDPAU), et pour l'affichage
@@ -954,7 +954,7 @@ de films.
 
 \subparagraph{}
 
-Il intègre un système de serialisation, deserialisation, ce qui permet
+Il intègre un système de serialisation, deserialization, ce qui permet
 de sauvegarder facilement les projets, avec les différents tracks,
 effets, transition\ldots dans le cadre d'application de montage vidéo.
 
@@ -1045,7 +1045,7 @@ présentant quatre éléments majeurs:
 
   \item {La timeline en bas}
 
-  \item {La gestion des footages, en haut à gauche}
+  \item {La gestion des footages, en haut à gauches}
 
   \item {La gestion des effets et transitions, au centre en haut. La
   configuration de ceux-ci se fait dans cette même partie.}
@@ -1078,18 +1078,18 @@ nombre possible de cas d'utilisations ayant un lien avec le multimedia
 les logiciels de montage video).  Ce framework, bien qu'écrit en C,
 utilise le paradigme objet, à travers de la librairie Glib. Cette
 librairie implémente de nombreuses API et en particulier la notion
-d'objet en C à travers le? module GObject. La Glib permet aussi la
-gestion des threads, des signaux\ldots De très nombreux projets de
-logiciels libres l'utilisent, en particulier le projet d'interface
-graphique Gnome. GStreamer offre une API stable aussi bien pour les
-développeurs de plugins que pour les développeurs d'applications. Il
-est hautement multi threaded\glossary{name={thread}, description={Il
-s'agit de la plus petit unité de processus qui peut être exécutée
-par un système d'exploitation. Ils permettent à un même ``programme'',
-processus d'exécuter du code de manière concurrente.}}, et est thread
-safe, c'est a dire que la mémoire partagée par les differents threads
-ne peut pas être corrompue dans le cas ou plusieurs threads voudraient
-la modifier en même temps(en utilisant le système d'exclusion mutuel).
+d'objet en C grace au module GObject. La Glib permet aussi la gestion
+des threads, des signaux\ldots De très nombreux projets de logiciels
+libres l'utilisent, en particulier le projet d'interface graphique
+Gnome. GStreamer offre une API stable aussi bien pour les développeurs
+de plugins que pour les développeurs d'applications. Il est hautement
+multi threaded\glossary{name={thread}, description={Il s'agit de la plus
+petit unité de processus qui peut être exécutée par un système
+d'exploitation. Ils permettent à un même ``programme'', processus
+d'exécuter du code de manière concurrente.}}, et est thread safe,
+c'est a dire que la mémoire partagée par les différents threads ne
+peut pas être corrompue dans le cas ou plusieurs threads voudraient la
+modifier en même temps(en utilisant le système d'exclusion mutuel).
 
 Le schéma suivant permet de représenter graphiquement l'architecture
 globale du framework:
@@ -1367,7 +1367,7 @@ migration vers les gst-editing-services.
 \subparagraph{ }
 
 Cette analyse technique du projet GStreamer et GES nous permet de voir
-que GStreamer étant une téchnologie très complexe, les développeurs
+que GStreamer étant une technologie très complexe, les développeurs
 ont développé diverse outils afin de permettre la création de manière
 simplifié de logiciels de montage vidéo. Ce framework à tracer de GES
 permet de répondre aux différents besoins de base des professionnels
@@ -1387,16 +1387,14 @@ en terme de fonctionnalités:
     de MLT}
 
   \item {Gestion des keyframes: Le framework GStreamer offre la
-  possibiliter
+  possibilité
     de créer des keyframes sur toutes les propriétés de ces élément
-    à grace à la classe GstIntepollation}
+    à grace à la classe GstInterpollation}
 
   \item {Visualisation image par image: Directement accessible grace
   à GES.}
 
 \end{itemize}
-
-\paragraph {}
 
 \subsubsection {Logiciel de montage vidéo basé sur GStreamer: PiTiVi}
 
@@ -1565,11 +1563,11 @@ GStreamer& 435 930  &205&47& Décembre 2001&Janvier 2001\\
 
 \end{center}
 
-\paragraph{}
+%\paragraph{}
 
 \subsection {Analyse des mailing lists}
 
-Cette analyse porte sur les mailling listes officiel des différent
+Cette analyse porte sur les mailing listes officiel des différent
 projets:
 
 \begin{itemize}
@@ -1618,22 +1616,131 @@ GStreamer & 238 & 521 &  387\\
 
 \end{center}
 
-\subsection {Cinelerra}
+\subsection {Analyse des bug trackers}
 
-Tout d'abord le logiciel cinelerra est développé exclusivement
-en interne par la société Heroine Virtual Ltd exclusivement en
-interne en faisant des libérant leur code (code drops) de manière
-bi-annuel en moyenne. Une communauté c'est formé autour de ce code,
-et celle-ci développe ce code en incluant les changement d'héroïne
-Ltd lorsque l'entreprise release son code. Cette communauté a appelé
-la ca version du logiciel cinelerra-cv, et la version est très proche
-de celle officiel.  L'entreprise aussi reprend la grande majorité du
-temps les changements effectués par la communauté au fur et à mesure.
+Cette analyse porte sur les bug trackers officiel des différent
+projets:
+
+\begin{itemize}
+
+  \item {cinelerra: version communautaire du projet:
+    bugs.cinelerra.org/}
+
+  \item {MLT: www.sourceforge.net/tracker/?group\_id=96039\&atid=613414}
+
+  \item {GStreamer: produit GStreamer in https://bugzilla.gnome.org/}
+
+\end{itemize}
+
+
+\begin{center}
+
+  \begin{tabular}{ | c | c | c | c|}
+
+    \hline
+
+         & Nombre total de bug & Nombre bug ouvert & nombre de bug \\
+
+Logiciel &        & & fermé dans la dernière release \\
+
+\hline \hline
+
+Cinelerra & 602 & 269 & 23 \\
+
+\hline
+
+MLT & 142 & 50 & 8 \\
+
+\hline
+
+GStreamer & 11210 & 1363 &  532\\
+
+\hline
+
+  \end{tabular}
+
+\end{center}
 
 \paragraph{}
 
+On s'aperçoit que les différence en volume de bugs report, sont très
+importantes entre ces différents projets, en particulier entre
+GStreamer et les autres. Celà s'explique probablement par le fait que
+GStreamer est un framework multimedia avec un champs d'application
+beaucoup plus large. Mais ces chiffre sont intéressant afin de juger
+de la taille des différentes communautés.
+
+\subsection {Cinelerra}
+
+Tout d'abord le logiciel cinelerra est développé en interne par la
+société Heroine Virtual Ltd en interne en libérant leur code (code
+drops) de manière bi-annuel en moyenne. Une communauté c'est formé
+autour de ce code, et celle-ci le développe en incluant les changement
+d'héroïne Ltd lorsque l'entreprise release son code. Cette communauté
+a appelé sa version du logiciel cinelerra-cv, et la version est très
+proche de celle officiel. La difference majeur est que la communauté
+essaye d'utiliser les version upstream\glossary{name={upstream},
+description={Version développé par les communauté qui maintien
+officiellement le code source d'un logiciel.}}. L'entreprise aussi
+reprend la grande majorité du temps les changements effectués par la
+communauté au fur et à mesure.
+
+\paragraph{}
+
+Aussi, l'entreprise LMA, fait le support, formation du
+logiciel Cinelerra auprès des entreprises professionnel
+de l'édition vidéo. Ces deux entreprises travail en
+collaboration afin de répondre aux besoins des entreprises. A
+en croire la liste \footnote{Liste des client de l'entreprise LMA:
+  http://lmahd.com/lmahd1/index.php?option=com\_content\&view=article\&id=87}
+de client et le type d'entreprise qui en fait partie (parmi laquelle
+figure Boeing, TF1, Columbia Picture\ldots) , montre que le projet
+est ou a été très actif. Mais à en croire les donnés statistique
+précédemment mentionnés, aussi bien au niveau du code, que des
+communication au sein de la communauté, le projet n'est pas spécialement
+actif.
+
+\paragraph{}
+
+Il convient donc d'analyser ce projet comme un étant un projet éditer
+par une seul entreprise. Cette entreprise a un business modèle a part
+de ce que ces concurrent ont, c'est à dire qu'au lieu de faire payer ces
+clients pour le logiciel, elle a choisi de créer un logiciel entièrement
+libre et de ce rémunérer (et plus particulièrement le groupe de
+développer qui en fait partit) à travers des différents développement
+spécifique, ou de services.  Afin de pouvoir se concentrer sur le code
+et sur les logiciels quel produit, Heroine Virtual utilise l'entreprise
+LMA comme vitrine commercial, et ainsi, les personnes travaillant chez
+heroine sont très majoritairement des ingénieur développeurs d'application.
+L'entreprise reste dans l'anonymat, et il n'a pas été possible de communiquer
+directement avec l'un de ses employés.
+
+\paragraph{}
+
+On peut aussi se demander pourquoi cette entreprise a décidé de faire
+le développement de manière caché. En effet, on peut penser que si
+celle-ci faisait le développement de manière ouverte, elle pourrai
+bénéficier de manière plus efficace de l'aide de la communauté. Il
+y a deux  explication possibles à cela:
+
+\begin{itemize}
+
+  \item {Des contrats, ou partenariats les empêches de le faire}
+
+  \item {Les développeurs considère que travailler au sein de la
+  communautés serai est
+    une perte de temps puisqu'il se verrai ``dans l'obligation'' de
+    collaborer de manière bien plus poussé avec ces membres}
+
+\end{itemize}
+
+\paragraph{}
+
+Il apparait plus probable que la première explication soit la bonne, parce qu'en
+général bénéficier de l'aide de la communauté est quelque chose de positif, et
+l'on s'aperçoit que toute les entreprise (créant de logiciel commerciaux ou non)
+essaye de profiter au maximum de celles-ci.
+
 \subsubsection{}
-
-
 
 \newpage \section{Lacunes} \newpage \section{Solutions possibles}
