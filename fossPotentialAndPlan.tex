@@ -1823,8 +1823,14 @@ ne pas divulguer le fonctionnement du logiciel, et ainsi, si une autre
 entreprise veut vendre et développer ce logiciel, celle-ci va avoir
 beaucoup de difficultés à prendre en main son codebase.
 
-\subsection {Entreprise impliqué dans le développement de
-MLT\index{MLT}}
+\subsection {Communauté Kdenlive et Mlt}
+
+Il est à savoir que le lien entre Kdenlive et Mlt est très étroit et
+le développeur principal de Kdenlive (Jean-Baptiste Mardelle) travail
+de manière régulière directement sur le framework majoritairement
+afin de corriger des bug.
+
+\paragraph{Entreprise impliqué dans le développement de MLT\index{MLT}}
 
 \paragraph{}
 
@@ -1848,7 +1854,29 @@ de materiel de post-production professionnel. L'entreprise soutient
 le projet en offrant du materiel  à la communauté afin que celle-ci
 puisse développer les fonctionnalité lié.
 
-\subsection {Entreprise impliqué dans le développement de GStreamer}
+\paragraph{Kdenlive dans la communauté libre}
+
+\paragraph{}
+
+Le logiciel Kdenlive est le logiciel de montage vidéo du bureau libre
+KDE et est par concéquent utilisé de manière intensive par ses
+utilisateurs. Il est particulièrement utilisé par des amateurs à la
+fois de vidéo et de logiciel libres. Il existe sur internet un nombre
+important de tutoriel et autre documentation créer par la communauté
+d'utilisateur.
+
+\subsection {Communauté PiTiVi et GStreamer}
+
+\paragraph {}
+
+La relation entre GStreamer et PiTiVi est aussi très étroite. Edward
+Hervey, personne ayant initié le projet PiTiVi est devenu core
+développeur de GStreamer, et est aussi en grande partie responsable de
+la création de la librairie gst-editing-services. De nombreuses personne
+de la communauté PiTiVi sont venu aider le développement de PiTiVi et vis
+vers çà.
+
+\paragraph {Entreprises impliqués dans le développement de GStreamer}
 
 \paragraph{}
 
@@ -1882,19 +1910,36 @@ différentes manière:
 
 \paragraph{}
 
+GStreamer est soutenu par l'organisation Freedesktop.org, organisation
+visant à permettre l'interopérabilité entre les différent bureau
+libre.  Dans ce cadre, GStreamer peut être considéré comme étant le
+standard des framework libre de facto.
+
+\paragraph{}
+
 On s'aperçoit que GStreamer n'est pas vraiment orienté édition vidéo,
 bien que la technologie puisse répondre à ce besoin, la grande partie
 de la communauté se concentre sur d'autres aspect de l'environnement
 multimedia.
 
+\paragraph{Communauté PiTiVi}
+
+\subparagraph{}
+
+Bien que officiellement le projet PiTiVi ne soit pas un projet Gnome,
+la relation entre ces deux projets est très étroite (par example, les
+traduction de PiTiVi est fait par les traducteur du projet Gnome), et
+donc dans les fait PiTiVi est le logiciel d'édition vidéo privilégié de
+ce bureau et donc bénéficie de l'aide de celle ci (principalement en terme
+de testing, rapport de bug\ldots).
+
 \newpage \section{Lacunes et solutions possibles}
 
 \subsection {Cinelerra}
 
-\paragraph{}
-On constate bien que le logiciel Cinelerra a su prendre une part de
-marché chez les professionnel. Mais son manque d'ergonomie et le
-fait qu'il ne soit soutenu que par deux entreprise (la communauté
+\paragraph{} On constate bien que le logiciel Cinelerra a su prendre une
+part de marché chez les professionnel. Mais son manque d'ergonomie et
+le fait qu'il ne soit soutenu que par deux entreprise (la communauté
 est négligeable dans ce projet) le rend particulièrement adapté au
 marché niche dans lequel il a su faire ca place. C'est à dire de gros
 client qui considère leur indépendance vis-à-vis de l'entreprise
@@ -1936,8 +1981,8 @@ marché sont
 
 \end{itemize}
 
-\paragraph{}
-Afin de remédier à cette situation, plusieurs solutions existent:
+\paragraph{} Afin de remédier à cette situation, plusieurs solutions
+existent:
 
 \begin{itemize}
 
@@ -1974,19 +2019,53 @@ plus à faire évoluer.
 
 \subsection {Kdenlive}
 
-\paragraph{}
-Le fait que Kdenlive n'ai pas réussi à ce faire une place auprès des
-professionnels est très largement due au fait que ce logiciel n'est
-actuellement supporté par aucune entreprise. De plus, son manque de
-fonctionnalité (bien que dans de nombreux cas, celui-ci peu dors et
-déjà répondre aux différents besoins), le rend que peu crédible
-sur le marché professionnels.
+\paragraph{} Le fait que Kdenlive n'ai pas réussi à ce faire une
+place auprès des professionnels est très largement due au fait que ce
+logiciel n'est actuellement supporté par aucune entreprise. De plus,
+son manque de fonctionnalité (bien que dans de nombreux cas, celui-ci
+peu dors et déjà répondre aux différents besoins), le rend que peu
+crédible sur le marché professionnels.
 
 \paragraph{}
 
-Au niveau des technologies sous-jacentes, celle ci sont correctement
-maintenu et supporté par plusieurs entreprise. La communauté, bien que
-petite, semble en capacité de maintenir le projet et le faire évolué
-convenablement. Le soucis majeur concernant cette technologies est due
-au fait qu'elle ne permet pas de faire de composition à proprement parler,
-et ne peut pas prendre en charge l'accélération materiel pour ce faire.
+Au niveau des technologies sous-jacentes, celle ci est correctement
+maintenu et supporté par plusieurs entreprises. La communauté, bien que
+petite, semble en capacité de maintenir le projet et le fait évolué
+même si que peu rapidement. Il n'y a aucun plan à long terme permettant
+par example de répondre au problème concernant le au fait qu'elle ne
+permet pas de faire de composition à proprement parler, et ne peut pas
+prendre en charge l'accélération materiel pour ce faire.
+
+Le fait que MLT soit très axés sur le broadcasting le rend que peu
+flexible, ce qui limite les possibilité qu'il offre aux applications
+qui l'utilise et donc à Kdenlive, et par concéquent risque de limiter
+ces possibilités d'adoption en milieu professionnel.
+
+\paragraph{}
+
+Afin de permettre l'utilisation de Kdenlive en milieu professionnel, le point
+essentiel serai qu'une entreprise soutienne son évolution et fasse le
+marketing de ce projet. Celui-ci offre dors et deja un large champs de
+possibilité et est très bien reçu par la communauté.
+
+\subsection {PiTiVi}
+
+\paragraph{}
+
+A l'heure actuel, PiTiVi manque grandement de fonctionnalités pour répondre
+aux besoins des professionnels. Le fait qu'il ne supporte pas encore la création
+de titre et générique rends son utilisation impossible dans le milieu. Il manque
+d'un développement soutenu dans le temps qui permettrai de subvenir à ce problème.
+
+\paragraph{}
+
+Afin de pouvoir répondre aux besoins des professionnels, PiTiVi devra implementer
+les différentes fonctionnalités. Celà ne devrai pas demander trop d'effort
+puisque celle-ci sont dors et deja disponible dans le framework GStreamer. Le fait
+que le framework sur lequel ce logiciel ce base est une communauté
+aussi importante, et que sont développement soit soutenu par de très grosse entreprise
+laisse penser que le potentiel offert par cette technologie est très important sur le
+long term. Il conviendra donc pour les développeurs de PiTiVi de tirer partie au plus
+vite de la puissance offerte par le framework, et l'entreprise collabora pourra aussi
+accélérer le développement du projet, en particulier de la migration vers GES afin
+de combler les lacunes du logiciels et conquérir le marché professionnel.
