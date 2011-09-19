@@ -1,6 +1,5 @@
-\onehalfspacing
-\chapter{Analyse des opportunités des technologies libres dans le
-domaine de l'édition vidéo et prévisions}
+\onehalfspacing \chapter{Analyse des opportunités des technologies
+libres dans le domaine de l'édition vidéo et prévisions}
 
 \minitoc \newpage
 
@@ -8,12 +7,12 @@ domaine de l'édition vidéo et prévisions}
 
 \paragraph{}
 
-Maintenant que les besoins et que les solutions existantes ont été
-analysées on rendra compte de la situation actuelle des technologies
-libres et de leurs communautés. Il est aussi important de chercher
-les raisons qui expliquent que ces logiciels ne sont pas plus utilisés
-par les professionnels. Puis, nous essayerons d'envisager les solutions
-possibles qui permettraient de remédier à cette situation.
+Nous avons donc analysé les besoins et solutions existantes et nous
+allons décrire la situation actuelle des technologies libres et de leur
+communautés.  Nous allons aussi voir pour quelles raison ces logiciels
+libres ne sont pas plus utilisés par les professionnels. Puis, nous
+essayerons d'envisager les solutions possibles qui permettraient de
+remédier à cette situation.
 
 \paragraph{}
 
@@ -42,9 +41,9 @@ Le schéma suivant permet de résumer facilement la situation:
 
 \paragraph{ }
 
-On constate donc que de nombreux projets de logiciel libre de montage
-vidéo on vu le jours ces 10 dernières années et dont les objectifs
-sont différents.  On peut distinguer deux types de public visés par
+Nous constatons donc que de nombreux projets de logiciel libre de montage
+vidéo ont vu le jours ces 10 dernières années et dont les objectifs
+sont différents. On peut distinguer deux types de public visés par
 ces projets:
 
 \begin {itemize}
@@ -117,12 +116,11 @@ aucune distribution Linux \footnote {Une distribution Linux, appelée
 aussi distribution GNU/Linux pour faire référence aux logiciels du
 projet GNU, est un ensemble cohérent de logiciels, la plupart étant
 logiciels libres, assemblés autour du noyau Linux. Source: Wikipedia}
-montre que même ce logiciel est le seul à avoir réussi à prendre
+montre que même si ce logiciel est le seul à avoir réussi à prendre
 une part de marché dans le milieu de l'édition professionnelle,
 il n'a toutefois pas su susciter l'enthousiasme des développeurs et
-utilisateurs typiques de la communauté du logiciel celui-ci n'a pas
-réussi à rassembler les développeurs et utilisateurs standard de
-logiciel libre. Nous verrons les raison techniques qui expliquent ce fait.
+utilisateurs typiques de la communauté du logiciel libre. Nous allons
+tenter de trouver les raisons de cette échec.
 
 \paragraph{}
 
@@ -180,7 +178,7 @@ deux façon de procéder:
 \end{itemize}
 
 \subsection {Technologies monolithiques\index{monolithique} VS
-technologies modulaires, frameworks}
+technologies modulaires, frameworks.}
 
 
 \subsubsection{Logiciels monolithiques \index{monolithique}}
@@ -203,13 +201,11 @@ entité de code:
 
 \paragraph{}
 
-Par le terme logiciel monolithique\index{monolithique}, il faut réaliser
-que le logiciel peut utiliser des librairies externes, mais le core
-de ce même logiciel, et la logique d'édition linéaire à proprement
-parler sont directement élaborés à l'intérieur du logiciel et non
-par une librairie ou framework \index{framework} externe. Cela a pour
-principal avantage de présenter une conception simplifiée pour les
-raisons suivantes:
+Dans un logiciel monolithique\index{monolithique}, il faut réaliser qu'on
+peut utiliser des librairies externes, mais le core de ce même logiciel,
+et la logique d'édition linéaire à proprement parlé sont directement
+élaborés à l'intérieur du logiciel et non par une librairie ou
+framework \index{framework} externe.
 
 \paragraph{}
 
@@ -219,8 +215,9 @@ en interne il ont un core qui ressemble fortement à un framework
 \index{framework}).Dans le monde des logiciels libres,les développeurs
 de Cinelerra ont décidé d'utiliser ce mode de fonctionnement.
 
-On peut voir plusieurs conséquences immédiates de ce mode de
-développement:
+Ce mode de fonctionnement a pour principal avantage de présenter une
+conception simplifiée pour les raisons suivantes:
+
 
 \begin{itemize} \setlength{\itemsep}{2mm}
 
@@ -250,38 +247,36 @@ développement:
 On se rend compte que cette manière de faire a pour principal avantage
 le fait que le logiciel peut être développé plus rapidement puisque
 le core du logiciel, et donc le code qui implémente la logique de
-l'édition non linéaire, est conçue avec pour seul cas d'utilisation,
+l'édition non linéaire, est conçu avec pour seul cas d'utilisation,
 celui du logiciel. Cependant, de nombreux inconvénients existent à
 cause de la nature monolithique\index{monolithique} du design:
 
-\subparagraph{Besoins en main d'oeuvre considérables:}
+\begin{itemize}
 
-\subparagraph { }
+  \item  {Besoins important en main en d'oeuvre: dans le cadre de logiciel
+    d'édition vidéo, le code à produire est considérable, comme
+    le montre les statistiques (Annexes 2). Le logiciel Cinelerra
+    à lui seul fait plus d'un million de lignes. Un tel volume
+    de code est difficile à maintenir et requiert des ressources
+    importantes en terme de main d'oeuvre. Le fait que le logiciel
+    soit monolithique\index{monolithique} implique que celui-ci va
+    être utilisé seulement par ce logiciel, et par conséquent, les
+    développeurs ne peuvent pas compter sur d'autre utilisation de ce
+    code pour améliorer et développer le core du logiciel.}
 
-Dans le cadre de logiciel d'édition vidéo, le code à produire
-est considérable, comme le montre les statistiques (Annexes 2). Le
-logiciel Cinelerra à lui seul fait plus d'un million de lignes. Un tel
-volume de code est difficile à maintenir et requiert des ressources
-importantes en terme de main d'oeuvre. Le fait que le logiciel soit
-monolithique\index{monolithique} implique que celui-ci va être utilisé
-seulement par ce logiciel, et par conséquent, les développeurs ne
-peuvent pas compter sur d'autre utilisation de ce code pour améliorer
-et développer le core du logiciel.
+  \item  {Réutilisabilité: l'un des inconvénients de cette manière
+  de faire est que le code
+    présent à l'intérieur du logiciel n'est pas réutilisable
+    directement par d'autres projets. On le considère comme
+    ``individualiste``, situation qu'il convient d'éviter dans le cadre
+    du développement de logiciel libre afin de ne pas multiplier les
+    efforts, et dupliquer le code.}
 
-\paragraph{Réutilisabilité:}
-
-\subparagraph { }
-
-L'un des inconvénients de cette manière de faire est que le code
-présent
- à l'intérieur du logiciel n'est pas réutilisable directement
-par d'autres projets. On le considère comme ``individualiste``, situation
-qu'il convient d'éviter dans le cadre du développement de logiciel
-libre afin de ne pas multiplier les efforts, et dupliquer le code.
+\end{itemize}
 
 \paragraph{}
 
-Cette façon de faire a été utilisée par le projet Cinelerra. Ce
+Ce mode opératoire a été utilisée par le projet Cinelerra. Ce
 logiciel est le plus avancé en terme de fonctionnalités dans l'offre
 des logiciels libres de montage . On peut penser que son architecture
 monolithique\index{monolithique} explique ce développement plus
@@ -305,28 +300,26 @@ final.
 
 La grande différence entre la conception monolithiques
 \index{monolithique} et la création d'un framework \index{framework}
-réside dans le le fait que dans le cadre d'un framework, on développe
+réside dans le le fait que, dans le cadre d'un framework, on développe
 une API \index{API} autour du core du logiciel. Cela résulte dans le
 fait que le core est un programme (librairie) externe, réutilisable par
 n'importe quel autre application.  On peut considérer que les avantages
 des frameworks sont les inconvénients des applications monolithiques
 \index{monolithique} et vice-versa. L'avantage principal des frameworks
 sur une conception monolithique\index{monolithique} est la possibilité
-de partager un même code à travers de multiples applications. Celà
-permet de réunir les efforts au travers, dans notre cas précis, de
-tout type d'application multimedia.
+de partager un même code à travers de multiples applications. Cela
+permet de réunir les efforts dans notre cas précis, au travers de tout
+type d'application multimedia.
 
 \subparagraph{}
 
 Dans le cadre de l'édition vidéo, on peut encore distinguer deux
-manière d'envisager son développement:
+manières d'envisager son développement:
 
 \begin {itemize}
 
   \item {Utiliser un framework multimedia généraliste, et créer les
-  outils nécessaire
-         au montage au dessus de celui-ci} %stupid french!\ldots On top
-                                           %of it?
+  outils nécessaires au montage au dessus de celui-ci}
 
   \item {Créer un framework spécialement orienté montage vidéo}
 
@@ -354,13 +347,13 @@ deux projets de framework leader sur ce segment:
 \subparagraph {}
 
 Au dessus de ces frameworks, plusieurs applications (interfaces
-graphiques) de montage vidéo se sont développées.
+graphiques) de montage vidéo se sont développées:
 
 \begin {itemize}
 
   \item {PiTiVi: utilise le Framework multimedia GStreamer}
 
-  \item {Kdenlive openshot utilisent le framework\index{framework}
+  \item {Kdenlive et openshot utilisent le framework\index{framework}
   orienté édition et broadcasting MLT\index{MLT}.}
 
 \end {itemize}
@@ -382,7 +375,7 @@ vers gstreamer-editing-services\cite{PresentationOfGes}).
 
 \paragraph {}
 
-Dans cette partie nous allons analyser la structure intern des trois
+Dans cette partie nous allons analyser la structure interne des trois
 logiciels précédemment définis: Cinelerra, PiTiVi et Kdenlive.
 
 \subsection{Cinelerra:}
@@ -403,7 +396,7 @@ contienne des imperfections.
 
 \subsubsection {Structuration du code}
 
-En terme de structure, le code de Cinelerra est décomposé en 3 partie:
+En terme de structure, le code de Cinelerra est décomposé en 3 parties:
 
 \begin{itemize}
 
@@ -411,8 +404,8 @@ En terme de structure, le code de Cinelerra est décomposé en 3 partie:
     contenu dans les dossiers ``quicktime'', ``thirdparty'' et
     ``libmpeg3''.}
 
-  \item{Effets audios et vidéos: Ceux-ci sont développés comme plugins,
-    et le code est donc présent de le dossier ``plugins`` }
+  \item{Effets audios et vidéos: ceux-ci sont développés comme plugins,
+    et le code est donc présent dans le dossier ``plugins`` }
 
   \item{Edition vidéo non linéaire et interface graphique: ce code est
     contenu dans un seul et unique dossier, ``cinelerra''}
@@ -442,8 +435,8 @@ diverses librairies:
   d'enregistrement, lecture, conversion de flux audio et vidéo. Il
   inclue libavcodec, librairie leader dans le domaines des
   coder/decoder\glossary{name={codec}, description={Un codec est un
-  procédé
-capable de compresser et/ou de décompresser un signal numérique. Ce
+  procédé capable de compresser et/ou de décompresser un signal
+  numérique. Ce
 procédé peut être un circuit imprimé ou un logiciel.}}\index{codec}.
 Il s'agit du core de la
   lecture audio et vidéo de Cinelerra.}
@@ -468,13 +461,17 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
 
 \subparagraph{}
 
+Les développeurs ont aussi créé des librairies en interne permettant
+d'ameliorer l'utilisation de fichier multimedias dans le cadre de
+l'édition vidéo:
+
 \begin{itemize}
 
   \item {Quicktime 4 Linux: supporte en particulier les formats DV,
     les codecs H.264 et AAC, et implémente des éléments de conversion
-    d'espaces colorimétrique (colorspace conversion)}
+    d'espaces colorimétriques (colorspace conversion)}
 
-  \item {Libmepg3: supporte la plupart des formats du ``Mpeg Picture
+  \item {Libmpeg3: supporte la plupart des formats du ``Mpeg Picture
     Motion Group'' \glossary{name={mpeg}, description={MPEG, sigle de
     Moving Picture Experts Group, est le groupe de travail SC 29/WG 11
     du comité technique mixte JTC 1 de l’ISO et de la CEI pour les
@@ -483,8 +480,8 @@ et le reste du logiciel (Fichier dans le dossier quicktime).
     la décompression, le traitement et le codage de la vidéo, de
     l’audio et de leur combinaison, de façon à satisfaire une large
     gamme d’applications. Source: Wikipedia}} et permet l'édition
-    vidéo en utilisant ces formats bien qu'il ne soit pas conçu pour
-    ce type d'utilisation.}
+    vidéo en utilisant ces formats bien qu'ils ne soient pas conçus
+    pour ce type d'utilisation.}
 
 \end{itemize}
 
@@ -498,7 +495,7 @@ provenant de deux librairies:
   \item {ladspa, Linux Audio Developers Simple Plugins API: Librairie
   d'effets audios qui contient une multitude de plugins.Il s'agit d'une
   API très simple et extrêmement flexible qui théoriquement permet
-  la création de plugins permettant n'importe quelle manipulation et
+  la création de plugins autorisant n'importe quelle manipulation et
   transformation du son. Dans les faits, certaines fonctionnalités
   ne sont pas implémentées pour éviter de complexifier le core de
   la librairie.}
@@ -507,27 +504,26 @@ provenant de deux librairies:
     d'effets vidéo. Il permet la création d'effets à travers de
     plugins. Il s'agit du standard de fait en terme d'effets vidéo dans
     le milieu des logiciels libres. Cette librairie a été élaborée
-    par de nombreux développeurs issus de différentes communautés de
-    logiciels libres en relation avec le multimedia. De nombreux plugins
-    existent et sont stables, mais il présentent un inconvénient assez
-    important concernant ce set d'effet, ils supportent uniquement
-    l'espace de couleur RGB. Cela a pour conséquence que dans le
-    cas ou le flux vidéo n'est pas dans cette espace de couleur,
-    \glossary {name={espace colorimétrique}, description={Un espace
-    colorimétrique ou espace de couleur associe des nombres aux couleurs
-    visibles.  Compte tenu des limites de la vision humaine, ces nombres
-    se présentent généralement sous la forme de triplets. Chaque
-    couleur de lumière peut donc être caractérisée par un point
-    dans un espace à trois dimensions. Lors d'une impression, pour des
-    raisons liées à la qualité des pigments, l'espace utilisé comporte
-    alors généralement au moins quatre dimensions. Source: Wikipedia}}
+    par de nombreux développeurs issus de différentes communautés
+    de logiciels libres en relation avec le multimedia. De nombreux
+    plugins existent et sont stables, mais il présentent un inconvénient
+    assez important concernant ce set d'effet, ils supportent uniquement
+    l'espace de couleur RGB. Cela a pour conséquence que dans le cas
+    où le flux vidéo n'est pas dans cet espace de couleur, \glossary
+    {name={espace colorimétrique}, description={Un espace colorimétrique
+    ou espace de couleur associe des nombres aux couleurs visibles.
+    Compte tenu des limites de la vision humaine, ces nombres se
+    présentent généralement sous la forme de triplets. Chaque couleur
+    de lumière peut donc être caractérisée par un point dans un
+    espace à trois dimensions. Lors d'une impression, pour des raisons
+    liées à la qualité des pigments, l'espace utilisé comporte alors
+    généralement au moins quatre dimensions. Source: Wikipedia}}
     une conversion d'espace colorimétrique est nécessaire afin de
     les utiliser. Un autre inconvénient de cette librairie réside
     dans le fait que les effets sont réalisés de manière logicielle,
     alors qu'à l'heure actuelle, l'utilisation de la carte graphique
     permettrait de tirer partie de manière beaucoup plus intéressante
     dans l'application d'effets sur les vidéos.}
-
 
 \end{itemize}
 
@@ -544,10 +540,10 @@ permet la configuration de ces effets.
 \paragraph{}
 
 L'interface graphique est développée en utilisant directement le server
-X sans aucune librairie graphique au dessus. Ceci a pour conséquence d
-augmenter le code à produire mais permet de controller intégralement
-le projet sans dépendre de ces librairies.  Dans le cadre de Cinelerra,
-cela est logique car ce logiciel est développé quasi intégralement
+X sans aucune librairie graphique au dessus. Ceci a pour conséquence d'
+augmenter le code à produire mais permet de contrôler intégralement le
+projet sans dépendre de ces librairies.  Dans le cadre de Cinelerra,
+c'est logique car ce logiciel est développé quasi intégralement
 en interne.
 
 \begin{figure} [H]
@@ -558,7 +554,7 @@ en interne.
 
   \end{center}
 
-  \caption{Interface graphique de cinelerra}
+  \caption{Interface graphique de Cinelerra}
 
   \label{Yes}
 
@@ -576,10 +572,10 @@ principales:
 
   \item {La fenêtre de ressource (en bas à droite sur le screenshot):
     dans cette fenêtre l'utilisateur peut accéder au différents
-    footages qu'il a importé. Il peut aussi accéder au différent
+    footages qu'il a importés. Il peut aussi accéder aux différents
     effets, transitions\ldots}
 
-  \item {Le fenêtre de preview (en haut à gauches sur le screenshot):
+  \item {Le fenêtre de preview (en haut à gauche sur le screenshot):
     cette fenêtre permet la prévisualisation des footages avant de
     les importer dans la timeline}
 
@@ -591,13 +587,13 @@ principales:
 
 \paragraph{}
 
-Cette interface est assez confuse, et ca prise en main n'est pas facile.
-Par exemple, pour ajouter des titre ou générique, il faut ajouter
-des effets et les configurer. Celà n'est absolument pas intuitif, et
-l'ergonomie de cinelerra laisse à désirer. Celà et le fait que le code
-n'est absolument pas commenter, et est très difficile à appréhender
-explique bien le fait que Cinelerra n'est pas réussi à rassembler les
-utilisateurs et développeurs standard de logiciel libre.
+Cette interface est assez confuse, et sa prise en main n'est pas facile.
+Par exemple, pour ajouter des titres ou génériques, il faut ajouter des
+effets et les configurer. Ce n'est absolument pas intuitif, et l'ergonomie
+de Cinelerra n'a pas été étudié. Avec un code non commenté, et
+difficile à appréhender, on comprend aisément que Cinelerra n'ai
+pas réussi à rassembler les utilisateurs et développeurs standard de
+logiciels libres.
 
 \subsubsection{Edition non linéaire}
 
@@ -606,20 +602,20 @@ utilisateurs et développeurs standard de logiciel libre.
 \subparagraph{}
 
 Dans Cinelerra, l'interface utilisateur et la logique de l'édition
-vidéo sont deux parties intégralement interdépendante. Au sein du
+vidéo sont deux parties intégralement interdépendantes. Au sein du
 code, il n'est pas possible de savoir quelle partie est plutôt liée
 à l'interface graphique et quelle partie réalise les calculs. Ceci
-est dû à sa conception monolithique, les développeurs n'ont pas
+provient de sa conception monolithique, les développeurs n'ont pas
 pris la peine de dissocier ces deux parties qui sont conceptuelement
 complètement différentes.
 
-\paragraph{Accélération materiel}
+\paragraph{Accélération matérielle}
 
 \subparagraph{}
 
 Lorsque openGL\index{openGL} est présent sur le système, Cinelerra
 est en mesure de l'utiliser directement, dans la mesure où cette
-fonctionnalité ait été activée lors de la compilation.  La fonction
+fonctionnalité ait été activée lors de la compilation. La fonction
 de compositing est ainsi accélérée, ainsi que la gestion des effets
 vidéo openGL.
 
@@ -636,27 +632,26 @@ dans un premier temps analyser ce framework.
 \subparagraph{}
 
 Le framework MLT\index{MLT} est écrit en C et offre une API\index{API}
-stable simple et minimaliste. Il est basé sur aucun library (seulement
-POSIX)
-
-\glossary {name={POSIX}, description={POSIX est le nom d'une famille
-de standards définis depuis 1988 par l'Institute of Electrical and
-Electronics Engineers et formellement désignée IEEE 1003. Ces standards
-ont émergé d'un projet de standardisation des API des logiciels
-destinés à fonctionner sur des variantes du système d'exploitation
-UNIX. Il s'agit de la standardisation des API des systèmes communément
-appelé UNIX. Source: Wikipedia}} et le standard C, C99). MLT\index{MLT}
-bien qu'écrit en C, utilise le paradigme de la programmation orienté
-objet en implémentant en interne le concept d'objet. Ce framework
-est modulaire, et conçu pour permettre le développement de nouveaux
-composants. Il permet l'utilisation des différents core des processeurs
-pour faire les calculs, afin d'utiliser au mieux les processeurs
-modernes. Il est aussi cross platform et peut être utilisé sur les
-principaux systèmes d'exploitation: Linux, BSD, OS X et windows.
+stable simple et minimaliste. Il est basé sur aucune librairie
+(seulement POSIX) \glossary {name={POSIX}, description={POSIX est le
+nom d'une famille de standards définis depuis 1988 par l'Institute
+of Electrical and Electronics Engineers et formellement désignée
+IEEE 1003. Ces standards ont émergé d'un projet de standardisation
+des API des logiciels destinés à fonctionner sur des variantes du
+système d'exploitation UNIX. Il s'agit de la standardisation des
+API des systèmes communément appelé UNIX. Source: Wikipedia}} et
+le standard C, C99). MLT\index{MLT} bien qu'écrit en C, utilise le
+paradigme de la programmation orienté objet en implémentant en interne
+le concept d'objet. Ce framework est modulaire, et conçu pour permettre
+le développement de nouveaux composants. Il permet l'utilisation des
+différents core des processeurs pour faire les calculs, afin d'utiliser
+au mieux les processeurs modernes. Il est aussi cross platform et peut
+être utilisé sur les principaux systèmes d'exploitation: Linux, BSD,
+OS X et windows.
 
 \subparagraph{}
 
-MLT\index{MLT} est distribué sous licence LGPL Version
+MLT\index{MLT} est distribué sous licence LGPL Version 2.1 ou supérieur
 
 \paragraph{Concepts de base}
 
@@ -666,10 +661,10 @@ MLT\index{MLT} est distribué sous licence LGPL Version
 
 Le framework MLT\index{MLT} est basé sur le concept de réseau de service
 sur lequel on distingue trois entités (classes) clés: producteur, filtre
-et consommateur. Ces différentes classes sont toutes des sous-classe
+et consommateur. Ces différentes classes sont toutes des sous-classes
 de la classe appelé ``service``.
 
-On peu schématiser le concept de réseau de service le plus simple de
+On peut schématiser le concept de réseau de service le plus simple de
 la manière suivante:
 
 \begin{figure} [H]
@@ -687,26 +682,25 @@ la manière suivante:
 \end{figure}
 
 Le producteur a pour rôle de produire des données (lire un fichier
-audio, vidéo\ldots) et de les faire passer au consommateur qui lui est
-connecté. Le consommateur a pour but de faire passer ces données (output
-datas) à la carte son, device vidéo, un autre fichier, où retransmettre
-à travers d'un moyen de télécommunication (broadcasting).  Le filtre
-qui n'est pas obligatoire pour lire des donnés multimedias, permet de
-modifier les données (par exemple produisant un effet vidéo/audio),
-il peut aussi être connecté à plusieurs producteurs, avec comme
-exemple la production d'une transition entre ceux-ci.
+audio, vidéo\ldots) et de les faire passer au consommateur qui lui
+est connecté. Le consommateur a pour but de faire passer ces données
+(output datas) à la carte son, device vidéo, un autre fichier, où
+retransmettre à travers un moyen de télécommunication (broadcasting).
+Le filtre qui n'est pas obligatoire pour lire des donnés multimedias,
+permet de modifier les données (par exemple produisant un effet
+vidéo/audio), il peut aussi être connecté à plusieurs producteurs,
+avec comme exemple la production d'une transition entre ceux-ci.
 
 \subparagraph{}
 
-Mais cela ne permet pas la creation d'éditeur de vidéo non linéaire,
+Mais cela ne permet pas la création d'éditeur de vidéo non linéaire,
 mais seulement la lecture et création de fichier. Pour permettre cette
 fonctionnalité, la classe multitrack a été mise en place. Celle-ci
 permet de gérer plusieurs producteurs et filtres les uns à la suite des
-autres. La multitrack contient plusieurs producteurs et les dispose les
-uns à la suite des autres. Ces mêmes producers peuvent aussi provenir
-d'une playlist qui est un concept différent, et celles-ci peuvent aussi
-être ajoutées directement à un multitrack, et enregistrées sous
-forme de fichier de playlist (dans les différents standards existants).
+autres. Ces mêmes producteurs peuvent aussi provenir d'une playlist qui
+est un concept différent, et celles-ci peuvent aussi être ajoutées
+directement à une multitrack, et enregistrées sous forme de fichier
+de playlist (dans les différents standards existants).
 
 \subparagraph{}
 
@@ -731,29 +725,28 @@ de la manière suivante:
 
 \end{figure}
 
-\paragraph{Modularité}
-
 \subsubsection{Documentation du code}
 
 \subparagraph{}
 
-Mlt possède une documentation accessible en ligne qui permet de connaitre
-les différents services existants. Le code est plutôt bien documenté,
-chaque fonction de l'API possède une description. Aussi, des documents
-texts dans les source (dossier docs/) permette au développeurs d'avoir un
-aperçu de la technologie. De plus il existe un outil en ligne de commande
-(melt) qui permet de tester de manière simple le framework. Le gros
-soucis étant qu'il est difficile de trouver une documentation claire de
-toute l'API, celle-ci ne semble pas être généré automatiquement lors
-de la compilation. Dans les sources de MLT\index{MLT}, il n'existe pas
-vraiment d'exemple expliquant chacune des fonctionnalités une par une,
-il faut pour cela regarder le code de melt, qui permet d'avoir un aperçu
-de comment utiliser l'API comme elle a été pensé par les développeurs.
+Mlt possède une documentation accessible en ligne qui permet de
+connaitre les différents services existants. Le code est plutôt bien
+documenté, chaque fonction de l'API possède une description. Aussi,
+des documents textes dans les sources (dossier docs/) permettent aux
+développeurs d'avoir un aperçu de la technologie. De plus il existe
+un outil en ligne de commande (melt) qui permet de tester de manière
+simple le framework. Le gros souci étant qu'il est difficile de trouver
+une documentation claire de toute l'API, celle-ci ne semble pas être
+générée automatiquement lors de la compilation. Dans les sources de
+MLT\index{MLT}, il n'existe pas vraiment d'exemple expliquant chacune
+des fonctionnalités une par une, il faut pour cela regarder le code
+de melt, qui permet d'avoir un aperçu de la manière avec laquelle les
+développeurs ont pensé l'utilisation de l'API.
 
 \subparagraph{}
 
-Dans MLT\index{MLT}, les de producteur, consommateurs où filtres sont
-des classes extern implémenté sous form de plugins. Certains sont
+Dans MLT\index{MLT}, les producteurs, consommateurs et filtres sont des
+classes externes implémentées sous forme de plugins. Certains sont
 implémentés directement dans MLT\index{MLT} tel que :
 
 \begin{itemize}
@@ -768,21 +761,18 @@ implémentés directement dans MLT\index{MLT} tel que :
 
 \end{itemize}
 
-Cela est fait grace à des libraries externes en implémentant des
-modules externes afin de faire le lien (wrapper)
-
-\glossary{name={adapter}, description={Il permet de convertir l'interface
-d'une classe en une autre interface que le client attend. L' Adaptateur
-fait fonctionner ensemble des classes qui n'auraient pas pu fonctionner
-sans lui, à cause d'une incompatibilité d'interfaces. Source:
-Wikipedia}} entre ces librairies et l'API\index{API} précédemment
-présenté. Les principales libraries actuellement utilisables à travers
-de ce framework sont:
+Cela est fait grâce à des libraries externes en implémentant des
+modules afin de faire le lien (wrapper) \glossary{name={adapter},
+description={Il permet de convertir l'interface d'une classe en une autre
+interface que le client attend. L' Adaptateur fait fonctionner ensemble
+des classes qui n'auraient pas pu fonctionner sans lui, à cause d'une
+incompatibilité d'interfaces. Source: Wikipedia}} entre ces librairies
+et l'API\index{API} précédemment présenté. Les principales libraries
+actuellement utilisables à travers ce framework sont:
 
 \begin{itemize}
 
-  \item {libav, libdv et libvorbis pour ce qui concerne des codecs et
-  muxers/demuxers}
+  \item {libav, libdv et libvorbis pour les codecs et muxers/demuxers}
 
   \item {frei0r pour les effets vidéos}
 
@@ -796,16 +786,18 @@ de ce framework sont:
 
 Ces différents services disponibles permettent de lire un nombre
 considérable de formats multimedia, en particulier grâce à libav,
-et d'effectuer de très nombreuses operations principalement grâce aux
-plugins frei0r pour la vidéo et ladspa pour l'audio.
+et d'effectuer de très nombreuses opérations principalement grâce
+aux plugins frei0r pour la vidéo et ladspa pour l'audio.
 
 \paragraph{Gestion des services}
 
-\subparagraph{Le ``repository``}
+\subparagraph{Le ``Repository``}
 
-Pour connaitre les différent services présents sur le système,
-l'utilisateur a à sa disposition une classe Repository. Celle-ci offre
-une API\index{API} simple listant les différents services par type
+\subparagraph{}
+
+Pour connaitre les différents services présents sur le système,
+l'utilisateur dispose une classe Repository. Celle-ci offre une
+API\index{API} simple listant les différents services par type
 (consommateur, producteur ou filtre).  Pour illustrer, le simple code
 suivant permet de récupérer la liste de tous les effets présents sur
 le système:
@@ -813,18 +805,21 @@ le système:
 \subparagraph{}
 
 \begin{lstlisting}
-  mlt_repository repo = mlt_repository_init (NULL) /* We just use the
-  standard module path */ mlt_properties filters = mlt_repository_filters
-  (repo); /*
+  /* We just use the standard module path */ mlt_repository
+  repo = mlt_repository_init (NULL) mlt_properties filters =
+  mlt_repository_filters (repo);
 \end{lstlisting}
 
-\subparagraph{Les ``factory''} Dans le but de simplifier la création de
-services de différents types, MLT\index{MLT} utilise le design pattern
-de la factory. On peut ainsi créer n'importe quel type de service de
-manière simple en utilisant les différentes factories existantes. Bien
-que tous les objets d'un réseau de service soient des descendants de
-la classe Service, les développeurs ont décidé de créer 4 méthodes
-différentes de la classe factory:
+\subparagraph{Les ``factory''}
+
+\subparagraph{}
+
+Dans le but de simplifier la création de services de différents types,
+MLT\index{MLT} utilise le design pattern de la factory. On peut ainsi
+créer n'importe quel type de service de manière simple en utilisant les
+différentes factories existantes. Bien que tous les objets d'un réseau
+de service soient des descendants de la classe Service, les développeurs
+ont décidé de créer 4 méthodes différentes de la classe factory:
 
 \begin{itemize}
 
@@ -853,24 +848,21 @@ Il sera ensuite possible d'ajouter ce service au réseau de service.
 
 \subparagraph{Les données dans un réseau de services}
 
-\subparagraph{La classe Frame}
-
-\subparagraph{}
-
-Les données qui transitent dans un réseau de service sont contenues dans
-des objets de type frame. Celles-ci contiennent à la fois les données
-audio et les données vidéos. Les producteurs peuvent setter ces données
-grâce aux méthodes mlt\_frame\_set\_audio et mlt\_frame\_set\_video.
+\subparagraph{La classe Frame} Les données qui transitent dans un
+réseau de service sont contenues dans des objets de type frame. Celles-ci
+contiennent à la fois les données audio et les données vidéos. Les
+producteurs peuvent setter ces données grâce aux méthodes
+mlt\_frame\_set\_audio et mlt\_frame\_set\_video.
 
 \subparagraph{Relations entre les différents services en terme de flux
 de données}
 
 Afin commencer le flux de données dans un réseau de service, le
-consommateur est celui qui fait la demande de donner (pull datas) les
-données depuis le service sur lequel il est connecté. Les autre services
-réagissent en fonction,et forment une chaine jusqu'au producteur qui
-produit les données, et les fait suivre au service suivant et ainsi de
-suite. Ce processus peut être schématisé de la manière suivante:
+consommateur est celui qui fait la demande de données (pull datas) au
+service sur lequel il est connecté. Les autres services réagissent,
+et forment une chaine jusqu'au producteur qui émet les données, et
+les fait suivre au service suivant et ainsi de suite. Ce processus peut
+être schématisé de la manière suivante:
 
 \begin{center}
 
@@ -880,12 +872,11 @@ suite. Ce processus peut être schématisé de la manière suivante:
 
 Phase & producteur & Filtre & Consommateur    \\ \hline \hline
 
-1 & & & Request frame   \\ \hline
+1 & & & Demande de frame \\ \hline
 
 2 & & Réception de la demande & \\
 
   & & Demande la frame à son tour & \\ \hline
-
 
 3 & Réception de la demande & & \\
 
@@ -913,11 +904,11 @@ Phase & producteur & Filtre & Consommateur    \\ \hline \hline
 
 \subparagraph{}
 
-Cette manière de fonctionner implique que seul le consommateur est
-le moteur du réseau. Il est celui qui doit faire partie d'un thread
-séparé et les appels à la fonction get\_frame doivent être faits
-dans une boucle principale.  Ces appels s'arrêteront au moment où le
-flux a été terminé (EOS).
+Ce mode de fonctionner implique que seul le consommateur est le moteur
+du réseau. Il est celui qui doit faire partie d'un thread séparé
+et les appels à la fonction get\_frame doivent être faits dans une
+boucle principale.  Ces appels s'arrêteront au moment où le flux a
+été terminé (EOS).
 
 
 \paragraph{Accélération materiel}
@@ -986,21 +977,18 @@ des professionnels en terme de fonctionnalités:
 
 \begin{itemize}
 
-  \item {Ajout de titres et génériques: A travers du module développé
-  par la
-    communauté Kdenlive: QImage.}
+  \item {Ajout de titres et génériques: à travers le module développé
+  par la communauté Kdenlive: QImage.}
 
   \item {Gestion des keyframes: possible dans les modules implémentant
     cette fonctionnalité, pas de solution générique au niveau du core
     de MLT\index{MLT}}
 
-  \item {Visualisation image par images et waveform: Directement
-  accessible à
-    travers du core de MLT\index{MLT}.}
+  \item {Visualisation image par images et waveform: directement
+  accessible à travers le core de MLT\index{MLT}.}
 
-  \item {Visualisation image par image et waveform: Directement
-  accessible à
-    travers du core de MLT\index{MLT}.}
+  \item {Visualisation image par image et waveform: directement accessible
+  à travers le core de MLT\index{MLT}.}
 
 \end{itemize}
 
@@ -1056,7 +1044,7 @@ présentant quatre éléments majeurs:
 
   \item {La timeline en bas}
 
-  \item {La gestion des footages, en haut à gauches}
+  \item {La gestion des footages, en haut à gauche}
 
   \item {La gestion des effets et transitions, au centre en haut. La
   configuration de ceux-ci se fait dans cette même partie.}
@@ -1077,29 +1065,31 @@ ce framework.
 
 \subsubsection {Framework multimedia: GStreamer}
 
-\paragraph {Panorama de la technologie} \subparagraph{}
+\paragraph {Panorama de la technologie}
 
-GStreamer un framework multimedia basé sur le concept de pipeline
-écrit en C.  L' API de ce framework est plus complet que celle de
-MLT\index{MLT} puisque les use-cases auxquels celui- ci cherche à
-répondre sont plus nombreux. En effet, la communauté GStreamer a pour
-objectif de créer un framework open source permettant de répondre au
-plus grand nombre possible de cas d'utilisations ayant un lien avec le
-multimedia (depuis les téléphones mobiles jusqu'aux renders farms
-en passant par les logiciels de montage video).  Ce framework, bien
-qu'écrit en C, utilise le paradigme objet, à travers de la librairie
-Glib. Cette librairie implémente de nombreuses API et en particulier
-la notion d'objet en C grace au module GObject. La Glib permet aussi
-la gestion des threads, des signaux\ldots De très nombreux projets
-de logiciels libres l'utilisent, en particulier le projet d'interface
-graphique Gnome. GStreamer offre une API stable aussi bien pour les
-développeurs de plugins que pour les développeurs d'applications. Il
-est hautement multi threaded\glossary{name={thread}, description={Il
-s'agit de la plus petit unité de processus qui peut être exécutée
-par un système d'exploitation. Ils permettent à un même ``programme'',
-processus d'exécuter du code de manière concurrente.}}, et est thread
-safe, c'est a dire que la mémoire partagée par les différents threads
-ne peut pas être corrompue dans le cas ou plusieurs threads voudraient
+\subparagraph{}
+
+GStreamer est un framework multimedia basé sur le concept de pipeline
+écrit en C. L' API de ce framework est plus complet que celle de
+MLT\index{MLT} car il vise à répondre à un plus grand nombre
+de use-cases.  En effet, la communauté GStreamer a pour objectif de
+créer un framework open source permettant de répondre au plus grand
+nombre possible de cas d'utilisations ayant un lien avec le multimedia
+(depuis les téléphones mobiles jusqu'aux renders farms en passant
+par les logiciels de montage video). Ce framework, bien qu'écrit en
+C, utilise le paradigme objet, à travers de la librairie Glib. Cette
+librairie implémente de nombreuses API et en particulier la notion
+d'objet en C grâce au module GObject. La Glib permet aussi la gestion
+des threads, des signaux\ldots De très nombreux projets de logiciels
+libres l'utilisent, en particulier le projet d'interface graphique
+Gnome. GStreamer offre une API stable aussi bien pour les développeurs
+de plugins que pour les développeurs d'applications. Il est hautement
+multi threaded\glossary{name={thread}, description={Il s'agit de la plus
+petit unité de processus qui peut être exécutée par un système
+d'exploitation. Ils permettent à un même ``programme'', processus
+d'exécuter du code de manière concurrente.}}, et est thread safe,
+c'est a dire que la mémoire partagée par les différents threads ne
+peut pas être corrompue dans le cas où plusieurs threads voudraient
 la modifier en même temps(en utilisant le système d'exclusion mutuel).
 
 Le schéma suivant permet de représenter graphiquement l'architecture
@@ -1113,7 +1103,8 @@ globale du framework:
 
   \end{center}
 
-  \caption{Architecture du framework GStreamer}
+  \caption{Architecture du framework GStreamer, Source: GStreamer
+  Application Development Manual}
 
   \label{Yes}
 
@@ -1127,16 +1118,16 @@ GStreamer est distribué sous licence LGPL Version
 
 \subparagraph{} Gstreamer utilise la syntaxe de gtk-doc afin de
 permettre la génération automatique de la documentation à partir du
-code source. Celà signifie que l'API est complètement documenté et
+code source. Cela signifie que l'API est complètement documenté et
 accessible sur internet. Afin de permettre d'obtenir des information
 sur les différent éléments, un outil gstreamer a été développé
-(gst-inspect). Il existe aussi des livres libres (pas toujours actualisé)
-permettant d'aider les développeurs soit à développer des applications
-en utilisant GStreamer (Gstreamer manual) où des plugins/éléments
-(Plugins Writer Guide).  Il est aussi possible de créer des pipeline en
-ligne de commande grace à l'outil 'gst-launch'.  En terme d'exemple,
-les développeurs essaye de tenir à jours des example pour chaque API
-nouvellement créé, mais cela n'est pas toujours le cas.
+(gst-inspect). Il existe aussi des livres libres (pas toujours
+actualisés) permettant d'aider les développeurs soit à créer
+des applications en utilisant GStreamer (Gstreamer manual) soit des
+plugins/éléments (Plugins Writer Guide). Il est aussi possible de créer
+des pipeline en ligne de commande grâce à l'outil 'gst-launch'. En terme
+d'exemple, les développeurs essayent de tenir à jour des exemples pour
+chaque API nouvellement créée, mais cela n'est pas toujours le cas.
 
 \paragraph{Concepts de base}
 
@@ -1160,7 +1151,8 @@ assez facilement:
   \caption{Un pipeline GStreamer permettant la lecture d'un fichier
   audio ogg
     ayant pour codec vorbis (ce schéma prend en compte d'autres notions
-    importantes du framework).}
+    importantes du framework). Source: GStreamer Application Development
+    Manual}
 
   \label{Yes}
 
@@ -1169,15 +1161,21 @@ assez facilement:
 \subparagraph{}
 
 On constate que l'architecture est assez similaire à celle
-MLT\index{MLT}, avec pour grande difference le fait que les éléments
+MLT\index{MLT}, avec pour grande différence le fait que les éléments
 composants le ``réseau de service'' sont tous dans un même élément:
-le pipeline. Cet élément GStreamer execute un thread séparé à
-partir du moment où l'on cherche a jouer son contenu. Dès lors,
-les données transitent entre les différents élément gstreamer, a
-commencé par l'élément source. Dans l'exemple donne par ce schéma,
-il s'agit d'un file-source, et terminant par le sink, dans notre exemple
-alsa-output. Les éléments entre les deux se chargent du demuxing
-(ogg-demux), et du decoding (vorbis-decoder).
+le pipeline. Cet élément GStreamer exécute un thread séparé à
+partir du moment où l'on appel la fonction:
+
+\begin{lstlisting}
+  gst_element_set_state (element, GST_STATE_PLAYING);
+\end{lstlisting}
+
+
+Dès lors, les données transitent entre les différents élément
+GStreamer, a commencé par l'élément source. Dans l'exemple donné
+par ce schéma, il s'agit d'un file-source, et terminant par le sink,
+dans notre exemple alsa-output. Les éléments entre les deux se chargent
+du demuxing (ogg-demux), et du decoding (vorbis-decoder).
 
 \subparagraph{}
 
@@ -1186,7 +1184,7 @@ a un contrôle plus important que dans le cas de MLT\index{MLT} sur
 les composants de la chaines d'éléments permettant la reproduction de
 contenu multimedia.  Dans GStreamer chaque tâche est effectuée par un
 élément, c'est à dire qu'un service MLT\index{MLT} sera décomposé
-en plusieurs élément GStreamer. Dans le cadre d'un producteur en
+en plusieurs éléments GStreamer. Dans le cadre d'un producteur en
 particulier, chez GStreamer, cela est effectué à travers un élément
 pour chaque étape du coding/decoding/muxing/demuxing, et dans certain
 cas, du parsing du bitstream. Cette décomposition en petits éléments
@@ -1200,9 +1198,9 @@ multimédia.
 
 La communication entre ces différents éléments se fait au travers des
 GstPad. Il convient de représenter un élément (dans ce cas un demuxer,
-qui permet de recevoir un flux en entrée de le décomposer afin d'avoir
-deux sorties, l'une contenant les données audios, et l'autre avec les
-données vidéos), de la manière suivante:
+qui permet de recevoir un flux en entrée et de le décomposer en deux
+sorties, l'une contenant les données audios, et l'autre les données
+vidéos), de la manière suivante:
 
 \begin{figure} [H]
 
@@ -1213,7 +1211,7 @@ données vidéos), de la manière suivante:
   \end{center}
 
   \caption{Représentation graphique d'un GstElement permettant le
-  demuxing.}
+  demuxing. Source: GStreamer Application Development Manual}
 
   \label{Yes}
 
@@ -1221,28 +1219,29 @@ données vidéos), de la manière suivante:
 
 Sur ce schéma, on constate la présence d'un sink pad, nommé ``sink'',
 et deux source pad, nommé ``audio'' et ``video''. Ces objets (GstPad),
-permettent la connection entre les différents élément. Il peuvent être
-comparé au ``prise'' et ``port'' dans le monde réel.  Afin de brancher
-une prise dans un port, il convient de s'assurer que ceux-ci soient
-compatibles, c'est ce rôle qu'ont les caps, assurer la compatibilité
-de la communication entre différents éléments.
+permettent la connection entre les différents éléments. Il peuvent
+être comparé au ``prise'' et ``port'' dans le monde réel.  Afin de
+brancher une prise dans un port, il convient de s'assurer que ceux-ci
+soient compatibles. C'est ce rôle que jouent les GstCaps en s'assurant
+de la compatibilité de la communication entre différents éléments.
 
 \paragraph {Modularité}
 
 \subparagraph{}
 
 GStreamer est extrêmement modulaire, et l'on peut l'étendre facilement
-en créant de nouveaux éléments. Il suffit d'ajouter ces élément
-(sous forme de plugins) sur le système pour que l'utilisateur puisse
+en créant de nouveaux éléments. Il suffit d'ajouter ces éléments
+(sous forme de plugins) sur le système afin que l'utilisateur puisse
 tirer partie des nouvelles fonctionnalités. La communauté GStreamer
 offre des collections de plugins contenant un très grand nombre
-d'élément. Ces set de plugins sont classés selon des critères précis:
+d'éléments. Ces set de plugins sont classés selon des critères
+précis:
 
 \begin{itemize}
 
   \item {base: Plugins de grande qualité et très bien maintenus. Il
-  offre aussi
-    des classes de base afin de faciliter la creation d'éléments.}
+  offre aussi des classes de base afin de faciliter la création
+  d'éléments.}
 
   \item {good: Plugins de qualité, ayant une licence LGPL}.
 
@@ -1284,66 +1283,62 @@ framework MLT\index{MLT}, c'est à dire, que l'on a une classe GstRegistry
 (comparable à la classe repository de MLT\index{MLT}), et des GstFactory
 qui permettent la fabrication facile d'éléments.
 
-%DIMANCHE SOIR
-
-\paragraph{Accélération materiel}
+\paragraph{Accélération matérielle}
 
 \subparagraph{}
 
-A l'heure actuel, il existe des éléments permettant le decoding de
-vidéo en utilisant, l'accélération materiel pour les carte graphiques
-Nvidia et Intel. Cela n'est pas activé par default mais les développeur
-travail actuellement sur ce problème, et cela devrai être activé par
-default très prochainement. De plus, il est techniquement pas possible
-dans la version actuel de permettre le compositing accéléré par
-matériel. Celà est du au fait que les éléments dans un pipeline n'est
-pas la possibilité de ``communiquer'' entre eux, et par concéquent,
-de laisser l'élément un élément qui pourrai tirer partie de
-l'accélération materiel faire l'opération de compositing. Afin de
+A l'heure actuelle, il existe des éléments permettant le decoding de
+vidéo en utilisant l'accélération materiel pour les cartes graphiques
+Nvidia et Intel. Cela n'est pas activé par défaut mais les développeurs
+travaillent actuellement sur ce problème, et cela devrait être activé
+par défaut très prochainement. De plus, il n'est techniquement
+pas possible dans la version actuelle de permettre le compositing
+accéléré par matériel. Celà est dû au fait que les éléments
+dans un pipeline n'ont pas la possibilité de ``communiquer'' entre eux,
+et par conséquent, de laisser l'élément qui pourrait tirer partie de
+l'accélération matérielle faire l'opération de compositing. Afin de
 résoudre ce problème, les développeurs de GStreamer, ont mis en place
 un système permettant d'ameliorer la communication entre les éléments
 dans la version 1.0 qui doit sortir avant la fin de l'année. Afin de
 s'assurer que le problème soit résolu dans tout les cas (c'est à dire
 lors de la reproduction aussi bien que du rendering), il faudra très
-probablement développer un élément glcomposition.
+probablement développer un élément ``GstGlcomposition``.
 
 \paragraph{Et l'édition vidéo?}
 
 \subparagraph{}
 
-En effet, tout cela ne nous permet pas de faire  de l'édition vidéo
-requiert la création de pipeline dynamique, c'est à dire qui permet
-de faire évoluer les éléments présents dans le pipeline au fil du
-temps.  C'est pour cette raison que les éléments du plugins Gnonlin
-ont été développés. Il s'agit de 4 éléments principaux dont voici
-la définition
+Tout cela ne nous permet pas de faire de l'édition vidéo car elle
+requiert la création de dynamique pipeline (c'est à dire faire évoluer
+dans le temps les éléments présents dans ce pipeline). C'est pour cette
+raison que les éléments du plugins Gnonlin ont été développés. Il
+s'agit de 4 éléments principaux dont voici la définition
 
 \begin{itemize}
 
-  \item {GnlComposition: élément le plus important qui permet de
-  faire évoluer
-    le pipeline de manière dynamique}
+  \item {GnlComposition: élément le plus important qui permet de faire
+  évoluer le pipeline de manière dynamique}
 
   \item{Gnl[uri/file]Source: élément source qui a les propriétés
     nécessaires pour savoir à quel moment il doit être présent ou
     non dans le pipeline}
 
   \item{GnlOperation: élément qui permet l'application d'effet,
-  transition
-    etc\ldots il a aussi les propriété permettant de savoir à quel
+  transition etc\ldots il a aussi les propriété permettant de savoir
+  à quel
     moment il doit être présent ou non dans le pipeline}
 
 \end{itemize}
 
 \subparagraph{}
 
-Mais ces éléments ne permettent pas de facilement créer des application
-de montage audio/ou vidéo. Le core actuel de PiTiVi utilise directement
-ces élément afin de gérer les notion propre à l'édition vidéo,
-mais les développeur se sont rendu compte que cela était trop complexe
-à utiliser, et par concéquent PiTiVi n'est pas une simple interface au
-dessus de GStreamer, mais introduit de plusieurs concepts supplémentaires
-au dessus de ces éléments.
+Mais ces éléments ne permettent pas de facilement créer des
+applications de montage audio/ou vidéo. Le core actuel de PiTiVi
+utilise directement ces éléments afin de gérer les notions propres
+à l'édition vidéo.  Mais les développeurs se sont rendu compte que
+c'était trop complexe à utiliser, et par conséquent PiTiVi n'est pas
+une simple interface au dessus de GStreamer, mais introduit plusieurs
+concepts supplémentaires au dessus de ces éléments.
 
 \paragraph{}
 
@@ -1368,27 +1363,28 @@ la compréhension de son fonctionnement.
 
   \end{center}
 
-  \caption{Concepts introduits par GES}
+  \caption{Concepts introduits par GES. Source: design
+  gst-editing-services}
 
   \label{Yes}
 
 \end{figure}
 
-Ce schéma permet de representer graphiquement les différents concepts
-qui entre en jeux. Niveau utilisateurs, l'API\index{API} de GES peut être
-utiliser de manière plus où moins avancé. C'est à dire que dans le
-cadre d'application simple d'édition vidéo, la notion de média est
-caché à l'utilisateur et celui-ci ne s'intéresse simplement à ce
-que sont les fichiers, effets etc\ldots Mais il est possible de faire
+Ce schéma permet de représenter graphiquement les différents concepts
+qui entrent en jeu. Niveau utilisateurs, l'API\index{API} de GES peut
+être utilisé de manière plus où moins avancée. C'est à dire
+que dans le cadre d'application simple d'édition vidéo, la notion
+de média est cachée à l'utilisateur et celui-ci ne s'intéresse
+simplement aux fichiers, effets etc\ldots Mais il est possible de faire
 une utilisation avancé de cette API afin de créer un éditeur vidéo
-à visée professionnel.
+à visée professionnelle.
 
 \subparagraph{}
 
-Tout comme ce que l'on a pu constater dans MLT\index{MLT}, GES
-offre des fonctionnalités de haut niveau tel que la génération de
-thumbnails à partir de la timeline, la serialisation, deserialization
-des timelines\ldots
+Tout comme ce que l'on a pu constater dans MLT\index{MLT}, GES offre des
+fonctionnalités de haut niveau tel que la génération de thumbnails
+à partir de la timeline, la sérialisation, désérialisation des
+timelines\ldots
 
 \subparagraph{}
 
@@ -1401,20 +1397,20 @@ migration vers les gst-editing-services.
 \subparagraph{ }
 
 Cette analyse technique du projet GStreamer et GES nous permet de voir
-que GStreamer étant une technologie très complexe, les développeurs
-ont développé diverse outils afin de permettre la création de manière
-simplifié de logiciels de montage vidéo. Ce framework à tracer de GES
+compte tenu de la technologie très complexe de GStreamer, les concepteurs
+ont développé divers outils afin de permettre la création de manière
+simplifié de logiciels de montage vidéo. Ce framework à travers GES
 permet de répondre aux différents besoins de base des professionnels
 en terme de fonctionnalités:
 
 \begin{itemize}
 
-  \item {Ajout de titres et génériques: GES offre des TextLayer et
-  TitleSource
-    qui permettent d'ajouter des titres de manière simple, en ce qui
-    concerne les générique, cela est possible à travers de keyframes,
-    mais cela n'est pas vraiment supporté à l'heure actuel. Il s'agit
-    d'un manque majeurs pour répondre aux besoins des professionnels}
+  \item {Ajout de titres et génériques: GES offre des TextLayer
+  et TitleSource qui permettent d'ajouter des titres de manière
+  simple. Pour les
+    les génériques, c'est possible à travers de keyframes, mais ce
+    n'est pas vraiment supporté à l'heure actuelle. Il s'agit d'un
+    manque majeur pour répondre aux besoins des professionnels}
 
   \item {Gestion des keyframes: possible dans les modules implémentant
     cette fonctionnalité, pas de solution générique au niveau du core
@@ -1422,10 +1418,10 @@ en terme de fonctionnalités:
 
   \item {Gestion des keyframes: Le framework GStreamer offre la
   possibilité
-    de créer des keyframes sur toutes les propriétés de ces élément
-    à grace à la classe GstInterpollation}
+    de créer des keyframes sur toutes les propriétés de ces éléments
+    grâce à la classe GstInterpollation}
 
-  \item {Visualisation image par image: Directement accessible grace
+  \item {Visualisation image par image: directement accessible grâce
   à GES.}
 
 \end{itemize}
@@ -1482,24 +1478,23 @@ présentant quatre éléments majeurs:
 
 \paragraph{}
 
-Ce screenshot permet de voir l'interface simple et épuré de
-PiTiVi. Celà traduit en effet son manque de fonctionnalités, mais aussi
-le but des développeurs qui est d'offrir le strict nécessaire en terme
-d'interface. C'est à dire offrir les options seulement si celle-ci sont
-utiles à l'utilisateur.
+Ce screenshot permet de voir l'interface simple et épuré de PiTiVi. Cela
+traduit en effet son manque de fonctionnalités, mais aussi le but des
+développeurs qui est d'offrir le strict nécessaire en terme d'interface,
+c'est à dire offrir les options seulement si celle-ci sont utiles à
+l'utilisateur.
 
 \newpage \section{Analyse des communautés}
 
 \paragraph{}
 
-Afin d'analyser une communautés, quatres éléments majeurs sont à
-prendre en comptes:
+Afin d'analyser une communauté, quatre éléments principaux sont à
+prendre en compte:
 
 \begin{itemize}
 
-  \item {Le code source: il convient de mesurer le nombre d'auteur,
-  la vitesse de son évolution
-    d'évolution. Afin de mesurer cela, des outils statistiques
+  \item {Le code source: il convient de mesurer le nombre d'auteurs, la
+  vitesse de son évolution. Afin de mesurer cela, des outils statistiques
     existent, en particulier pour le système de gestion de code
     source\glossary{name={Système de gestion de version}, description={Un
     logiciel de gestion de versions (ou VCS en anglais, pour Version
@@ -1510,15 +1505,16 @@ prendre en comptes:
     Wikipedia}} git\glossary{name={git}, description={Git est un logiciel
     de gestion de versions décentralisée. C'est un logiciel libre
     créé par Linus Torvalds, le créateur du noyau Linux, et distribué
-    sous la GNU GPL version 2.}}, et à l'outil gitstats. Celà permet
+    sous la GNU GPL version 2.}}, et à l'outil gitstats. Cela permet
     d'analyser l'état de santé d'un communauté de logiciel libre.}
 
-  \item {Les entreprises qui travail sur le projet: Les logiciels libre
-    font à l'heure actuel actuel pleinement partit de l'économie
+  \item {Les entreprises qui travaillent sur le projet: Les logiciels
+  libres
+    font à l'heure actuelle actuel pleinement partie de l'économie
     du logiciel informatique. L'implication des entreprises dans les
-    différentes communautés libre est un point essentiel qui permet
-    permettant de comprendre la viabilité de celui-ci en particulier,
-    comme c'est le cas dans cette analyse, au prêt des professionnels}
+    différentes communautés libres est un point essentiel qui permet
+    de comprendre la viabilité de celui-ci en particulier, comme c'est
+    le cas dans cette analyse, auprès des professionnels}
 
   \item {Le nombre de bugs rapportés, et l'analyse de la vitesse de fix
     de ceux-ci}
@@ -1529,8 +1525,8 @@ prendre en comptes:
 
 \paragraph{}
 
-Pour les différent projets précédemment analyser, nous allons
-faire un état des lieux de leurs communauté selon les deux critère
+Pour les différents projets précédemment analysés, nous allons
+faire un état des lieux de leurs communautés selon les deux critère
 précédemment mentionnés.
 
 \subsection {Analyse du code source}
@@ -1552,14 +1548,14 @@ http://www.mltframework.org/gitweb/mlt.git?p=mltframework.org/mlt.git;a=summary}
 
 \end{itemize}
 
-Il est important de noter que ce tableau doit être analyser en prenant
+Il est important de noter que ce tableau doit être analysé en prenant
 en compte les paramètres suivants:
 
 \begin{itemize}
 
-  \item {Le fait que le projet cinelerra ne soit pas réelement basé
+  \item {Le fait que le projet cinelerra ne soit pas réellement basé
   sur la communauté
-    risque de faussé la comparaison avec les autres projets, mais il
+    risque de fausser la comparaison avec les autres projets, mais il
     convient de garder en tête que ce projet est le seul projet présent
     sur le marché de l'édition professionnel.}
 
@@ -1567,10 +1563,9 @@ en compte les paramètres suivants:
   \item {Le fait que cinelerra ne soit pas un framework mais une
     application complète d'édition vidéo doit être pris en compte}
 
-  \item {Dans MLT\index{MLT}, les plugins sont prise en compte, alors
-  que pour
-    GStreamer, on ne prend en compte que le core du famework (qui n'est
-    qu'un très petit partie du framework)}
+  \item {Dans MLT\index{MLT}, les plugins sont pris en compte, alors
+  que pour GStreamer, on ne prend en compte que le core du framework
+  (qui n'est qu'une très petit partie du framework)}
 
 \end{itemize}
 
@@ -1604,7 +1599,7 @@ Plugins-base& 413 883 &46&47& Mars 2004&Décembre 2001\\
 
 Plugins-bad& 696 521 &305&156& Juin 2006&Décembre 2001\\
 
-GES& 51 932 &14&49& Juin 2010&Aout 2009\\
+GES& 51 932 &14&49& Juin 2010&Août 2009\\
 
 \hline
 
@@ -1612,23 +1607,24 @@ GES& 51 932 &14&49& Juin 2010&Aout 2009\\
 
 \end{center}
 
-Ce tableau montre quel le codebase de Gstreamer et de ces plugins est plus
-le important. Celà semble tout à fait logique puisque ce framework a
-pour objectif de répondre à plus de problème. Il est intéressant de
-constater que la communauté MLT\index{MLT} est très petite (seulement
-12 développeurs), cela s'explique par le fait que l'API maintenu est
-minimalist, et permet de répondre à un problème précis.  Le nombre de
-développeur de cinelerra n'est aussi pas très grand, dans les faits, il
-s'agit plus où moins d'un ``one man show'', et Adam Williams (employé
-Heroine) est responsable de l'immense majorité du code. Le nombre de
-commit le mois passé laisse penser que Cinelerra est un projet très peu
-actif. Mais celà n'est pas vrai puisqu'en aout dernier, la société
-Héroine a encore releasé une nouvelle version contenant quelques
-nouvelles fonctionnalités et corrigé quelque bugs assez importants.
+Ce tableau montre que le codebase de GStreamer et de ces plugins est le
+plus important. Cela semble tout à fait logique puisque ce framework
+a pour objectif de répondre à un plus nombre de problèmes. Il est
+intéressant de constater que la communauté MLT\index{MLT} est très
+petite (seulement 12 développeurs), cela s'explique par le fait que
+l'API maintenu est minimalist, et permet de répondre à un problème
+précis.  Le nombre de développeurs de cinelerra n'est lui aussi pas
+très élevé. Dans les faits, il s'agit plus où moins d'un ``one man
+show'', et Adam Williams (employé Heroine) est responsable de l'immense
+majorité du code. Le nombre de commit le mois passé laisse penser que
+Cinelerra est un projet très peu actif. Mais ce n'est pas réel car
+en août dernier, la société Héroine a encore releasé une nouvelle
+version contenant quelques nouvelles fonctionnalités et corrigé quelques
+bugs assez importants.
 
 \subsection {Analyse des mailing lists}
 
-Cette analyse porte sur les mailing listes officiel des différent
+Cette analyse porte sur les mailing listes officiels des différent
 projets:
 
 \begin{itemize}
@@ -1669,7 +1665,7 @@ MLT\index{MLT} & 37 & 178 & 72 \\
 
 GStreamer & 238 & 521 &  387\\
 
-          & Janvier 2010 & Aout 2010 & \\
+          & Janvier 2010 & Août 2010 & \\
 
 \hline
 
@@ -1678,15 +1674,16 @@ GStreamer & 238 & 521 &  387\\
 \end{center}
 
 D'après l'analyse des mailing lists, on voit une fois de plus que le
-projet GStreamer est un projet plus important. Mais les autres projet ont
-de gros flux de mail intern à la communauté aussi. Tout ces projets,
-sont encore belle et bien vivant, même si le mois passé est le mois
-où il y a eu le moins d'échange au sein de la communauté Cinelerra,
-le mois précédent avait été actif avec 108 messages échangés.
+projet GStreamer est un projet plus important. Mais les autres projet
+ont de gros flux de mails internes à la communauté aussi. Tous ces
+projets, sont encore réellement vivants. Même si très peu d'échanges
+au seins de la communauté Cinelerra on eu lieu le mois passé, le mois
+précédent avait été actif avec 108 messages échangés.
 
 \subsection {Analyse des bug trackers}
 
-Cette analyse porte sur les bug trackers officiel des différent projets:
+Cette analyse porte sur les bug trackers officiels des différents
+projets:
 
 \begin{itemize}
 
@@ -1731,142 +1728,146 @@ GStreamer & 11210 & 1363 &  532\\
 
 \paragraph{}
 
-On s'aperçoit que les différence en volume de bugs report, sont très
+On s'aperçoit que les différences en volume de bugs report sont très
 importantes entre ces différents projets, en particulier entre GStreamer
-et les autres. Celà s'explique probablement par le fait que GStreamer
+et les autres. Cela s'explique probablement par le fait que GStreamer
 est un framework multimedia avec un champs d'application beaucoup
-plus large. Il convient de faire la différence entre le nombre de bug
-reporté et le nombre de bugs existant. Un projet qui contient de très
-nombreux bug dans son bug tracker signifie de manière certaine que le
-projet a de nombreux utilisateurs. Ces chiffre sont intéressant afin de
-juger de la taille des différentes communautés, et le nombre de leur
-utilisateurs. Mais on peu considérer qu'il est très probable que le
-nombre de bugs de MLT\index{MLT} et Cinelerra signifie que les projets
-sont mature et stables. GStreamer de son coté est stable mais encore en
-évolution constante, et avec un champs d'action beaucoup plus important
-qui rend le nombre de bugs potentiels beaucoup plus important.
+plus large. Il convient de faire la différence entre le nombre de bugs
+reportés et le nombre de bugs existants. Un projet qui contient de très
+nombreux bugs dans son bug tracker signifie de manière certaine que le
+projet a de nombreux utilisateurs. Ces chiffres sont intéressants car
+il permettent de juger de la taille des différentes communautés, et le
+nombre de leurs utilisateurs. Mais on peut considérer qu'il est très
+probable que le nombre de bugs de MLT\index{MLT} et Cinelerra signifie
+que les projets sont matûre et stables. GStreamer de son coté est
+stable mais encore en évolution constante, et avec un champs d'action
+beaucoup plus important qui rend le nombre de bugs potentiels beaucoup
+plus important.
 
 \subsection {Entreprise impliqué dans le développement de Cinelerra}
 
 \paragraph{}
 
-Tout d'abord le logiciel cinelerra est développé en interne par la
-société Heroine Virtual Ltd en interne en libérant leur code (code
-drops) de manière bi-annuel en moyenne. Une communauté c'est formé
-autour de ce code, et celle-ci le développe en incluant les changement
-d'héroïne Ltd lorsque l'entreprise release son code. Cette communauté
-a appelé sa version du logiciel cinelerra-cv, et la version est très
-proche de celle officiel. La difference majeur est que la communauté
-essaye d'utiliser les version upstream\glossary{name={upstream},
-description={Version développé par les communauté qui maintien
-officiellement le code source d'un logiciel.}}. L'entreprise aussi
-reprend la grande majorité du temps les changements effectués par la
-communauté au fur et à mesure.
+Tout d'abord le logiciel cinelerra est développé en interne par
+la société Heroine Virtual Ltd en interne en libérant leur code
+(code drops) de manière bi annuelle en moyenne. Une communauté s'est
+formée autour de ce code, et celle-ci le développe en incluant les
+changements d'Héroïne Ltd lorsque l'entreprise release son code. Cette
+communauté a appelé sa version du logiciel cinelerra-cv, et cette
+version est très proche de la version officielle. La différence majeure
+réside dans le fait que la communauté essaye d'utiliser les versions
+Upstream\glossary{name={upstream}, description={Version développé
+par les communauté qui maintien officiellement le code source d'un
+logiciel.}}. A noter que l'entreprise intègre aussi la grande majorité
+des changements effectués par la communauté.
 
 \paragraph{}
 
-Aussi, l'entreprise LMA, fait le support, formation du logiciel Cinelerra
-auprès des entreprises professionnel de l'édition vidéo. Ces deux
-entreprises travail en collaboration afin de répondre aux besoins
-des entreprises. A en croire la liste \footnote{Liste des client de
-l'entreprise LMA:
+L'entreprise LMA, fait le support, formation du logiciel Cinelerra
+auprès des entreprises professionnelles de l'édition vidéo. Ces deux
+entreprises travaillent en collaboration afin de répondre aux besoins
+des utilisateurs professionnels. En consultant la liste \footnote{Liste
+des clients de l'entreprise LMA:
   http://lmahd.com/lmahd1/index.php?option=com\_content\&view=article\&id=87}
-de client et le type d'entreprise qui en fait partie (parmi laquelle
-figure Boeing, TF1, Columbia Picture\ldots) , montre que le projet est
-ou a été très actif.
+des clients et le type d'entreprise qui en fait partie (parmi laquelle
+figure Boeing, TF1, Columbia Picture\ldots), on s'aperçoit que le projet
+est ou a été très actif.
 
 \paragraph{}
 
-Il convient donc d'analyser ce projet comme un étant un projet éditer
-par une seul entreprise. Cette entreprise a un business modèle a
-part de ce que ces concurrent ont, c'est à dire qu'au lieu de faire
-payer ces clients pour le logiciel, elle a choisi de créer un logiciel
-entièrement libre et de ce rémunérer (et plus particulièrement le
-groupe de développer qui en fait partit) à travers des différents
-développement spécifique, ou de services.  Afin de pouvoir se concentrer
-sur le code et sur les logiciels quel produit, Heroine Virtual utilise
-l'entreprise LMA comme vitrine commercial, et ainsi, leurs employés
-sont très majoritairement des ingénieur développeurs d'application.
-L'entreprise reste dans l'anonymat, et il n'a pas été possible de
-communiquer directement avec l'un de ses employés.
+Il convient donc d'analyser ce projet comme étant un projet édité par
+une seule entreprise. Cette entreprise a un business modèle à part,
+c'est à dire qu'au lieu de faire payer ses clients pour le logiciel, elle
+a choisi de créer un logiciel entièrement libre et de se rémunérer
+(et plus particulièrement le groupe de développer qui en fait partie) à
+travers des différents développement spécifiques, ou des services. Afin
+de pouvoir se concentrer sur le code et sur les logiciels quel produit,
+Heroine Virtual utilise l'entreprise LMA comme vitrine commerciale,
+et ainsi, leurs employés sont très majoritairement des ingénieur
+développeurs d'application.  L'entreprise reste dans l'anonymat,
+et il n'a pas été possible de communiquer directement avec l'un de
+ses employés.
 
 \paragraph{}
 
 On peut aussi se demander pourquoi cette entreprise a décidé de faire
-le développement de manière caché. En effet, on peut penser que si
-celle-ci faisait le développement de manière ouverte, elle pourrai
-bénéficier de manière plus efficace de l'aide de la communauté. Il
-y a trois explications possibles à cela:
+le développement de manière cachée. En effet, on peut penser que si
+celle-ci faisait le développement de manière ouverte, elle pourrait
+bénéficier plus efficacement de l'aide de la communauté. Il y a trois
+explications possibles à cela:
 
 \begin{itemize}
 
-  \item {Des contrats, ou partenariats les empêches de le faire}
+  \item {Des contrats, ou partenariats ne leur permet pas de le faire}
 
-  \item {Les développeurs considère que travailler au sein de la
-  communautés serai est
-    une perte de temps puisqu'il se verrai ``dans l'obligation'' de
-    collaborer de manière bien plus poussé avec ces membres}
+  \item {Les développeurs considèrent que travailler au sein de la
+  communauté serait est une perte de temps puisqu'ils se verraient
+  ``dans l'obligation'' de collaborer de manière bien plus poussée
+  avec ses membres}
 
   \item {L'entreprise veut garder un contrôle complet sur le
     développement de son logiciel, et ainsi ne pas prendre le risque
-    que d'autres entreprise ne vienne les concurrencer sur leur propre
-    logiciel}
+    que d'autres entreprises ne viennent les concurrencer sur leur
+    propre logiciel}
 
 \end{itemize}
 
 \paragraph{}
 
-Il apparait plus probable que cette dernière explication soit
-la bonne.  En général bénéficier de l'aide de la communauté est
-quelque chose de positif, et l'on s'aperçoit que toute les entreprise
-(créant de logiciel commerciaux ou non) essaye de profiter au maximum
-de celles-ci.  Le fait que l'entreprise n'est fait aucune documentation
-sur le code de cinelerra semble aussi montrer que leur intention est de
+Il apparait plus probable que cette dernière explication soit la bonne.
+En général bénéficier de l'aide de la communauté est quelque chose
+de positif, et l'on s'aperçoit que toutes les entreprises (créant
+des logiciels commerciaux ou non) essayent de profiter au maximum de
+celles-ci. Le fait que l'entreprise n'a fait aucune documentation sur
+le code de Cinelerra semble aussi montrer que leur intention est de
 ne pas divulguer le fonctionnement du logiciel, et ainsi, si une autre
-entreprise veut vendre et développer ce logiciel, celle-ci va avoir
-beaucoup de difficultés à prendre en main son codebase.
+entreprise veut vendre et développer ce logiciel, celle-ci aura beaucoup
+de difficultés à prendre en main son codebase.
 
 \subsection {Communauté Kdenlive et Mlt}
 
-Il est à savoir que le lien entre Kdenlive et Mlt est très étroit et
-le développeur principal de Kdenlive (Jean-Baptiste Mardelle) travail
+Il faut savoir que le lien entre Kdenlive et Mlt est très étroit et le
+développeur principal de Kdenlive (Jean-Baptiste Mardelle) travaille
 de manière régulière directement sur le framework majoritairement
-afin de corriger des bug.
+afin de corriger des bugs.
 
-\paragraph{Entreprise impliqué dans le développement de MLT\index{MLT}}
+\paragraph{Entreprise impliquée dans le développement de MLT\index{MLT}}
 
 \paragraph{}
 
 Le projet MLT\index{MLT} a été initié par l'entreprise de
 télévision et post-production Indienne Ushodaya\footnote{Ushodaya:
 http://www.etv.co.in}. Cette entreprise possède 12 chaines de
-télévision dans le paye et a décidé de créer un projet logiciel en
-interne pour ce qui est de la partie montage et broadcasting. Afin de
-simplifier cet tache, l'entreprise a créé le projet libre MLT\index{MLT}
-afin de créer une communauté autour du projet et ainsi bénéficier de
-son aide. L'entreprise développe toujours le framework et l'utilise en
-interne. A l'heure actuel, la société VMFX aide aussi au développement
-de MLT dans le cadre du développement du projet cineFX.
+télévision dans le pays et a décidé de créer un projet logiciel
+en interne pour la partie montage et broadcasting. Afin de simplifier
+cet tâche, l'entreprise a créé le projet libre MLT\index{MLT} pour
+créer une communauté autour du projet et ainsi bénéficier de son
+aide. L'entreprise développe toujours le framework et l'utilise
+en interne. A l'heure actuelle, la société VMFX aide aussi au
+développement de MLT dans le cadre du développement du projet cineFX.
 
-\paragraph{} L'entreprise Mainconcept est spécialisé dans la création
-de codecs et d'analyse de contenu multimedia. Elle offre des codecs de
-qualité professionnel pour le framework MLT\index{MLT}.
+\paragraph{}
 
-\paragraph{} BlueFish444 est une entreprise spécialisé dans la vente
-de materiel de post-production professionnel. L'entreprise soutient
-le projet en offrant du materiel  à la communauté afin que celle-ci
-puisse développer les fonctionnalité lié.
+L'entreprise Mainconcept est spécialisée dans la création de codecs
+et d'analyse de contenu multimedia. Elle offre des codecs de qualité
+professionnelle pour le framework MLT\index{MLT}.
+
+\paragraph{}
+
+BlueFish444 est une entreprise spécialisée dans la vente de materiel
+professionnel de post-production. L'entreprise soutient le projet
+en offrant du matériel  à la communauté afin que celle-ci puisse
+développer les fonctionnalités liées.
 
 \paragraph{Kdenlive dans la communauté libre}
 
 \paragraph{}
 
 Le logiciel Kdenlive est le logiciel de montage vidéo du bureau libre
-KDE et est par concéquent utilisé de manière intensive par ses
-utilisateurs. Il est particulièrement utilisé par des amateurs à la
-fois de vidéo et de logiciel libres. Il existe sur internet un nombre
-important de tutoriel et autre documentation créer par la communauté
-d'utilisateur.
+KDE et est utilisé de manière intensive par ses utilisateurs. Il est
+particulièrement utilisé par des amateurs à la fois de vidéo et de
+logiciel libre. Il existe sur internet un nombre important de tutoriel
+et autre documentation créée par la communauté d'utilisateur.
 
 \subsection {Communauté PiTiVi et GStreamer}
 
@@ -1874,49 +1875,48 @@ d'utilisateur.
 
 La relation entre GStreamer et PiTiVi est aussi très étroite. Edward
 Hervey, personne ayant initié le projet PiTiVi est devenu core
-développeur de GStreamer, et est aussi en grande partie responsable de
+développeur de GStreamer. Il est aussi en grande partie responsable de
 la création de la librairie gst-editing-services. De nombreuses personne
-de la communauté PiTiVi sont venu aider le développement de PiTiVi et vis
-vers çà.
+de la communauté GStreamer sont venues aider le développement de PiTiVi
+et réciproquement.
 
-\paragraph {Entreprises impliqués dans le développement de GStreamer}
+\paragraph {Entreprises impliquées dans le développement de GStreamer}
 
 \paragraph{}
 
-GStreamer est développé par de nombreuse entreprise, parmi lesquels
+GStreamer est développé par de nombreuses entreprises, parmi lesquelles
 Intel, HP, Texas Instrument, Nokia\ldots dans le cadre des différents
-système d'exploitation qu'ils développent (Meego, WebOs, Ubuntu).
+systèmes d'exploitation qu'ils développent (Meego, WebOs, Ubuntu).
 
 \paragraph{}
 
-De nombreuse autres entreprise plus petite travail sur GStreamer de
-différentes manière:
+De nombreuses autres entreprises plus petite travaillent sur GStreamer
+de différentes manières:
 
 \begin{itemize}
 
-  \item {Fluendo: Vent des codec, server multimedia de broadcast basé
+  \item {Fluendo: Vend des codec, server multimedia de broadcast basé
   sur GStreamer}
 
-  \item {Collabora: Vent du service aux différentes entreprise utilisant
+  \item {Collabora: Vend du service aux différentes entreprises utilisant
   GStreamer.
-    Aide au développement de PiTiVi et est responsable du développement
-    de gst-editing-services.}
+    Aide au développement de PiTiVi et assure responsabilité du
+    développement de gst-editing-services.}
 
-  \item {Linaro: Travail sur GStreamer pour les processeur arm et les
-  appareils mobiles}
+  \item {Linaro: Travaille sur GStreamer pour les processeurs arm et
+  les appareils mobiles}
 
-  \item {entropywave: Travail sur l'encoding vidéo, le développement
-  d'application,
-    vente de materiel multimedia de tout type}
+  \item {entropywave: Travaille sur l'encoding vidéo, le développement
+  d'application, vend du materiel multimedia de tout type}
 
 \end{itemize}
 
 \paragraph{}
 
 GStreamer est soutenu par l'organisation Freedesktop.org, organisation
-visant à permettre l'interopérabilité entre les différent bureau
-libre.  Dans ce cadre, GStreamer peut être considéré comme étant le
-standard des framework libre de facto.
+visant à permettre l'interopérabilité entre les différents bureaux
+libres. Dans ce cadre, GStreamer peut être considéré comme étant le
+standard des frameworks libres de facto.
 
 \paragraph{}
 
@@ -1929,40 +1929,41 @@ multimedia.
 
 \subparagraph{}
 
-Bien que officiellement le projet PiTiVi ne soit pas un projet Gnome,
-la relation entre ces deux projets est très étroite (par example, les
-traduction de PiTiVi est fait par les traducteur du projet Gnome), et
-donc dans les fait PiTiVi est le logiciel d'édition vidéo privilégié de
-ce bureau et donc bénéficie de l'aide de celle ci (principalement en terme
-de testing, rapport de bug\ldots).
+Bien qu'officiellement le projet PiTiVi ne soit pas un projet Gnome,
+la relation entre ces deux projets est très étroite (par exemple, les
+traductions de PiTiVi sont faites par les traducteurs du projet Gnome),
+et dans les faits PiTiVi est le logiciel d'édition vidéo privilégié
+de ce bureau et bénéficie donc de l'aide de celle ci (principalement
+en terme de testing, rapport de bug\ldots).
 
 \newpage \section{Lacunes et solutions possibles}
 
 \subsection {Cinelerra}
 
-\paragraph{} On constate bien que le logiciel Cinelerra a su prendre une
-part de marché chez les professionnel. Mais son manque d'ergonomie et
-le fait qu'il ne soit soutenu que par deux entreprise (la communauté
-est négligeable dans ce projet) le rend particulièrement adapté au
-marché niche dans lequel il a su faire ca place. C'est à dire de gros
-client qui considère leur indépendance vis-à-vis de l'entreprise
-éditrice ainsi que la possibilité d'adapter le logiciel à leur guise
-comme étant des facteur essentiel dans le choix du logiciel de montage
-vidéo. Deux types d'utilisateur  seulement sont visé (du fait de son
-ergonomie laisse vraiment à désiré): Les passionnés d'informatiques
-et de montage vidéo, et les professionnels qui ont les moyens d'être
-former sur ce logiciel.
+\paragraph{}
 
-Les principales limitations de ce logiciel pour conquérir d'autre
-marché sont
+On constate que le logiciel Cinelerra a bien su prendre une part de
+marché chez les professionnels. Mais son manque d'ergonomie et le
+fait qu'il ne soit soutenu que par deux entreprises (la communauté est
+négligeable dans ce projet) le rend particulièrement adapté au marché
+niche dans lequel il a su faire sa place. Il s'agit de clients importants
+qui considèrent leur indépendance vis-à-vis de l'entreprise éditrice
+ainsi que la possibilité d'adapter le logiciel à leur guise comme étant
+des facteurs essentiels dans le choix du logiciel de montage vidéo. Deux
+types d'utilisateurs seulement sont visés (du fait des lacunes de
+son ergonomie): les passionnés d'informatiques et de montage vidéo,
+et les professionnels qui ont les moyens d'être formés sur ce logiciel.
+
+Les principales limites de ce logiciel pour conquérir d'autres marchés
+sont:
 
 \begin{itemize}
 
   \item {Aucun installer disponible pour les utilisateurs
   potentiels. Cinelerra doit être
-    compilé à la main pour être utilisé, où acheté auprès de LMA,
-    mais cela le rend très chère (puisque LMA vent des packs contenant
-    le materiel, une distribution Linux adapté\ldots)}
+    compilé à la main pour être utilisé, ou acheté auprès de LMA,
+    mais cela le rend très cher (puisque LMA vent des packs contenant
+    le matériel et une distribution Linux adaptée\ldots)}
 
   \item {Interface graphique qui est à revoir à la fois en terme
     d'ergonomie et en terme d'esthétique}
@@ -1973,39 +1974,41 @@ marché sont
     au sein de la communauté open source.}
 
   \item {Le fait qu'aucune entreprise ne le pousse dans d'autre marché.
-    L'entreprise LMA est vraiment orienté sur le marché qu'elle a deja
-    conquis, et ne fait absolument pas parler d'elle et de son produit
-    dans le monde de l'édition professionnel. Aussi, Héroïne, n'a
-    pas vocation à vendre son produit auprès des utilisateurs finaux}
+    L'entreprise LMA est vraiment orientée sur le marché qu'elle a
+    déjà conquis, et ne fait absolument pas parler d'elle et de son
+    produit dans le monde professionnel de l'édition. Aussi, Héroïne,
+    n'a pas vocation à vendre son produit auprès des utilisateurs
+    finaux}
 
   \item {Manque de part de marché dans le milieu de l'édition vidéo
-    ``standard'', cela a pour conséquence que de nombreuses entreprises
-    ne vont pas prendre le risque d'utiliser ce logiciel.}
+    ``standard'', cela a pour conséquence de limiter le nombre
+    d'entreprises qui vont faire le choix d'utiliser ce logiciel.}
 
 \end{itemize}
 
-\paragraph{} Afin de remédier à cette situation, plusieurs solutions
-existent:
+\paragraph{}
+
+Afin de remédier à cette situation, plusieurs solutions existent:
 
 \begin{itemize}
 
-  \item {Réécrire le code de manière a ce qu'il soit plus facilement
-    utilisable par la communauté. Celà impliquerais probablement de
-    faire une limitation plus nette entre l'interface graphique et le
-    core de l'application. On peut imaginer aussi utiliser un toolkit
-    graphique dans le cadre de cette réécriture afin de tirer au
-    mieux partie des technologies libres existant. Un effort en terme
-    d'ergonomie devrai aussi être fait. Cette idée a été mise à
-    execution par le projet Lumiera. Mais cet effort a débuté en
-    2008, et jusqu'à l'heure actuel aucun résultat satisfaisant n'en
-    est sortit. La solution pour que ce projet soit viable, serai que
-    l'entreprise Héroïne le soutienne, ce qui ne semble pas être
-    possible compte tenu de la stratégie actuel de l'entreprise.}
+  \item {Réécrire le code de manière à le rendre pus facilement
+    utilisable par la communauté. Cela impliquerait probablement de faire
+    une limitation plus nette entre l'interface graphique et le core de
+    l'application. On peut imaginer aussi utiliser un toolkit graphique
+    dans le cadre de cette réécriture afin de tirer au mieux partie
+    des technologies libres existantes. Un effort en terme d'ergonomie
+    devrait aussi être fait. Cette idée a été mise à exécution par
+    le projet Lumiera. Mais cet effort a débuté en 2008, et à l'heure
+    actuelle aucun résultat satisfaisant n'en est sortit. La solution
+    pour rendre ce projet viable, serait que Héroïne le soutienne,
+    ce qui ne semble pas être possible compte tenu de la stratégie
+    actuelle de l'entreprise.}
 
 
-  \item {Permettre une installation plus facile sur les différent
-  système de
-    la version actuel et re designer l'interaction utilisateur. Il serait
+  \item {Permettre une installation plus facile sur les différents
+  systèmes de la version actuelle et re-designer l'interaction
+  utilisateur. Il serait
     ensuite nécessaire qu'une entreprise fasse du marketing autour de ce
     produit auprès des différents acteurs du marché du montage vidéo.}
 
@@ -2013,62 +2016,67 @@ existent:
 
 \paragraph {}
 
-Compte tenu de la posture actuel des différents acteurs de la communauté
-Cinelerra, le plus probable est que le logiciel garde une part de marché
-sur le créneaux très pointu sur lequel elle est à l'heure actuel. Mais
-les sociétés Héroïne et LMA devront dans tout les cas réussir à
+Compte tenu de la posture actuelle des différents acteurs de la
+communauté Cinelerra, le plus probable est que le logiciel garde une part
+de marché sur le segment très pointu il est situé actuellement. Mais
+les sociétés Héroïne et LMA devront dans tous les cas réussir à
 moderniser ce logiciel qui semble très difficile à maintenir et encore
 plus à faire évoluer.
 
 \subsection {Kdenlive}
 
-\paragraph{} Le fait que Kdenlive n'ai pas réussi à ce faire une
-place auprès des professionnels est très largement due au fait que ce
-logiciel n'est actuellement supporté par aucune entreprise. De plus,
-son manque de fonctionnalité (bien que dans de nombreux cas, celui-ci
-peu dors et déjà répondre aux différents besoins), le rend que peu
-crédible sur le marché professionnels.
+\paragraph{}
+
+Le fait que Kdenlive n'ait pas réussi à ce faire une place auprès des
+professionnels est très largement due au fait que ce logiciel n'est
+actuellement supporté par aucune entreprise. De plus, son manque de
+fonctionnalité (bien que dans de nombreux cas, celui-ci peu dores et
+déjà répondre aux différents besoins), le rend que peu crédible
+sur le marché professionnel.
 
 \paragraph{}
 
-Au niveau des technologies sous-jacentes, celle ci est correctement
-maintenu et supporté par plusieurs entreprises. La communauté, bien que
-petite, semble en capacité de maintenir le projet et le fait évolué
-même si que peu rapidement. Il n'y a aucun plan à long terme permettant
-par example de répondre au problème concernant le au fait qu'elle ne
-permet pas de faire de composition à proprement parler, et ne peut pas
-prendre en charge l'accélération materiel pour ce faire.
+Au niveau des technologies sous-jacentes, celle ci sont correctement
+maintenues et supportées par plusieurs entreprises. La communauté,
+bien que petite, semble avoir la capacité de maintenir le projet et
+le fait évoluer ne serait-ce que graduellement. Il n'y a aucun plan
+à long terme permettant par exemple de répondre à l'absence de la
+fonctionnalité de composition à proprement parler, et de la prise en
+charge l'accélération matérielle.
 
 Le fait que MLT soit très axés sur le broadcasting le rend que peu
-flexible, ce qui limite les possibilité qu'il offre aux applications
-qui l'utilise et donc à Kdenlive, et par concéquent risque de limiter
-ces possibilités d'adoption en milieu professionnel.
+flexible, ce qui limite les possibilités qu'il offre aux applications
+qui l'utilise et donc à Kdenlive, et par conséquent risque de limiter
+les possibilités d'utilisation en milieu professionnel.
 
 \paragraph{}
 
-Afin de permettre l'utilisation de Kdenlive en milieu professionnel, le point
-essentiel serai qu'une entreprise soutienne son évolution et fasse le
-marketing de ce projet. Celui-ci offre dors et deja un large champs de
-possibilité et est très bien reçu par la communauté.
+Kdenlive sera utilisé en milieu professionnel seulement si une entreprise
+soutient son évolution et en fait sa promotion. Celui-ci offre dores
+et déjà un large champs de possibilités. Il est également très bien
+reçu par la communauté.
 
 \subsection {PiTiVi}
 
 \paragraph{}
 
-A l'heure actuel, PiTiVi manque grandement de fonctionnalités pour répondre
-aux besoins des professionnels. Le fait qu'il ne supporte pas encore la création
-de titre et générique rends son utilisation impossible dans le milieu. Il manque
-d'un développement soutenu dans le temps qui permettrai de subvenir à ce problème.
+A l'heure actuelle, PiTiVi manque grandement de fonctionnalités pour
+répondre aux besoins des professionnels. Le fait qu'il ne supporte
+pas encore la création de titres et génériques rend son utilisation
+impossible dans le milieu. Il manque d'un développement soutenu dans
+le temps qui permettrai de subvenir à ce problème.
 
 \paragraph{}
 
-Afin de pouvoir répondre aux besoins des professionnels, PiTiVi devra implementer
-les différentes fonctionnalités. Celà ne devrai pas demander trop d'effort
-puisque celle-ci sont dors et deja disponible dans le framework GStreamer. Le fait
-que le framework sur lequel ce logiciel ce base est une communauté
-aussi importante, et que sont développement soit soutenu par de très grosse entreprise
-laisse penser que le potentiel offert par cette technologie est très important sur le
-long term. Il conviendra donc pour les développeurs de PiTiVi de tirer partie au plus
-vite de la puissance offerte par le framework, et l'entreprise collabora pourra aussi
-accélérer le développement du projet, en particulier de la migration vers GES afin
-de combler les lacunes du logiciels et conquérir le marché professionnel.
+Afin de pouvoir répondre aux besoins des professionnels, PiTiVi devra
+implementer les différentes fonctionnalités. Cela ne devrai pas demander
+trop d'effort puisque celle-ci sont dores et deja disponible dans le
+framework GStreamer. Le fait que le framework sur lequel ce logiciel ce
+base est une communauté aussi importante, et que sont développement soit
+soutenu par de très grosse entreprise laisse penser que le potentiel
+offert par cette technologie est très important sur le long term. Il
+conviendra donc pour les développeurs de PiTiVi de tirer partie au plus
+vite de la puissance offerte par le framework.  L'entreprise collabora
+pourra aussi accélérer le développement du projet, en particulier en
+assurant la migration vers GES afin de combler les lacunes du logiciels
+et finalement conquérir le marché professionnel.
