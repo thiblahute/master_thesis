@@ -842,17 +842,15 @@ il suffit de faire:
 
 Il sera ensuite possible d'ajouter ce service au réseau de service.
 
-\subparagraph{Les données dans un réseau de services}
+\paragraph{Les données dans un réseau de services}
 
-\subparagraph{La classe Frame} Les données qui transitent dans un
-réseau de service sont contenues dans des objets de type frame. Celles-ci
-contiennent à la fois les données audio et les données vidéos. Les
-producteurs peuvent setter ces données grâce aux méthodes
-mlt\_frame\_set\_audio et mlt\_frame\_set\_video.
+La classe Frame: Les données qui transitent dans un réseau de service
+sont contenues dans des objets de type frame. Celles-ci contiennent
+à la fois les données audio et les données vidéos. Les producteurs
+peuvent setter ces données grâce aux méthodes mlt\_frame\_set\_audio
+et mlt\_frame\_set\_video.
 
-\subparagraph{Relations entre les différents services en terme de flux
-de données}
-
+Relations entre les différents services en terme de flux de données:
 Afin commencer le flux de données dans un réseau de service, le
 consommateur est celui qui fait la demande de données (pull datas) au
 service sur lequel il est connecté. Les autres services réagissent,
@@ -862,7 +860,7 @@ les fait suivre au service suivant et ainsi de suite. Ce processus peut
 
 \begin{center}
 
-  \begin{tabular}{ | c | c | c | c |}
+  \begin{longtable}{ | c | c | c | c |}
 
     \hline
 
