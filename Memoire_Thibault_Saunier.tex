@@ -24,7 +24,11 @@ Framework multimedia, Cinelerra, PiTiVi, Kdenlive, MLT, GStreamer}
 \setcounter{secnumdepth}{3}
 \setcounter{minitocdepth}{3}
 \setcounter{tocdepth}{1}
+
+\begin{spacing}{1.2}
 \tableofcontents{}
+\end{spacing}
+
 
 \thispagestyle{empty}
 
@@ -43,11 +47,14 @@ Framework multimedia, Cinelerra, PiTiVi, Kdenlive, MLT, GStreamer}
 \newpage
 \printindex
 \listoffigures
+\addcontentsline{toc}{chapter}{Table des figures}
 
 \newpage
 \printglossary
+\addcontentsline{toc}{chapter}{Glossaire}
 
 \newpage
 \bibliography{biblio}
+\addcontentsline{toc}{chapter}{Bibliographie}
 
 \end{document}
